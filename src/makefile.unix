@@ -144,22 +144,12 @@ OBJS= \
     obj/noui.o \
     obj/leveldb.o \
     obj/txdb.o\
-    obj/cubehash.o \
-    obj/luffa.o \
     obj/aes_helper.o \
-    obj/echo.o \
-    obj/shavite.o \
-    obj/simd.o \
-    obj/blake.o\
-    obj/bmw.o\
-    obj/groestl.o\
-    obj/jh.o\
     obj/keccak.o\
-    obj/skein.o\
     obj/bttrackers.o \
     obj/ecdsa.o
 
-all: simugamesd
+all: zettelkastend
 
 test check: test_spreadcoin FORCE
 	./test_spreadcoin
@@ -204,7 +194,7 @@ obj/%.o: %.c
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-simugamesd: $(OBJS:obj/%=obj/%)
+zettelkastend: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -220,7 +210,7 @@ test_spreadcoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(LINK) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ $(TESTLIBS) $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f simugamesd test_simugames
+        -rm -f zettelkastend test_zettelkasten
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P

@@ -116,10 +116,10 @@ OBJS= \
     obj/bttrackers.o \
     obj/ecdsa.o
 
-all: simugamesd.exe
+all: zettelkastend.exe
 
-test check: test_simugames.exe FORCE
-	test_simugames.exe
+test check: test_zettelkasten.exe FORCE
+        test_zettelkasten.exe
 
 #
 # LevelDB support
@@ -139,7 +139,7 @@ obj/%.o: %.cpp $(HEADERS)
 obj/%.o: %.c $(HEADERS)
 	$(CXX) -c $(CFLAGS) -fpermissive -o $@ $<
 
-simugamesd.exe: $(OBJS:obj/%=obj/%)
+zettelkastend.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -147,13 +147,13 @@ TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
 obj-test/%.o: test/%.cpp $(HEADERS)
 	$(CXX) -c $(TESTDEFS) $(CFLAGS) -o $@ $<
 
-test_simugames.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_zettelkasten.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework$(BOOST_SUFFIX) $(LIBS)
 
 clean:
-	rm -f simugamesd.exe test_simugames.exe
-	rm -f obj/*
-	rm -f obj-test/*
+        rm -f zettelkastend.exe test_zettelkasten.exe
+        rm -f obj/*
+        rm -f obj-test/*
 	cd leveldb && $(MAKE) TARGET_OS=NATIVE_WINDOWS clean && cd ..
 
 FORCE:

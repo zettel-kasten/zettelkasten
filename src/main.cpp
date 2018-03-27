@@ -3123,7 +3123,7 @@ static CBlock getGenesisBlock()
     block.hashPrevBlock = 0;
     block.hashMerkleRoot = block.BuildMerkleTree();
     block.nVersion = 1;
-    block.nTime    = 1522171630; //fTestNet? 1496033996 : 1495841000; //1406620001 : 1406620000;
+    block.nTime    = 1522187616; //fTestNet? 1496033996 : 1495841000; //1406620001 : 1406620000;
     block.nBits    = bnProofOfWorkLimit.GetCompact();
     block.nHeight  = 0;
 
