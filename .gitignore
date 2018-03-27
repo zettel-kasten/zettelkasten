@@ -1,0 +1,37 @@
+src/*.exe
+src/darkcoin
+src/darkcoind
+src/test_darkcoin
+.*.swp
+*.*~*
+*.bak
+*.rej
+*.orig
+*.o
+*.patch
+.darkcoin
+
+# Compilation and Qt preprocessor part
+*.qm
+Makefile
+darkcoin-qt
+DarkCoin-Qt.app
+
+# Unit-tests
+Makefile.test
+darkcoin-qt_test
+
+# Resources cpp
+qrc_*.cpp
+
+# Qt creator
+*.pro.user
+
+# Mac specific
+.DS_Store
+build
+
+!src/leveldb-*/Makefile
+.cproject
+.project
+
