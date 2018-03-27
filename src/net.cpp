@@ -1255,7 +1255,7 @@ void ThreadDNSAddressSeed()
 unsigned int pnSeed[] =
 {
     // Spread-FIXME: Add more seed nodes
-    0xEE3319B9,0x0CF4FcD5,
+    0xEE3319B9,0x0CF4FcD5,0xE98451AC,
 };
 
 void DumpAddresses()
