@@ -1,9 +1,9 @@
-Building SpreadCoin
+Building zettelkasten
 
-See doc/readme-qt.rst for instructions on building SpreadCoin-Qt,
+See doc/readme-qt.rst for instructions on building zettelkasten-Qt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of SpreadCoin.
+implementation of zettelkasten.
 
-See doc/build-*.txt for instructions on building spreadcoind,
+See doc/build-*.txt for instructions on building zettelkasten,
 the intended-for-services, no-graphical-interface, reference
-implementation of SpreadCoin.
+implementation of zettelkasten.
