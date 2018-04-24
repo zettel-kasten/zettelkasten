@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About DarkCoin</source>
-        <translation>O DarkCoinu</translation>
+        <source>About ZettelKasten</source>
+        <translation>O ZettelKastenu</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;DarkCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;DarkCoin&lt;/b&gt; verze</translation>
+        <source>&lt;b&gt;ZettelKasten&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;ZettelKasten&lt;/b&gt; verze</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -34,8 +34,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+0"/>
-        <source>The DarkCoin developers</source>
-        <translation>Vývojáři DarkCoinu</translation>
+        <source>The ZettelKasten developers</source>
+        <translation>Vývojáři ZettelKastenu</translation>
     </message>
 </context>
 <context>
@@ -67,8 +67,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your DarkCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Tohle jsou tvé DarkCoinové adresy pro příjem plateb. Můžeš dát pokaždé každému plátci novou adresu, abys věděl, kdo ti kdy kolik platil.</translation>
+        <source>These are your ZettelKasten addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Tohle jsou tvé ZettelKastenové adresy pro příjem plateb. Můžeš dát pokaždé každému plátci novou adresu, abys věděl, kdo ti kdy kolik platil.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -82,8 +82,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a DarkCoin address</source>
-        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem DarkCoinové adresy</translation>
+        <source>Sign a message to prove you own a ZettelKasten address</source>
+        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem ZettelKastenové adresy</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -107,8 +107,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified DarkCoin address</source>
-        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou DarkCoinovou adresou</translation>
+        <source>Verify a message to ensure it was signed with a specified ZettelKasten address</source>
+        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou ZettelKastenovou adresou</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -122,8 +122,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your DarkCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Tohle jsou tvé DarkCoinové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
+        <source>These are your ZettelKasten addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Tohle jsou tvé ZettelKastenové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -248,8 +248,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DARKCOINS&lt;/b&gt;!</source>
-        <translation>Varování: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY DARKCOINY&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ZettelKastenS&lt;/b&gt;!</source>
+        <translation>Varování: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY ZettelKastenY&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -275,8 +275,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="-56"/>
-        <source>DarkCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
-        <translation>DarkCoin se teď ukončí, aby dokončil zašifrování. Pamatuj však, že pouhé zašifrování peněženky úplně nezabraňuje krádeži tvých darkcoinů malwarem, kterým se může počítač nakazit.</translation>
+        <source>ZettelKasten will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZettelKastens from being stolen by malware infecting your computer.</source>
+        <translation>ZettelKasten se teď ukončí, aby dokončil zašifrování. Pamatuj však, že pouhé zašifrování peněženky úplně nezabraňuje krádeži tvých ZettelKastenů malwarem, kterým se může počítač nakazit.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -374,8 +374,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about DarkCoin</source>
-        <translation>Zobraz informace o DarkCoinu</translation>
+        <source>Show information about ZettelKasten</source>
+        <translation>Zobraz informace o ZettelKastenu</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -419,13 +419,13 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a DarkCoin address</source>
-        <translation>Pošli mince na DarkCoinovou adresu</translation>
+        <source>Send coins to a ZettelKasten address</source>
+        <translation>Pošli mince na ZettelKastenovou adresu</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for DarkCoin</source>
-        <translation>Uprav nastavení DarkCoinu</translation>
+        <source>Modify configuration options for ZettelKasten</source>
+        <translation>Uprav nastavení ZettelKastenu</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -455,8 +455,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>DarkCoin</source>
-        <translation>DarkCoin</translation>
+        <source>ZettelKasten</source>
+        <translation>ZettelKasten</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -480,8 +480,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About DarkCoin</source>
-        <translation>O &amp;DarkCoinu</translation>
+        <source>&amp;About ZettelKasten</source>
+        <translation>O &amp;ZettelKastenu</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -500,13 +500,13 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your DarkCoin addresses to prove you own them</source>
-        <translation>Podepiš zprávy svými DarkCoinovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
+        <source>Sign messages with your ZettelKasten addresses to prove you own them</source>
+        <translation>Podepiš zprávy svými ZettelKastenovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified DarkCoin addresses</source>
-        <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými DarkCoinovými adresami</translation>
+        <source>Verify messages to ensure they were signed with specified ZettelKasten addresses</source>
+        <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými ZettelKastenovými adresami</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -536,13 +536,13 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+47"/>
-        <source>DarkCoin client</source>
-        <translation>DarkCoin klient</translation>
+        <source>ZettelKasten client</source>
+        <translation>ZettelKasten klient</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to DarkCoin network</source>
-        <translation><numerusform>%n aktivní spojení do DarkCoinové sítě</numerusform><numerusform>%n aktivní spojení do DarkCoinové sítě</numerusform><numerusform>%n aktivních spojení do DarkCoinové sítě</numerusform></translation>
+        <source>%n active connection(s) to ZettelKasten network</source>
+        <translation><numerusform>%n aktivní spojení do ZettelKastenové sítě</numerusform><numerusform>%n aktivní spojení do ZettelKastenové sítě</numerusform><numerusform>%n aktivních spojení do ZettelKastenové sítě</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -656,8 +656,8 @@ Adresa: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid DarkCoin address or malformed URI parameters.</source>
-        <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná DarkCoinová adresa nebo poškozené parametry URI.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid ZettelKasten address or malformed URI parameters.</source>
+        <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná ZettelKastenová adresa nebo poškozené parametry URI.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -671,8 +671,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. DarkCoin can no longer continue safely and will quit.</source>
-        <translation>Stala se fatální chyba. DarkCoin nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
+        <source>A fatal error occurred. ZettelKasten can no longer continue safely and will quit.</source>
+        <translation>Stala se fatální chyba. ZettelKasten nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
     </message>
 </context>
 <context>
@@ -737,8 +737,8 @@ Adresa: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid DarkCoin address.</source>
-        <translation>Zadaná adresa &quot;%1&quot; není platná DarkCoinová adresa.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid ZettelKasten address.</source>
+        <translation>Zadaná adresa &quot;%1&quot; není platná ZettelKastenová adresa.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -756,8 +756,8 @@ Adresa: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>DarkCoin-Qt</source>
-        <translation>DarkCoin-Qt</translation>
+        <source>ZettelKasten-Qt</source>
+        <translation>ZettelKasten-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -819,13 +819,13 @@ Adresa: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start DarkCoin after logging in to the system.</source>
-        <translation>Automaticky spustí DarkCoin po přihlášení do systému.</translation>
+        <source>Automatically start ZettelKasten after logging in to the system.</source>
+        <translation>Automaticky spustí ZettelKasten po přihlášení do systému.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start DarkCoin on system login</source>
-        <translation>S&amp;pustit DarkCoin po přihlášení do systému</translation>
+        <source>&amp;Start ZettelKasten on system login</source>
+        <translation>S&amp;pustit ZettelKasten po přihlášení do systému</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -844,7 +844,7 @@ Adresa: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the DarkCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the ZettelKasten client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Automaticky otevře potřebný port na routeru. Tohle funguje jen za předpokladu, že tvůj router podporuje UPnP a že je UPnP povolené.</translation>
     </message>
     <message>
@@ -854,8 +854,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the DarkCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Připojí se do DarkCoinové sítě přes SOCKS proxy (např. když se připojuje přes Tor).</translation>
+        <source>Connect to the ZettelKasten network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Připojí se do ZettelKastenové sítě přes SOCKS proxy (např. když se připojuje přes Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -929,8 +929,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting DarkCoin.</source>
-        <translation>Tady lze nastavit jazyk uživatelského rozhraní. Nastavení se projeví až po restartování DarkCoinu.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZettelKasten.</source>
+        <translation>Tady lze nastavit jazyk uživatelského rozhraní. Nastavení se projeví až po restartování ZettelKastenu.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -944,8 +944,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show DarkCoin addresses in the transaction list or not.</source>
-        <translation>Zda ukazovat darkcoinové adresy ve výpisu transakcí nebo ne.</translation>
+        <source>Whether to show ZettelKasten addresses in the transaction list or not.</source>
+        <translation>Zda ukazovat ZettelKastenové adresy ve výpisu transakcí nebo ne.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -996,8 +996,8 @@ Adresa: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting DarkCoin.</source>
-        <translation>Nastavení se projeví až po restartování DarkCoinu.</translation>
+        <source>This setting will take effect after restarting ZettelKasten.</source>
+        <translation>Nastavení se projeví až po restartování ZettelKastenu.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1015,8 +1015,8 @@ Adresa: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the DarkCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s DarkCoinovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZettelKasten network after a connection is established, but this process has not completed yet.</source>
+        <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s ZettelKastenovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1069,8 +1069,8 @@ Adresa: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
-        <translation>Nemůžu spustit darkcoin: obsluha click-to-pay</translation>
+        <source>Cannot start ZettelKasten: click-to-pay handler</source>
+        <translation>Nemůžu spustit ZettelKasten: obsluha click-to-pay</translation>
     </message>
 </context>
 <context>
@@ -1219,8 +1219,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the DarkCoin-Qt help message to get a list with possible DarkCoin command-line options.</source>
-        <translation>Seznam parametrů DarkCoinu pro příkazovou řádku získáš v nápovědě DarkCoinu Qt.</translation>
+        <source>Show the ZettelKasten-Qt help message to get a list with possible ZettelKasten command-line options.</source>
+        <translation>Seznam parametrů ZettelKastenu pro příkazovou řádku získáš v nápovědě ZettelKastenu Qt.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1239,13 +1239,13 @@ Adresa: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>DarkCoin - Debug window</source>
-        <translation>DarkCoin - ladicí okno</translation>
+        <source>ZettelKasten - Debug window</source>
+        <translation>ZettelKasten - ladicí okno</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>DarkCoin Core</source>
-        <translation>Jádro DarkCoinu</translation>
+        <source>ZettelKasten Core</source>
+        <translation>Jádro ZettelKastenu</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1254,8 +1254,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the DarkCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otevři soubor s ladicími záznamy DarkCoinu z aktuálního datového adresáře. U velkých logů to může pár vteřin zabrat.</translation>
+        <source>Open the ZettelKasten debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otevři soubor s ladicími záznamy ZettelKastenu z aktuálního datového adresáře. U velkých logů to může pár vteřin zabrat.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1264,8 +1264,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the DarkCoin RPC console.</source>
-        <translation>Vítej v DarkCoinové RPC konzoli.</translation>
+        <source>Welcome to the ZettelKasten RPC console.</source>
+        <translation>Vítej v ZettelKastenové RPC konzoli.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1448,8 +1448,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Zadej DarkCoinovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Zadej ZettelKastenovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1513,8 +1513,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this DarkCoin address</source>
-        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této DarkCoinové adresy</translation>
+        <source>Sign the message to prove you own this ZettelKasten address</source>
+        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této ZettelKastenové adresy</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1549,8 +1549,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified DarkCoin address</source>
-        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou DarkCoinovou adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified ZettelKasten address</source>
+        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou ZettelKastenovou adresou</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1565,8 +1565,8 @@ Adresa: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Zadej DarkCoinovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Zadej ZettelKastenovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1575,8 +1575,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter DarkCoin signature</source>
-        <translation>Vlož DarkCoinový podpis</translation>
+        <source>Enter ZettelKasten signature</source>
+        <translation>Vlož ZettelKastenový podpis</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1649,8 +1649,8 @@ Adresa: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The DarkCoin developers</source>
-        <translation>Vývojáři DarkCoinu</translation>
+        <source>The ZettelKasten developers</source>
+        <translation>Vývojáři ZettelKastenu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2187,8 +2187,8 @@ Adresa: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>DarkCoin version</source>
-        <translation>Verze DarkCoinu</translation>
+        <source>ZettelKasten version</source>
+        <translation>Verze ZettelKastenu</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2197,8 +2197,8 @@ Adresa: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Poslat příkaz pro -server nebo darkcoind</translation>
+        <source>Send command to -server or ZettelKastend</source>
+        <translation>Poslat příkaz pro -server nebo ZettelKastend</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2217,13 +2217,13 @@ Adresa: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Konfigurační soubor (výchozí: darkcoin.conf)</translation>
+        <source>Specify configuration file (default: ZettelKasten.conf)</source>
+        <translation>Konfigurační soubor (výchozí: ZettelKasten.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>PID soubor (výchozí: darkcoind.pid)</translation>
+        <source>Specify pid file (default: ZettelKastend.pid)</source>
+        <translation>PID soubor (výchozí: ZettelKastend.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2300,24 +2300,24 @@ Adresa: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=ZettelKastenrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;ZettelKasten Alert&quot; admin@foo.com
 </source>
         <translation>%s, musíš nastavit rpcpassword v konfiguračním souboru:
 %s
 Je vhodné použít následující náhodné heslo:
-rpcuser=darkcoinrpc
+rpcuser=ZettelKastenrpc
 rpcpassword=%s
 (není potřeba si ho pamatovat)
 rpcuser a rpcpassword NESMÍ být stejné.
 Pokud konfigurační soubor ještě neexistuje, vytvoř ho tak, aby ho mohl číst pouze vlastník.
 Je také doporučeno si nastavit alertnotify, abys byl upozorněn na případné problémy;
-například: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo.com
+například: alertnotify=echo %%s | mail -s &quot;ZettelKasten Alert&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2332,8 +2332,8 @@ například: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. DarkCoin is probably already running.</source>
-        <translation>Nedaří se mi získat zámek na datový adresář %s. DarkCoin pravděpodobně už jednou běží.</translation>
+        <source>Cannot obtain a lock on data directory %s. ZettelKasten is probably already running.</source>
+        <translation>Nedaří se mi získat zámek na datový adresář %s. ZettelKasten pravděpodobně už jednou běží.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2377,8 +2377,8 @@ například: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong DarkCoin will not work properly.</source>
-        <translation>Upozornění: Zkontroluj, že máš v počítači správně nastavený datum a čas! Pokud jsou nastaveny špatně, DarkCoin nebude fungovat správně.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ZettelKasten will not work properly.</source>
+        <translation>Upozornění: Zkontroluj, že máš v počítači správně nastavený datum a čas! Pokud jsou nastaveny špatně, ZettelKasten nebude fungovat správně.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2627,8 +2627,8 @@ například: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the DarkCoin Wiki for SSL setup instructions)</source>
-        <translation>Možnosti SSL: (viz instrukce nastavení SSL v DarkCoin Wiki)</translation>
+        <source>SSL options: (see the ZettelKasten Wiki for SSL setup instructions)</source>
+        <translation>Možnosti SSL: (viz instrukce nastavení SSL v ZettelKasten Wiki)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2817,13 +2817,13 @@ například: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of DarkCoin</source>
-        <translation>Chyba při načítání wallet.dat: peněženka vyžaduje novější verzi DarkCoinu</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of ZettelKasten</source>
+        <translation>Chyba při načítání wallet.dat: peněženka vyžaduje novější verzi ZettelKastenu</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart DarkCoin to complete</source>
-        <translation>Soubor s peněženkou potřeboval přepsat: restartuj DarkCoin, aby se operace dokončila</translation>
+        <source>Wallet needed to be rewritten: restart ZettelKasten to complete</source>
+        <translation>Soubor s peněženkou potřeboval přepsat: restartuj ZettelKasten, aby se operace dokončila</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2882,8 +2882,8 @@ například: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. DarkCoin is probably already running.</source>
-        <translation>Nedaří se mi připojit na %s na tomhle počítači. DarkCoin už pravděpodobně jednou běží.</translation>
+        <source>Unable to bind to %s on this computer. ZettelKasten is probably already running.</source>
+        <translation>Nedaří se mi připojit na %s na tomhle počítači. ZettelKasten už pravděpodobně jednou běží.</translation>
     </message>
     <message>
         <location line="+64"/>

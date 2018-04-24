@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About DarkCoin</source>
-        <translation>Par DarkCoin</translation>
+        <source>About ZettelKasten</source>
+        <translation>Par ZettelKasten</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;DarkCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;DarkCoin&lt;/b&gt; versija</translation>
+        <source>&lt;b&gt;ZettelKasten&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;ZettelKasten&lt;/b&gt; versija</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -29,7 +29,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+0"/>
-        <source>The DarkCoin developers</source>
+        <source>The ZettelKasten developers</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -62,7 +62,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your DarkCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <source>These are your ZettelKasten addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -77,7 +77,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a DarkCoin address</source>
+        <source>Sign a message to prove you own a ZettelKasten address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -102,7 +102,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified DarkCoin address</source>
+        <source>Verify a message to ensure it was signed with a specified ZettelKasten address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -117,7 +117,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your DarkCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your ZettelKasten addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -243,7 +243,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DARKCOINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ZettelKastenS&lt;/b&gt;!</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -270,8 +270,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>DarkCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
-        <translation>DarkCoin aizvērsies, lai pabeigtu šifrēšanu. Atcerieties, ka maciņa šifrēšana nevar pilnībā novērst bitkoinu zādzību, ko veic datorā ieviesušās kaitīgas programmas.</translation>
+        <source>ZettelKasten will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZettelKastens from being stolen by malware infecting your computer.</source>
+        <translation>ZettelKasten aizvērsies, lai pabeigtu šifrēšanu. Atcerieties, ka maciņa šifrēšana nevar pilnībā novērst bitkoinu zādzību, ko veic datorā ieviesušās kaitīgas programmas.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -369,8 +369,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about DarkCoin</source>
-        <translation>Parādīt informāciju par DarkCoin</translation>
+        <source>Show information about ZettelKasten</source>
+        <translation>Parādīt informāciju par ZettelKasten</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -414,13 +414,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a DarkCoin address</source>
-        <translation>Nosūtīt bitkoinus uz DarkCoin adresi</translation>
+        <source>Send coins to a ZettelKasten address</source>
+        <translation>Nosūtīt bitkoinus uz ZettelKasten adresi</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for DarkCoin</source>
-        <translation>Mainīt DarkCoin konfigurācijas uzstādījumus</translation>
+        <source>Modify configuration options for ZettelKasten</source>
+        <translation>Mainīt ZettelKasten konfigurācijas uzstādījumus</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -450,7 +450,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>DarkCoin</source>
+        <source>ZettelKasten</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -475,7 +475,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About DarkCoin</source>
+        <source>&amp;About ZettelKasten</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -495,12 +495,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your DarkCoin addresses to prove you own them</source>
+        <source>Sign messages with your ZettelKasten addresses to prove you own them</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified DarkCoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified ZettelKasten addresses</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -531,13 +531,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+47"/>
-        <source>DarkCoin client</source>
-        <translation>DarkCoin klients</translation>
+        <source>ZettelKasten client</source>
+        <translation>ZettelKasten klients</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to DarkCoin network</source>
-        <translation><numerusform>%n aktīvu savienojumu ar DarkCoin tīklu</numerusform><numerusform>%n aktīvs savienojums ar DarkCoin tīklu</numerusform><numerusform>%n aktīvu savienojumu as DarkCoin tīklu</numerusform></translation>
+        <source>%n active connection(s) to ZettelKasten network</source>
+        <translation><numerusform>%n aktīvu savienojumu ar ZettelKasten tīklu</numerusform><numerusform>%n aktīvs savienojums ar ZettelKasten tīklu</numerusform><numerusform>%n aktīvu savienojumu as ZettelKasten tīklu</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -651,7 +651,7 @@ Adrese: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid DarkCoin address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid ZettelKasten address or malformed URI parameters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -666,7 +666,7 @@ Adrese: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. DarkCoin can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. ZettelKasten can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -732,8 +732,8 @@ Adrese: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid DarkCoin address.</source>
-        <translation>Ierakstītā adrese &quot;%1&quot; nav derīga DarkCoin adrese.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid ZettelKasten address.</source>
+        <translation>Ierakstītā adrese &quot;%1&quot; nav derīga ZettelKasten adrese.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -751,8 +751,8 @@ Adrese: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>DarkCoin-Qt</source>
-        <translation>DarkCoin-Qt</translation>
+        <source>ZettelKasten-Qt</source>
+        <translation>ZettelKasten-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -814,13 +814,13 @@ Adrese: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start DarkCoin after logging in to the system.</source>
-        <translation>Automātiski sākt DarkCoin pēc pieteikšanās sistēmā.</translation>
+        <source>Automatically start ZettelKasten after logging in to the system.</source>
+        <translation>Automātiski sākt ZettelKasten pēc pieteikšanās sistēmā.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start DarkCoin on system login</source>
-        <translation>&amp;Sākt DarkCoin reizē ar sistēmu</translation>
+        <source>&amp;Start ZettelKasten on system login</source>
+        <translation>&amp;Sākt ZettelKasten reizē ar sistēmu</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -839,8 +839,8 @@ Adrese: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the DarkCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Uz rūtera automātiski atvērt DarkCoin klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
+        <source>Automatically open the ZettelKasten client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Uz rūtera automātiski atvērt ZettelKasten klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -849,7 +849,7 @@ Adrese: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the DarkCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <source>Connect to the ZettelKasten network through a SOCKS proxy (e.g. when connecting through Tor).</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -924,8 +924,8 @@ Adrese: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting DarkCoin.</source>
-        <translation>Šeit var iestatīt lietotāja valodu. Iestatījums aktivizēsies pēc DarkCoin pārstartēšanas.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZettelKasten.</source>
+        <translation>Šeit var iestatīt lietotāja valodu. Iestatījums aktivizēsies pēc ZettelKasten pārstartēšanas.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -939,8 +939,8 @@ Adrese: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show DarkCoin addresses in the transaction list or not.</source>
-        <translation>Rādīt vai nē DarkCoin adreses transakciju sarakstā.</translation>
+        <source>Whether to show ZettelKasten addresses in the transaction list or not.</source>
+        <translation>Rādīt vai nē ZettelKasten adreses transakciju sarakstā.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -991,7 +991,7 @@ Adrese: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting DarkCoin.</source>
+        <source>This setting will take effect after restarting ZettelKasten.</source>
         <translation>Iestatījums aktivizēsies pēc Bitkoin pārstartēšanas.</translation>
     </message>
     <message>
@@ -1010,8 +1010,8 @@ Adrese: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the DarkCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar DarkCoin tīklu, taču šis process vēl nav beidzies.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZettelKasten network after a connection is established, but this process has not completed yet.</source>
+        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar ZettelKasten tīklu, taču šis process vēl nav beidzies.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1064,7 +1064,7 @@ Adrese: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
+        <source>Cannot start ZettelKasten: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1214,7 +1214,7 @@ Adrese: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the DarkCoin-Qt help message to get a list with possible DarkCoin command-line options.</source>
+        <source>Show the ZettelKasten-Qt help message to get a list with possible ZettelKasten command-line options.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1234,12 +1234,12 @@ Adrese: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>DarkCoin - Debug window</source>
+        <source>ZettelKasten - Debug window</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+25"/>
-        <source>DarkCoin Core</source>
+        <source>ZettelKasten Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1249,7 +1249,7 @@ Adrese: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the DarkCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the ZettelKasten debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1259,8 +1259,8 @@ Adrese: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the DarkCoin RPC console.</source>
-        <translation>Laipni lūgti DarkCoin RPC konsolē.</translation>
+        <source>Welcome to the ZettelKasten RPC console.</source>
+        <translation>Laipni lūgti ZettelKasten RPC konsolē.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1443,8 +1443,8 @@ Adrese: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Ierakstiet DarkCoin adresi (piem. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Ierakstiet ZettelKasten adresi (piem. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1508,7 +1508,7 @@ Adrese: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this DarkCoin address</source>
+        <source>Sign the message to prove you own this ZettelKasten address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1544,7 +1544,7 @@ Adrese: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified DarkCoin address</source>
+        <source>Verify the message to ensure it was signed with the specified ZettelKasten address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1560,8 +1560,8 @@ Adrese: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Ierakstiet DarkCoin adresi (piem. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Ierakstiet ZettelKasten adresi (piem. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1570,7 +1570,7 @@ Adrese: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter DarkCoin signature</source>
+        <source>Enter ZettelKasten signature</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1644,7 +1644,7 @@ Adrese: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The DarkCoin developers</source>
+        <source>The ZettelKasten developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2182,8 +2182,8 @@ Adrese: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>DarkCoin version</source>
-        <translation>DarkCoin versija</translation>
+        <source>ZettelKasten version</source>
+        <translation>ZettelKasten versija</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2192,8 +2192,8 @@ Adrese: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Nosūtīt komantu uz -server vai darkcoind</translation>
+        <source>Send command to -server or ZettelKastend</source>
+        <translation>Nosūtīt komantu uz -server vai ZettelKastend</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2212,13 +2212,13 @@ Adrese: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Norādiet konfigurācijas failu (pēc noklusēšanas: darkcoin.conf)</translation>
+        <source>Specify configuration file (default: ZettelKasten.conf)</source>
+        <translation>Norādiet konfigurācijas failu (pēc noklusēšanas: ZettelKasten.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>Norādiet pid failu (pēc noklusēšanas: darkcoind.pid)</translation>
+        <source>Specify pid file (default: ZettelKastend.pid)</source>
+        <translation>Norādiet pid failu (pēc noklusēšanas: ZettelKastend.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2295,13 +2295,13 @@ Adrese: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=ZettelKastenrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;ZettelKasten Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2317,7 +2317,7 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. DarkCoin is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. ZettelKasten is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2362,7 +2362,7 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong DarkCoin will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ZettelKasten will not work properly.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2612,7 +2612,7 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the DarkCoin Wiki for SSL setup instructions)</source>
+        <source>SSL options: (see the ZettelKasten Wiki for SSL setup instructions)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2802,13 +2802,13 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of DarkCoin</source>
-        <translation>Nevar ielādēt wallet.dat: maciņa atvēršanai nepieciešama jaunāka DarkCoin versija</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of ZettelKasten</source>
+        <translation>Nevar ielādēt wallet.dat: maciņa atvēršanai nepieciešama jaunāka ZettelKasten versija</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart DarkCoin to complete</source>
-        <translation>Bija nepieciešams pārstartēt maciņu: pabeigšanai pārstartējiet DarkCoin</translation>
+        <source>Wallet needed to be rewritten: restart ZettelKasten to complete</source>
+        <translation>Bija nepieciešams pārstartēt maciņu: pabeigšanai pārstartējiet ZettelKasten</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2867,8 +2867,8 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. DarkCoin is probably already running.</source>
-        <translation>Nevar pievienoties %s uz šī datora. DarkCoin droši vien jau darbojas.</translation>
+        <source>Unable to bind to %s on this computer. ZettelKasten is probably already running.</source>
+        <translation>Nevar pievienoties %s uz šī datora. ZettelKasten droši vien jau darbojas.</translation>
     </message>
     <message>
         <location line="+64"/>

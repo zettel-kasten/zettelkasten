@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About DarkCoin</source>
-        <translation>À propos de DarkCoin</translation>
+        <source>About ZettelKasten</source>
+        <translation>À propos de ZettelKasten</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;DarkCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;DarkCoin&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;ZettelKasten&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;ZettelKasten&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -34,8 +34,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+0"/>
-        <source>The DarkCoin developers</source>
-        <translation>Les développeurs DarkCoin</translation>
+        <source>The ZettelKasten developers</source>
+        <translation>Les développeurs ZettelKasten</translation>
     </message>
 </context>
 <context>
@@ -67,8 +67,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your DarkCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Voici vos adresses DarkCoin qui vous permettent de recevoir des paiements. Vous pouvez donner une adresse différente à chaque expéditeur afin de savoir qui vous paye.</translation>
+        <source>These are your ZettelKasten addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Voici vos adresses ZettelKasten qui vous permettent de recevoir des paiements. Vous pouvez donner une adresse différente à chaque expéditeur afin de savoir qui vous paye.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -82,8 +82,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a DarkCoin address</source>
-        <translation>Signer un message pour prouver que vous détenez une adresse DarkCoin</translation>
+        <source>Sign a message to prove you own a ZettelKasten address</source>
+        <translation>Signer un message pour prouver que vous détenez une adresse ZettelKasten</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -107,8 +107,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified DarkCoin address</source>
-        <translation>Vérifier un message pour vous assurer qu&apos;il a bien été signé avec l&apos;adresse DarkCoin spécifiée</translation>
+        <source>Verify a message to ensure it was signed with a specified ZettelKasten address</source>
+        <translation>Vérifier un message pour vous assurer qu&apos;il a bien été signé avec l&apos;adresse ZettelKasten spécifiée</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -122,8 +122,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your DarkCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ce sont vos adresses DarkCoin pour émettre des paiements. Vérifiez toujours le montant et l&apos;adresse du destinataire avant d&apos;envoyer des pièces.</translation>
+        <source>These are your ZettelKasten addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ce sont vos adresses ZettelKasten pour émettre des paiements. Vérifiez toujours le montant et l&apos;adresse du destinataire avant d&apos;envoyer des pièces.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -248,8 +248,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DARKCOINS&lt;/b&gt;!</source>
-        <translation>Attention : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous &lt;b&gt;PERDREZ ACCÈS À TOUS VOS DARKCOINS&lt;/b&gt; !</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ZettelKastenS&lt;/b&gt;!</source>
+        <translation>Attention : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous &lt;b&gt;PERDREZ ACCÈS À TOUS VOS ZettelKastenS&lt;/b&gt; !</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -275,8 +275,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>DarkCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
-        <translation>DarkCoin va à présent se fermer pour terminer la procédure de cryptage. N&apos;oubliez pas que le chiffrement de votre porte-monnaie ne peut pas fournir une protection totale contre le vol par des logiciels malveillants qui infecteraient votre ordinateur.</translation>
+        <source>ZettelKasten will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZettelKastens from being stolen by malware infecting your computer.</source>
+        <translation>ZettelKasten va à présent se fermer pour terminer la procédure de cryptage. N&apos;oubliez pas que le chiffrement de votre porte-monnaie ne peut pas fournir une protection totale contre le vol par des logiciels malveillants qui infecteraient votre ordinateur.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -374,8 +374,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about DarkCoin</source>
-        <translation>Afficher des informations à propos de DarkCoin</translation>
+        <source>Show information about ZettelKasten</source>
+        <translation>Afficher des informations à propos de ZettelKasten</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -419,13 +419,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a DarkCoin address</source>
-        <translation>Envoyer des pièces à une adresse DarkCoin</translation>
+        <source>Send coins to a ZettelKasten address</source>
+        <translation>Envoyer des pièces à une adresse ZettelKasten</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for DarkCoin</source>
-        <translation>Modifier les options de configuration de DarkCoin</translation>
+        <source>Modify configuration options for ZettelKasten</source>
+        <translation>Modifier les options de configuration de ZettelKasten</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -455,8 +455,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>DarkCoin</source>
-        <translation>DarkCoin</translation>
+        <source>ZettelKasten</source>
+        <translation>ZettelKasten</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -480,8 +480,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About DarkCoin</source>
-        <translation>À &amp;propos de DarkCoin</translation>
+        <source>&amp;About ZettelKasten</source>
+        <translation>À &amp;propos de ZettelKasten</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -500,13 +500,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your DarkCoin addresses to prove you own them</source>
-        <translation>Signer les messages avec vos adresses DarkCoin pour prouver que vous les détenez</translation>
+        <source>Sign messages with your ZettelKasten addresses to prove you own them</source>
+        <translation>Signer les messages avec vos adresses ZettelKasten pour prouver que vous les détenez</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified DarkCoin addresses</source>
-        <translation>Vérifier les messages pour vous assurer qu&apos;ils ont bien été signés avec les adresses DarkCoin spécifiées</translation>
+        <source>Verify messages to ensure they were signed with specified ZettelKasten addresses</source>
+        <translation>Vérifier les messages pour vous assurer qu&apos;ils ont bien été signés avec les adresses ZettelKasten spécifiées</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -536,13 +536,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+47"/>
-        <source>DarkCoin client</source>
-        <translation>Client DarkCoin</translation>
+        <source>ZettelKasten client</source>
+        <translation>Client ZettelKasten</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to DarkCoin network</source>
-        <translation><numerusform>%n connexion active avec le réseau DarkCoin</numerusform><numerusform>%n connexions actives avec le réseau DarkCoin</numerusform></translation>
+        <source>%n active connection(s) to ZettelKasten network</source>
+        <translation><numerusform>%n connexion active avec le réseau ZettelKasten</numerusform><numerusform>%n connexions actives avec le réseau ZettelKasten</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -641,10 +641,10 @@ Amount: %2
 Type: %3
 Address: %4
 </source>
-        <translation>Date : %1
-Montant : %2
-Type : %3
-Adresse : %4
+        <translation>Date : %1
+Montant : %2
+Type : %3
+Adresse : %4
 </translation>
     </message>
     <message>
@@ -656,8 +656,8 @@ Adresse : %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid DarkCoin address or malformed URI parameters.</source>
-        <translation>L&apos;URI ne peut être analysé ! Cela peut être causé par une adresse DarkCoin invalide ou par des paramètres d&apos;URI malformés.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid ZettelKasten address or malformed URI parameters.</source>
+        <translation>L&apos;URI ne peut être analysé ! Cela peut être causé par une adresse ZettelKasten invalide ou par des paramètres d&apos;URI malformés.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -671,8 +671,8 @@ Adresse : %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. DarkCoin can no longer continue safely and will quit.</source>
-        <translation>Une erreur fatale est survenue. DarkCoin ne peut plus continuer à fonctionner de façon sûre et va s&apos;arrêter.</translation>
+        <source>A fatal error occurred. ZettelKasten can no longer continue safely and will quit.</source>
+        <translation>Une erreur fatale est survenue. ZettelKasten ne peut plus continuer à fonctionner de façon sûre et va s&apos;arrêter.</translation>
     </message>
 </context>
 <context>
@@ -733,12 +733,12 @@ Adresse : %4
     <message>
         <location line="+76"/>
         <source>The entered address &quot;%1&quot; is already in the address book.</source>
-        <translation>L’adresse fournie « %1 » est déjà présente dans le carnet d&apos;adresses.</translation>
+        <translation>L’adresse fournie « %1 » est déjà présente dans le carnet d&apos;adresses.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid DarkCoin address.</source>
-        <translation>L&apos;adresse fournie « %1 » n&apos;est pas une adresse DarkCoin valide.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid ZettelKasten address.</source>
+        <translation>L&apos;adresse fournie « %1 » n&apos;est pas une adresse ZettelKasten valide.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -756,8 +756,8 @@ Adresse : %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>DarkCoin-Qt</source>
-        <translation>DarkCoin-Qt</translation>
+        <source>ZettelKasten-Qt</source>
+        <translation>ZettelKasten-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -767,7 +767,7 @@ Adresse : %4
     <message>
         <location line="+2"/>
         <source>Usage:</source>
-        <translation>Utilisation :</translation>
+        <translation>Utilisation :</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -782,7 +782,7 @@ Adresse : %4
     <message>
         <location line="+1"/>
         <source>Set language, for example &quot;de_DE&quot; (default: system locale)</source>
-        <translation>Définir la langue, par exemple « de_DE » (par défaut : la langue du système)</translation>
+        <translation>Définir la langue, par exemple « de_DE » (par défaut : la langue du système)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -792,7 +792,7 @@ Adresse : %4
     <message>
         <location line="+1"/>
         <source>Show splash screen on startup (default: 1)</source>
-        <translation>Afficher l&apos;écran d&apos;accueil au démarrage (par défaut : 1)</translation>
+        <translation>Afficher l&apos;écran d&apos;accueil au démarrage (par défaut : 1)</translation>
     </message>
 </context>
 <context>
@@ -819,13 +819,13 @@ Adresse : %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start DarkCoin after logging in to the system.</source>
-        <translation>Démarrer DarkCoin automatiquement lors de l&apos;ouverture une session sur l&apos;ordinateur.</translation>
+        <source>Automatically start ZettelKasten after logging in to the system.</source>
+        <translation>Démarrer ZettelKasten automatiquement lors de l&apos;ouverture une session sur l&apos;ordinateur.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start DarkCoin on system login</source>
-        <translation>&amp;Démarrer DarkCoin lors de l&apos;ouverture d&apos;une session</translation>
+        <source>&amp;Start ZettelKasten on system login</source>
+        <translation>&amp;Démarrer ZettelKasten lors de l&apos;ouverture d&apos;une session</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -844,8 +844,8 @@ Adresse : %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the DarkCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Ouvrir le port du client DarkCoin automatiquement sur le routeur. Cela ne fonctionne que si votre routeur supporte l&apos;UPnP et si la fonctionnalité est activée.</translation>
+        <source>Automatically open the ZettelKasten client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Ouvrir le port du client ZettelKasten automatiquement sur le routeur. Cela ne fonctionne que si votre routeur supporte l&apos;UPnP et si la fonctionnalité est activée.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -854,18 +854,18 @@ Adresse : %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the DarkCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connexion au réseau DarkCoin à travers un proxy SOCKS (par ex. lors d&apos;une connexion via Tor).</translation>
+        <source>Connect to the ZettelKasten network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Connexion au réseau ZettelKasten à travers un proxy SOCKS (par ex. lors d&apos;une connexion via Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>&amp;Connect through SOCKS proxy:</source>
-        <translation>&amp;Connexion à travers un proxy SOCKS :</translation>
+        <translation>&amp;Connexion à travers un proxy SOCKS :</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Proxy &amp;IP:</source>
-        <translation>&amp;IP du proxy :</translation>
+        <translation>&amp;IP du proxy :</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -875,7 +875,7 @@ Adresse : %4
     <message>
         <location line="+7"/>
         <source>&amp;Port:</source>
-        <translation>&amp;Port :</translation>
+        <translation>&amp;Port :</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -885,7 +885,7 @@ Adresse : %4
     <message>
         <location line="+7"/>
         <source>SOCKS &amp;Version:</source>
-        <translation>&amp;Version SOCKS :</translation>
+        <translation>&amp;Version SOCKS :</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -925,17 +925,17 @@ Adresse : %4
     <message>
         <location line="+8"/>
         <source>User Interface &amp;language:</source>
-        <translation>&amp;Langue de l&apos;interface utilisateur :</translation>
+        <translation>&amp;Langue de l&apos;interface utilisateur :</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting DarkCoin.</source>
-        <translation>La langue de l&apos;interface utilisateur peut être définie ici. Ce réglage sera pris en compte après redémarrage de DarkCoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZettelKasten.</source>
+        <translation>La langue de l&apos;interface utilisateur peut être définie ici. Ce réglage sera pris en compte après redémarrage de ZettelKasten.</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Unité d&apos;affichage des montants :</translation>
+        <translation>&amp;Unité d&apos;affichage des montants :</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -944,8 +944,8 @@ Adresse : %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show DarkCoin addresses in the transaction list or not.</source>
-        <translation>Détermine si les adresses DarkCoin seront affichées sur la liste des transactions.</translation>
+        <source>Whether to show ZettelKasten addresses in the transaction list or not.</source>
+        <translation>Détermine si les adresses ZettelKasten seront affichées sur la liste des transactions.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -996,8 +996,8 @@ Adresse : %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting DarkCoin.</source>
-        <translation>Ce réglage sera pris en compte après un redémarrage de DarkCoin.</translation>
+        <source>This setting will take effect after restarting ZettelKasten.</source>
+        <translation>Ce réglage sera pris en compte après un redémarrage de ZettelKasten.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1015,18 +1015,18 @@ Adresse : %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the DarkCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Les informations affichées peuvent être obsolètes. Votre porte-monnaie est automatiquement synchronisé avec le réseau DarkCoin lorsque la connexion s&apos;établit, or ce processus n&apos;est pas encore terminé.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZettelKasten network after a connection is established, but this process has not completed yet.</source>
+        <translation>Les informations affichées peuvent être obsolètes. Votre porte-monnaie est automatiquement synchronisé avec le réseau ZettelKasten lorsque la connexion s&apos;établit, or ce processus n&apos;est pas encore terminé.</translation>
     </message>
     <message>
         <location line="-124"/>
         <source>Balance:</source>
-        <translation>Solde :</translation>
+        <translation>Solde :</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Unconfirmed:</source>
-        <translation>Non confirmé :</translation>
+        <translation>Non confirmé :</translation>
     </message>
     <message>
         <location line="-78"/>
@@ -1069,8 +1069,8 @@ Adresse : %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
-        <translation>Impossible de démarrer darkcoin : gestionnaire de cliquer-pour-payer</translation>
+        <source>Cannot start ZettelKasten: click-to-pay handler</source>
+        <translation>Impossible de démarrer ZettelKasten : gestionnaire de cliquer-pour-payer</translation>
     </message>
 </context>
 <context>
@@ -1088,17 +1088,17 @@ Adresse : %4
     <message>
         <location line="+56"/>
         <source>Amount:</source>
-        <translation>Montant :</translation>
+        <translation>Montant :</translation>
     </message>
     <message>
         <location line="-44"/>
         <source>Label:</source>
-        <translation>Étiquette :</translation>
+        <translation>Étiquette :</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Message:</source>
-        <translation>Message :</translation>
+        <translation>Message :</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -1219,8 +1219,8 @@ Adresse : %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the DarkCoin-Qt help message to get a list with possible DarkCoin command-line options.</source>
-        <translation>Afficher le message d&apos;aide de DarkCoin-Qt pour obtenir la liste des options de ligne de commande disponibles pour DarkCoin.</translation>
+        <source>Show the ZettelKasten-Qt help message to get a list with possible ZettelKasten command-line options.</source>
+        <translation>Afficher le message d&apos;aide de ZettelKasten-Qt pour obtenir la liste des options de ligne de commande disponibles pour ZettelKasten.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1239,13 +1239,13 @@ Adresse : %4
     </message>
     <message>
         <location line="-104"/>
-        <source>DarkCoin - Debug window</source>
-        <translation>DarkCoin - Fenêtre de débogage</translation>
+        <source>ZettelKasten - Debug window</source>
+        <translation>ZettelKasten - Fenêtre de débogage</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>DarkCoin Core</source>
-        <translation>Noyau DarkCoin</translation>
+        <source>ZettelKasten Core</source>
+        <translation>Noyau ZettelKasten</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1254,8 +1254,8 @@ Adresse : %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the DarkCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Ouvrir le journal de débogage de DarkCoin depuis le répertoire de données actuel. Cela peut prendre quelques secondes pour les journaux de grande taille.</translation>
+        <source>Open the ZettelKasten debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Ouvrir le journal de débogage de ZettelKasten depuis le répertoire de données actuel. Cela peut prendre quelques secondes pour les journaux de grande taille.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1264,8 +1264,8 @@ Adresse : %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the DarkCoin RPC console.</source>
-        <translation>Bienvenue sur la console RPC de DarkCoin.</translation>
+        <source>Welcome to the ZettelKasten RPC console.</source>
+        <translation>Bienvenue sur la console RPC de ZettelKasten.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1315,7 +1315,7 @@ Adresse : %4
     <message>
         <location line="+22"/>
         <source>Balance:</source>
-        <translation>Solde :</translation>
+        <translation>Solde :</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1345,7 +1345,7 @@ Adresse : %4
     <message>
         <location line="+1"/>
         <source>Are you sure you want to send %1?</source>
-        <translation>Êtes-vous sûr de vouloir envoyer %1 ?</translation>
+        <translation>Êtes-vous sûr de vouloir envoyer %1 ?</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -1385,7 +1385,7 @@ Adresse : %4
     <message>
         <location line="+5"/>
         <source>Error: The transaction was rejected. This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Erreur : la transaction a été rejetée. Cela peut arriver si certaines pièces de votre porte-monnaie ont déjà été dépensées, par exemple si vous avez utilisé une copie de wallet.dat avec laquelle les pièces ont été dépensées mais pas marquées comme telles ici.</translation>
+        <translation>Erreur : la transaction a été rejetée. Cela peut arriver si certaines pièces de votre porte-monnaie ont déjà été dépensées, par exemple si vous avez utilisé une copie de wallet.dat avec laquelle les pièces ont été dépensées mais pas marquées comme telles ici.</translation>
     </message>
 </context>
 <context>
@@ -1398,12 +1398,12 @@ Adresse : %4
     <message>
         <location line="+15"/>
         <source>A&amp;mount:</source>
-        <translation>&amp;Montant :</translation>
+        <translation>&amp;Montant :</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Pay &amp;To:</source>
-        <translation>Payer &amp;à :</translation>
+        <translation>Payer &amp;à :</translation>
     </message>
     <message>
         <location line="+34"/>
@@ -1419,7 +1419,7 @@ Adresse : %4
     <message>
         <location line="-78"/>
         <source>&amp;Label:</source>
-        <translation>&amp;Étiquette :</translation>
+        <translation>&amp;Étiquette :</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -1448,8 +1448,8 @@ Adresse : %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Entrez une adresse DarkCoin (par ex. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Entrez une adresse ZettelKasten (par ex. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1513,8 +1513,8 @@ Adresse : %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this DarkCoin address</source>
-        <translation>Signer le message pour prouver que vous détenez cette adresse DarkCoin</translation>
+        <source>Sign the message to prove you own this ZettelKasten address</source>
+        <translation>Signer le message pour prouver que vous détenez cette adresse ZettelKasten</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1549,8 +1549,8 @@ Adresse : %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified DarkCoin address</source>
-        <translation>Vérifier le message pour vous assurer qu&apos;il a bien été signé par l&apos;adresse DarkCoin spécifiée</translation>
+        <source>Verify the message to ensure it was signed with the specified ZettelKasten address</source>
+        <translation>Vérifier le message pour vous assurer qu&apos;il a bien été signé par l&apos;adresse ZettelKasten spécifiée</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1565,18 +1565,18 @@ Adresse : %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Entrez une adresse DarkCoin (par ex. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Entrez une adresse ZettelKasten (par ex. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Click &quot;Sign Message&quot; to generate signature</source>
-        <translation>Cliquez sur « Signer le message » pour générer la signature</translation>
+        <translation>Cliquez sur « Signer le message » pour générer la signature</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter DarkCoin signature</source>
-        <translation>Entrer une signature DarkCoin</translation>
+        <source>Enter ZettelKasten signature</source>
+        <translation>Entrer une signature ZettelKasten</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1649,8 +1649,8 @@ Adresse : %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The DarkCoin developers</source>
-        <translation>Les développeurs DarkCoin</translation>
+        <source>The ZettelKasten developers</source>
+        <translation>Les développeurs ZettelKasten</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1784,7 +1784,7 @@ Adresse : %4
     <message>
         <location line="+3"/>
         <source>Generated coins must mature 120 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Les pièces générées doivent mûrir pendant 120 blocs avant de pouvoir être dépensées. Lorsque vous avez généré ce bloc, il a été diffusé sur le réseau pour être ajouté à la chaîne de blocs. S’il échoue a intégrer la chaîne, son état sera modifié en « non accepté » et il ne sera pas possible de le dépenser. Cela peut arriver occasionnellement si un autre nœud génère un bloc quelques secondes avant ou après vous.</translation>
+        <translation>Les pièces générées doivent mûrir pendant 120 blocs avant de pouvoir être dépensées. Lorsque vous avez généré ce bloc, il a été diffusé sur le réseau pour être ajouté à la chaîne de blocs. S’il échoue a intégrer la chaîne, son état sera modifié en « non accepté » et il ne sera pas possible de le dépenser. Cela peut arriver occasionnellement si un autre nœud génère un bloc quelques secondes avant ou après vous.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1900,7 +1900,7 @@ Adresse : %4
     <message>
         <location line="+5"/>
         <source>This block was not received by any other nodes and will probably not be accepted!</source>
-        <translation>Ce bloc n’a été reçu par aucun autre nœud et ne sera probablement pas accepté !</translation>
+        <translation>Ce bloc n’a été reçu par aucun autre nœud et ne sera probablement pas accepté !</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2124,7 +2124,7 @@ Adresse : %4
     <message>
         <location line="+100"/>
         <source>Range:</source>
-        <translation>Intervalle :</translation>
+        <translation>Intervalle :</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -2187,18 +2187,18 @@ Adresse : %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>DarkCoin version</source>
-        <translation>Version de DarkCoin</translation>
+        <source>ZettelKasten version</source>
+        <translation>Version de ZettelKasten</translation>
     </message>
     <message>
         <location line="+102"/>
         <source>Usage:</source>
-        <translation>Utilisation :</translation>
+        <translation>Utilisation :</translation>
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Envoyer une commande à -server ou à darkcoind</translation>
+        <source>Send command to -server or ZettelKastend</source>
+        <translation>Envoyer une commande à -server ou à ZettelKastend</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2213,17 +2213,17 @@ Adresse : %4
     <message>
         <location line="+24"/>
         <source>Options:</source>
-        <translation>Options :</translation>
+        <translation>Options :</translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Spécifier le fichier de configuration (par défaut : darkcoin.conf)</translation>
+        <source>Specify configuration file (default: ZettelKasten.conf)</source>
+        <translation>Spécifier le fichier de configuration (par défaut : ZettelKasten.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>Spécifier le fichier PID (par défaut : darkcoind.pid)</translation>
+        <source>Specify pid file (default: ZettelKastend.pid)</source>
+        <translation>Spécifier le fichier PID (par défaut : ZettelKastend.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2233,17 +2233,17 @@ Adresse : %4
     <message>
         <location line="-9"/>
         <source>Set database cache size in megabytes (default: 25)</source>
-        <translation>Définir la taille du tampon en mégaoctets (par défaut : 25)</translation>
+        <translation>Définir la taille du tampon en mégaoctets (par défaut : 25)</translation>
     </message>
     <message>
         <location line="-28"/>
         <source>Listen for connections on &lt;port&gt; (default: 9333 or testnet: 19333)</source>
-        <translation>Écouter les connexions sur le &lt;port&gt; (par défaut : 9333 ou testnet : 19333)</translation>
+        <translation>Écouter les connexions sur le &lt;port&gt; (par défaut : 9333 ou testnet : 19333)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>Garder au plus &lt;n&gt; connexions avec les pairs (par défaut : 125)</translation>
+        <translation>Garder au plus &lt;n&gt; connexions avec les pairs (par défaut : 125)</translation>
     </message>
     <message>
         <location line="-48"/>
@@ -2258,12 +2258,12 @@ Adresse : %4
     <message>
         <location line="+3"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Seuil de déconnexion des pairs de mauvaise qualité (par défaut : 100)</translation>
+        <translation>Seuil de déconnexion des pairs de mauvaise qualité (par défaut : 100)</translation>
     </message>
     <message>
         <location line="-134"/>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Délai en secondes de refus de reconnexion aux pairs de mauvaise qualité (par défaut : 86400)</translation>
+        <translation>Délai en secondes de refus de reconnexion aux pairs de mauvaise qualité (par défaut : 86400)</translation>
     </message>
     <message>
         <location line="-29"/>
@@ -2293,31 +2293,31 @@ Adresse : %4
     <message>
         <location line="-112"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
-        <translation>Accepter les connexions entrantes (par défaut : 1 si -proxy ou -connect ne sont pas présents)</translation>
+        <translation>Accepter les connexions entrantes (par défaut : 1 si -proxy ou -connect ne sont pas présents)</translation>
     </message>
     <message>
         <location line="-80"/>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=ZettelKastenrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;ZettelKasten Alert&quot; admin@foo.com
 </source>
         <translation>%s, vous devez définir un mot de passe rpc dans le fichier de configuration : 
 %s
 Il vous est conseillé d&apos;utiliser le mot de passe aléatoire suivant :
-rpcuser=darkcoinrpc
+rpcuser=ZettelKastenrpc
 rpcpassword=%s
 (vous n&apos;avez pas besoin de retenir ce mot de passe)
 Le nom d&apos;utilisateur et le mot de passe NE DOIVENT PAS être identiques.
 Si le fichier n&apos;existe pas, créez-le avec les droits de lecture accordés au propriétaire.
 Il est aussi conseillé de régler alertnotify pour être prévenu des problèmes ;
-par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo.com
+par exemple : alertnotify=echo %%s | mail -s &quot;ZettelKasten Alert&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2332,8 +2332,8 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. DarkCoin is probably already running.</source>
-        <translation>Impossible d’obtenir un verrou sur le répertoire de données %s. DarkCoin fonctionne probablement déjà.</translation>
+        <source>Cannot obtain a lock on data directory %s. ZettelKasten is probably already running.</source>
+        <translation>Impossible d’obtenir un verrou sur le répertoire de données %s. ZettelKasten fonctionne probablement déjà.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2377,8 +2377,8 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong DarkCoin will not work properly.</source>
-        <translation>Attention : veuillez vérifier que l&apos;heure et la date de votre ordinateur sont correctes ! Si votre horloge n&apos;est pas à l&apos;heure, DarkCoin ne fonctionnera pas correctement.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ZettelKasten will not work properly.</source>
+        <translation>Attention : veuillez vérifier que l&apos;heure et la date de votre ordinateur sont correctes ! Si votre horloge n&apos;est pas à l&apos;heure, ZettelKasten ne fonctionnera pas correctement.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2413,7 +2413,7 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     <message>
         <location line="+1"/>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
-        <translation>Découvrir sa propre adresse IP (par défaut : 1 lors de l&apos;écoute et si -externalip n&apos;est pas présent)</translation>
+        <translation>Découvrir sa propre adresse IP (par défaut : 1 lors de l&apos;écoute et si -externalip n&apos;est pas présent)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2573,17 +2573,17 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     <message>
         <location line="+3"/>
         <source>Invalid -tor address: &apos;%s&apos;</source>
-        <translation>Adresse -tor invalide : « %s »</translation>
+        <translation>Adresse -tor invalide : « %s »</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation>Montant invalide pour -minrelayfee=&lt;montant&gt; : « %s »</translation>
+        <translation>Montant invalide pour -minrelayfee=&lt;montant&gt; : « %s »</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation>Montant invalide pour -mintxfee=&lt;montant&gt; : « %s »</translation>
+        <translation>Montant invalide pour -mintxfee=&lt;montant&gt; : « %s »</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -2627,8 +2627,8 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the DarkCoin Wiki for SSL setup instructions)</source>
-        <translation>Options SSL : (cf. le wiki de DarkCoin pour les instructions de configuration du SSL)</translation>
+        <source>SSL options: (see the ZettelKasten Wiki for SSL setup instructions)</source>
+        <translation>Options SSL : (cf. le wiki de ZettelKasten pour les instructions de configuration du SSL)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2668,7 +2668,7 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     <message>
         <location line="+2"/>
         <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>Spécifier le délai d&apos;expiration de la connexion en millisecondes (par défaut : 5000)</translation>
+        <translation>Spécifier le délai d&apos;expiration de la connexion en millisecondes (par défaut : 5000)</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -2693,17 +2693,17 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     <message>
         <location line="+7"/>
         <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>Utiliser l&apos;UPnP pour rediriger le port d&apos;écoute (par défaut : 0)</translation>
+        <translation>Utiliser l&apos;UPnP pour rediriger le port d&apos;écoute (par défaut : 0)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation>Utiliser l&apos;UPnP pour rediriger le port d&apos;écoute (par défaut : 1 lors de l&apos;écoute)</translation>
+        <translation>Utiliser l&apos;UPnP pour rediriger le port d&apos;écoute (par défaut : 1 lors de l&apos;écoute)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Use proxy to reach tor hidden services (default: same as -proxy)</source>
-        <translation>Utiliser un proxy pour atteindre les services cachés de Tor (par défaut : même valeur que -proxy)</translation>
+        <translation>Utiliser un proxy pour atteindre les services cachés de Tor (par défaut : même valeur que -proxy)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2743,7 +2743,7 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     <message>
         <location line="+76"/>
         <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>Envoyer des commandes au nœud fonctionnant à &lt;ip&gt; (par défaut : 127.0.0.1)</translation>
+        <translation>Envoyer des commandes au nœud fonctionnant à &lt;ip&gt; (par défaut : 127.0.0.1)</translation>
     </message>
     <message>
         <location line="-120"/>
@@ -2758,7 +2758,7 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     <message>
         <location line="-21"/>
         <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>Régler la taille de la plage de clefs sur &lt;n&gt; (par défaut : 100)</translation>
+        <translation>Régler la taille de la plage de clefs sur &lt;n&gt; (par défaut : 100)</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -2773,17 +2773,17 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     <message>
         <location line="-26"/>
         <source>Server certificate file (default: server.cert)</source>
-        <translation>Fichier de certificat serveur (par défaut : server.cert)</translation>
+        <translation>Fichier de certificat serveur (par défaut : server.cert)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Server private key (default: server.pem)</source>
-        <translation>Clef privée du serveur (par défaut : server.pem)</translation>
+        <translation>Clef privée du serveur (par défaut : server.pem)</translation>
     </message>
     <message>
         <location line="-151"/>
         <source>Acceptable ciphers (default: TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</source>
-        <translation>Clefs de chiffrement acceptables (par défaut : TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</translation>
+        <translation>Clefs de chiffrement acceptables (par défaut : TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</translation>
     </message>
     <message>
         <location line="+165"/>
@@ -2813,17 +2813,17 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     <message>
         <location line="-35"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Erreur lors du chargement de wallet.dat : porte-monnaie corrompu</translation>
+        <translation>Erreur lors du chargement de wallet.dat : porte-monnaie corrompu</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of DarkCoin</source>
-        <translation>Erreur lors du chargement de wallet.dat : le porte-monnaie nécessite une version plus récente de DarkCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of ZettelKasten</source>
+        <translation>Erreur lors du chargement de wallet.dat : le porte-monnaie nécessite une version plus récente de ZettelKasten</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart DarkCoin to complete</source>
-        <translation>Le porte-monnaie nécessitait une réécriture : veuillez redémarrer DarkCoin pour terminer l&apos;opération</translation>
+        <source>Wallet needed to be rewritten: restart ZettelKasten to complete</source>
+        <translation>Le porte-monnaie nécessitait une réécriture : veuillez redémarrer ZettelKasten pour terminer l&apos;opération</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2833,32 +2833,32 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     <message>
         <location line="+28"/>
         <source>Invalid -proxy address: &apos;%s&apos;</source>
-        <translation>Adresse -proxy invalide : « %s »</translation>
+        <translation>Adresse -proxy invalide : « %s »</translation>
     </message>
     <message>
         <location line="+56"/>
         <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
-        <translation>Réseau inconnu spécifié sur -onlynet : « %s »</translation>
+        <translation>Réseau inconnu spécifié sur -onlynet : « %s »</translation>
     </message>
     <message>
         <location line="-1"/>
         <source>Unknown -socks proxy version requested: %i</source>
-        <translation>Version inconnue de proxy -socks demandée : %i</translation>
+        <translation>Version inconnue de proxy -socks demandée : %i</translation>
     </message>
     <message>
         <location line="-96"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
-        <translation>Impossible de résoudre l&apos;adresse -bind : « %s »</translation>
+        <translation>Impossible de résoudre l&apos;adresse -bind : « %s »</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Cannot resolve -externalip address: &apos;%s&apos;</source>
-        <translation>Impossible de résoudre l&apos;adresse -externalip : « %s »</translation>
+        <translation>Impossible de résoudre l&apos;adresse -externalip : « %s »</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation>Montant invalide pour -paytxfee=&lt;montant&gt; : « %s »</translation>
+        <translation>Montant invalide pour -paytxfee=&lt;montant&gt; : « %s »</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2882,8 +2882,8 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. DarkCoin is probably already running.</source>
-        <translation>Impossible de se lier à %s sur cet ordinateur. DarkCoin fonctionne probablement déjà.</translation>
+        <source>Unable to bind to %s on this computer. ZettelKasten is probably already running.</source>
+        <translation>Impossible de se lier à %s sur cet ordinateur. ZettelKasten fonctionne probablement déjà.</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -2930,7 +2930,7 @@ par exemple : alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@fo
         <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
 %s
 If the file does not exist, create it with owner-readable-only file permissions.</source>
-        <translation>Vous devez ajouter la ligne rpcpassword=&lt;mot-de-passe&gt; au fichier de configuration :
+        <translation>Vous devez ajouter la ligne rpcpassword=&lt;mot-de-passe&gt; au fichier de configuration :
 %s
 Si le fichier n&apos;existe pas, créez-le avec les droits de lecture seule accordés au propriétaire.</translation>
     </message>

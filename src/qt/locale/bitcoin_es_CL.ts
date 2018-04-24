@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About DarkCoin</source>
-        <translation>Sobre DarkCoin</translation>
+        <source>About ZettelKasten</source>
+        <translation>Sobre ZettelKasten</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;DarkCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;DarkCoin&lt;/b&gt; - versión </translation>
+        <source>&lt;b&gt;ZettelKasten&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;ZettelKasten&lt;/b&gt; - versión </translation>
     </message>
     <message>
         <location line="+57"/>
@@ -37,7 +37,7 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="+0"/>
-        <source>The DarkCoin developers</source>
+        <source>The ZettelKasten developers</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -70,8 +70,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your DarkCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Estas son tus direcciones DarkCoin para recibir pagos. Puedes utilizar una diferente por cada persona emisora para saber quien te está pagando.</translation>
+        <source>These are your ZettelKasten addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Estas son tus direcciones ZettelKasten para recibir pagos. Puedes utilizar una diferente por cada persona emisora para saber quien te está pagando.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -85,7 +85,7 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a DarkCoin address</source>
+        <source>Sign a message to prove you own a ZettelKasten address</source>
         <translation>Firmar un mensaje para provar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -110,7 +110,7 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified DarkCoin address</source>
+        <source>Verify a message to ensure it was signed with a specified ZettelKasten address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -125,7 +125,7 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your DarkCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your ZettelKasten addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -251,8 +251,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DARKCOINS&lt;/b&gt;!</source>
-        <translation>Atención: ¡Si codificas tu billetera y pierdes la contraseña perderás &lt;b&gt;TODOS TUS DARKCOINS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ZettelKastenS&lt;/b&gt;!</source>
+        <translation>Atención: ¡Si codificas tu billetera y pierdes la contraseña perderás &lt;b&gt;TODOS TUS ZettelKastenS&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -278,8 +278,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="-56"/>
-        <source>DarkCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
-        <translation>DarkCoin se cerrará para finalizar el proceso de encriptación. Recuerde que encriptar su billetera no protegera completatamente sus darkcoins de ser robados por malware que infecte su computador</translation>
+        <source>ZettelKasten will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZettelKastens from being stolen by malware infecting your computer.</source>
+        <translation>ZettelKasten se cerrará para finalizar el proceso de encriptación. Recuerde que encriptar su billetera no protegera completatamente sus ZettelKastens de ser robados por malware que infecte su computador</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -377,8 +377,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about DarkCoin</source>
-        <translation>Muestra información acerca de DarkCoin</translation>
+        <source>Show information about ZettelKasten</source>
+        <translation>Muestra información acerca de ZettelKasten</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -422,13 +422,13 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a DarkCoin address</source>
-        <translation>Enviar monedas a una dirección darkcoin</translation>
+        <source>Send coins to a ZettelKasten address</source>
+        <translation>Enviar monedas a una dirección ZettelKasten</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for DarkCoin</source>
-        <translation>Modifica las opciones de configuración de darkcoin</translation>
+        <source>Modify configuration options for ZettelKasten</source>
+        <translation>Modifica las opciones de configuración de ZettelKasten</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -458,8 +458,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>DarkCoin</source>
-        <translation>DarkCoin</translation>
+        <source>ZettelKasten</source>
+        <translation>ZettelKasten</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -483,8 +483,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About DarkCoin</source>
-        <translation>&amp;Sobre DarkCoin</translation>
+        <source>&amp;About ZettelKasten</source>
+        <translation>&amp;Sobre ZettelKasten</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -503,12 +503,12 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your DarkCoin addresses to prove you own them</source>
+        <source>Sign messages with your ZettelKasten addresses to prove you own them</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified DarkCoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified ZettelKasten addresses</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -539,13 +539,13 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
     </message>
     <message>
         <location line="+47"/>
-        <source>DarkCoin client</source>
-        <translation>Cliente DarkCoin</translation>
+        <source>ZettelKasten client</source>
+        <translation>Cliente ZettelKasten</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to DarkCoin network</source>
-        <translation><numerusform>%n conexión activa hacia la red DarkCoin</numerusform><numerusform>%n conexiones activas hacia la red DarkCoin</numerusform></translation>
+        <source>%n active connection(s) to ZettelKasten network</source>
+        <translation><numerusform>%n conexión activa hacia la red ZettelKasten</numerusform><numerusform>%n conexiones activas hacia la red ZettelKasten</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -658,7 +658,7 @@ Dirección: %4</translation>
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid DarkCoin address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid ZettelKasten address or malformed URI parameters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -673,7 +673,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. DarkCoin can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. ZettelKasten can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -739,8 +739,8 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid DarkCoin address.</source>
-        <translation>La dirección introducida &quot;%1&quot; no es una dirección DarkCoin valida.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid ZettelKasten address.</source>
+        <translation>La dirección introducida &quot;%1&quot; no es una dirección ZettelKasten valida.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -758,7 +758,7 @@ Dirección: %4</translation>
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>DarkCoin-Qt</source>
+        <source>ZettelKasten-Qt</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -822,13 +822,13 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start DarkCoin after logging in to the system.</source>
-        <translation>Inicia DarkCoin automáticamente despues de encender el computador</translation>
+        <source>Automatically start ZettelKasten after logging in to the system.</source>
+        <translation>Inicia ZettelKasten automáticamente despues de encender el computador</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start DarkCoin on system login</source>
-        <translation>&amp;Inicia DarkCoin al iniciar el sistema</translation>
+        <source>&amp;Start ZettelKasten on system login</source>
+        <translation>&amp;Inicia ZettelKasten al iniciar el sistema</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -847,8 +847,8 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the DarkCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abre automáticamente el puerto del cliente DarkCoin en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
+        <source>Automatically open the ZettelKasten client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abre automáticamente el puerto del cliente ZettelKasten en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -857,8 +857,8 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the DarkCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Conecta a la red DarkCoin a través de un proxy SOCKS (ej. cuando te conectas por la red Tor)</translation>
+        <source>Connect to the ZettelKasten network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Conecta a la red ZettelKasten a través de un proxy SOCKS (ej. cuando te conectas por la red Tor)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -932,7 +932,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting DarkCoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZettelKasten.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -947,7 +947,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show DarkCoin addresses in the transaction list or not.</source>
+        <source>Whether to show ZettelKasten addresses in the transaction list or not.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -999,7 +999,7 @@ Dirección: %4</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting DarkCoin.</source>
+        <source>This setting will take effect after restarting ZettelKasten.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1018,7 +1018,7 @@ Dirección: %4</translation>
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the DarkCoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZettelKasten network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1072,7 +1072,7 @@ Dirección: %4</translation>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
+        <source>Cannot start ZettelKasten: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1222,7 +1222,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the DarkCoin-Qt help message to get a list with possible DarkCoin command-line options.</source>
+        <source>Show the ZettelKasten-Qt help message to get a list with possible ZettelKasten command-line options.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1242,12 +1242,12 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>DarkCoin - Debug window</source>
+        <source>ZettelKasten - Debug window</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+25"/>
-        <source>DarkCoin Core</source>
+        <source>ZettelKasten Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1257,7 +1257,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the DarkCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the ZettelKasten debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1267,7 +1267,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the DarkCoin RPC console.</source>
+        <source>Welcome to the ZettelKasten RPC console.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1451,8 +1451,8 @@ Dirección: %4</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introduce una dirección DarkCoin (ej. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Introduce una dirección ZettelKasten (ej. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1475,7 +1475,7 @@ Dirección: %4</translation>
     <message>
         <location line="+18"/>
         <source>The address to sign the message with (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introduce una dirección DarkCoin (ej. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <translation>Introduce una dirección ZettelKasten (ej. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1516,7 +1516,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this DarkCoin address</source>
+        <source>Sign the message to prove you own this ZettelKasten address</source>
         <translation>Firmar un mensjage para probar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -1548,11 +1548,11 @@ Dirección: %4</translation>
     <message>
         <location line="+21"/>
         <source>The address the message was signed with (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introduce una dirección DarkCoin (ej. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <translation>Introduce una dirección ZettelKasten (ej. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified DarkCoin address</source>
+        <source>Verify the message to ensure it was signed with the specified ZettelKasten address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1568,8 +1568,8 @@ Dirección: %4</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introduce una dirección DarkCoin (ej. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Introduce una dirección ZettelKasten (ej. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1578,7 +1578,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter DarkCoin signature</source>
+        <source>Enter ZettelKasten signature</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1652,7 +1652,7 @@ Dirección: %4</translation>
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The DarkCoin developers</source>
+        <source>The ZettelKasten developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2190,8 +2190,8 @@ Dirección: %4</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>DarkCoin version</source>
-        <translation>Versión DarkCoin</translation>
+        <source>ZettelKasten version</source>
+        <translation>Versión ZettelKasten</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2200,8 +2200,8 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Envia comando a darkcoin lanzado con -server u darkcoind
+        <source>Send command to -server or ZettelKastend</source>
+        <translation>Envia comando a ZettelKasten lanzado con -server u ZettelKastend
 </translation>
     </message>
     <message>
@@ -2224,14 +2224,14 @@ Dirección: %4</translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Especifica archivo de configuración (predeterminado: darkcoin.conf)
+        <source>Specify configuration file (default: ZettelKasten.conf)</source>
+        <translation>Especifica archivo de configuración (predeterminado: ZettelKasten.conf)
 </translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>Especifica archivo pid (predeterminado: darkcoin.pid)
+        <source>Specify pid file (default: ZettelKastend.pid)</source>
+        <translation>Especifica archivo pid (predeterminado: ZettelKasten.pid)
 </translation>
     </message>
     <message>
@@ -2313,13 +2313,13 @@ Dirección: %4</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=ZettelKastenrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;ZettelKasten Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2335,7 +2335,7 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. DarkCoin is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. ZettelKasten is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2380,8 +2380,8 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong DarkCoin will not work properly.</source>
-        <translation>Precaución: Por favor revise que la fecha y hora de tu ordenador son correctas. Si tu reloj está mal configurado DarkCoin no funcionará correctamente.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ZettelKasten will not work properly.</source>
+        <translation>Precaución: Por favor revise que la fecha y hora de tu ordenador son correctas. Si tu reloj está mal configurado ZettelKasten no funcionará correctamente.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2631,8 +2631,8 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the DarkCoin Wiki for SSL setup instructions)</source>
-        <translation>Opciones SSL: (ver la DarkCoin Wiki para instrucciones de configuración SSL)</translation>
+        <source>SSL options: (see the ZettelKasten Wiki for SSL setup instructions)</source>
+        <translation>Opciones SSL: (ver la ZettelKasten Wiki para instrucciones de configuración SSL)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2833,13 +2833,13 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of DarkCoin</source>
-        <translation>Error cargando wallet.dat: Billetera necesita una vercion reciente de DarkCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of ZettelKasten</source>
+        <translation>Error cargando wallet.dat: Billetera necesita una vercion reciente de ZettelKasten</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart DarkCoin to complete</source>
-        <translation>La billetera necesita ser reescrita: reinicie DarkCoin para completar</translation>
+        <source>Wallet needed to be rewritten: restart ZettelKasten to complete</source>
+        <translation>La billetera necesita ser reescrita: reinicie ZettelKasten para completar</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2898,8 +2898,8 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. DarkCoin is probably already running.</source>
-        <translation>No es posible escuchar en el %s en este ordenador. Probablemente DarkCoin ya se está ejecutando.</translation>
+        <source>Unable to bind to %s on this computer. ZettelKasten is probably already running.</source>
+        <translation>No es posible escuchar en el %s en este ordenador. Probablemente ZettelKasten ya se está ejecutando.</translation>
     </message>
     <message>
         <location line="+64"/>

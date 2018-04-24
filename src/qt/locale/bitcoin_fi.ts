@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About DarkCoin</source>
-        <translation>Tietoa DarkCoinista</translation>
+        <source>About ZettelKasten</source>
+        <translation>Tietoa ZettelKastenista</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;DarkCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;DarkCoin&lt;/b&gt; versio</translation>
+        <source>&lt;b&gt;ZettelKasten&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;ZettelKasten&lt;/b&gt; versio</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -35,7 +35,7 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="+0"/>
-        <source>The DarkCoin developers</source>
+        <source>The ZettelKasten developers</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -68,8 +68,8 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your DarkCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Nämä ovat DarkCoin-osoitteesi joihin voit vastaanottaa maksuja. Voit haluta antaa jokaiselle maksajalle omansa, että pystyt seuraamaan keneltä maksut tulevat.</translation>
+        <source>These are your ZettelKasten addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Nämä ovat ZettelKasten-osoitteesi joihin voit vastaanottaa maksuja. Voit haluta antaa jokaiselle maksajalle omansa, että pystyt seuraamaan keneltä maksut tulevat.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -83,8 +83,8 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a DarkCoin address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat DarkCoin-osoitteen</translation>
+        <source>Sign a message to prove you own a ZettelKasten address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat ZettelKasten-osoitteen</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -108,8 +108,8 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified DarkCoin address</source>
-        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä DarkCoin-osoitteella</translation>
+        <source>Verify a message to ensure it was signed with a specified ZettelKasten address</source>
+        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä ZettelKasten-osoitteella</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -123,7 +123,7 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your DarkCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your ZettelKasten addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -249,8 +249,8 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DARKCOINS&lt;/b&gt;!</source>
-        <translation>Varoitus: Jos salaat lompakkosi ja menetät tunnuslauseesi, &lt;b&gt;MENETÄT KAIKKI DARKCOINISI&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ZettelKastenS&lt;/b&gt;!</source>
+        <translation>Varoitus: Jos salaat lompakkosi ja menetät tunnuslauseesi, &lt;b&gt;MENETÄT KAIKKI ZettelKastenISI&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -276,8 +276,8 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="-56"/>
-        <source>DarkCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
-        <translation>DarkCoin sulkeutuu lopettaakseen salausprosessin. Muista, että salattukaan lompakko ei täysin suojaa sitä haittaohjelmien aiheuttamilta varkauksilta.</translation>
+        <source>ZettelKasten will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZettelKastens from being stolen by malware infecting your computer.</source>
+        <translation>ZettelKasten sulkeutuu lopettaakseen salausprosessin. Muista, että salattukaan lompakko ei täysin suojaa sitä haittaohjelmien aiheuttamilta varkauksilta.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -361,7 +361,7 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     <message>
         <location line="-14"/>
         <source>Show the list of addresses for receiving payments</source>
-        <translation>Näytä DarkCoinien vastaanottamiseen käytetyt osoitteet</translation>
+        <translation>Näytä ZettelKastenien vastaanottamiseen käytetyt osoitteet</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -375,8 +375,8 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about DarkCoin</source>
-        <translation>Näytä tietoa DarkCoin-projektista</translation>
+        <source>Show information about ZettelKasten</source>
+        <translation>Näytä tietoa ZettelKasten-projektista</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -420,13 +420,13 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a DarkCoin address</source>
-        <translation>Lähetä kolikoita DarkCoin-osoitteeseen</translation>
+        <source>Send coins to a ZettelKasten address</source>
+        <translation>Lähetä kolikoita ZettelKasten-osoitteeseen</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for DarkCoin</source>
-        <translation>Muuta DarkCoinin konfiguraatioasetuksia</translation>
+        <source>Modify configuration options for ZettelKasten</source>
+        <translation>Muuta ZettelKastenin konfiguraatioasetuksia</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -456,8 +456,8 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>DarkCoin</source>
-        <translation>DarkCoin</translation>
+        <source>ZettelKasten</source>
+        <translation>ZettelKasten</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -481,8 +481,8 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About DarkCoin</source>
-        <translation>&amp;Tietoa DarkCoinista</translation>
+        <source>&amp;About ZettelKasten</source>
+        <translation>&amp;Tietoa ZettelKastenista</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -492,7 +492,7 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     <message>
         <location line="+1"/>
         <source>Show or hide the main Window</source>
-        <translation>Näytä tai piilota DarkCoin-ikkuna</translation>
+        <translation>Näytä tai piilota ZettelKasten-ikkuna</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -501,13 +501,13 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your DarkCoin addresses to prove you own them</source>
-        <translation>Allekirjoita viestisi omalla DarkCoin -osoitteellasi todistaaksesi, että omistat ne</translation>
+        <source>Sign messages with your ZettelKasten addresses to prove you own them</source>
+        <translation>Allekirjoita viestisi omalla ZettelKasten -osoitteellasi todistaaksesi, että omistat ne</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified DarkCoin addresses</source>
-        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä DarkCoin -osoitteella</translation>
+        <source>Verify messages to ensure they were signed with specified ZettelKasten addresses</source>
+        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä ZettelKasten -osoitteella</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -537,13 +537,13 @@ Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin (http://www.o
     </message>
     <message>
         <location line="+47"/>
-        <source>DarkCoin client</source>
-        <translation>DarkCoin-asiakas</translation>
+        <source>ZettelKasten client</source>
+        <translation>ZettelKasten-asiakas</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to DarkCoin network</source>
-        <translation><numerusform>%n aktiivinen yhteys DarkCoin-verkkoon</numerusform><numerusform>%n aktiivista yhteyttä DarkCoin-verkkoon</numerusform></translation>
+        <source>%n active connection(s) to ZettelKasten network</source>
+        <translation><numerusform>%n aktiivinen yhteys ZettelKasten-verkkoon</numerusform><numerusform>%n aktiivista yhteyttä ZettelKasten-verkkoon</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -656,8 +656,8 @@ Osoite: %4</translation>
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid DarkCoin address or malformed URI parameters.</source>
-        <translation>URIa ei voitu jäsentää! Tämä voi johtua kelvottomasta DarkCoin-osoitteesta tai virheellisistä URI parametreista.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid ZettelKasten address or malformed URI parameters.</source>
+        <translation>URIa ei voitu jäsentää! Tämä voi johtua kelvottomasta ZettelKasten-osoitteesta tai virheellisistä URI parametreista.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -671,8 +671,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. DarkCoin can no longer continue safely and will quit.</source>
-        <translation>Peruuttamaton virhe on tapahtunut. DarkCoin ei voi enää jatkaa turvallisesti ja sammutetaan.</translation>
+        <source>A fatal error occurred. ZettelKasten can no longer continue safely and will quit.</source>
+        <translation>Peruuttamaton virhe on tapahtunut. ZettelKasten ei voi enää jatkaa turvallisesti ja sammutetaan.</translation>
     </message>
 </context>
 <context>
@@ -737,8 +737,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid DarkCoin address.</source>
-        <translation>Antamasi osoite &quot;%1&quot; ei ole validi DarkCoin-osoite.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid ZettelKasten address.</source>
+        <translation>Antamasi osoite &quot;%1&quot; ei ole validi ZettelKasten-osoite.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -756,8 +756,8 @@ Osoite: %4</translation>
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>DarkCoin-Qt</source>
-        <translation>DarkCoin-Qt</translation>
+        <source>ZettelKasten-Qt</source>
+        <translation>ZettelKasten-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -819,13 +819,13 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start DarkCoin after logging in to the system.</source>
-        <translation>Käynnistä DarkCoin kirjautumisen yhteydessä.</translation>
+        <source>Automatically start ZettelKasten after logging in to the system.</source>
+        <translation>Käynnistä ZettelKasten kirjautumisen yhteydessä.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start DarkCoin on system login</source>
-        <translation>&amp;Käynnistä DarkCoin kirjautumisen yhteydessä</translation>
+        <source>&amp;Start ZettelKasten on system login</source>
+        <translation>&amp;Käynnistä ZettelKasten kirjautumisen yhteydessä</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -844,8 +844,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the DarkCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Avaa DarkCoin-asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
+        <source>Automatically open the ZettelKasten client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Avaa ZettelKasten-asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -854,8 +854,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the DarkCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Ota yhteys DarkCoin-verkkoon SOCKS-proxyn läpi (esimerkiksi kun haluat käyttää Tor-verkkoa).</translation>
+        <source>Connect to the ZettelKasten network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Ota yhteys ZettelKasten-verkkoon SOCKS-proxyn läpi (esimerkiksi kun haluat käyttää Tor-verkkoa).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -910,7 +910,7 @@ Osoite: %4</translation>
     <message>
         <location line="+7"/>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
-        <translation>Ikkunaa suljettaessa vain pienentää DarkCoin-ohjelman ikkunan lopettamatta itse ohjelmaa. Kun tämä asetus on valittuna, ohjelman voi sulkea vain valitsemalla Lopeta ohjelman valikosta.</translation>
+        <translation>Ikkunaa suljettaessa vain pienentää ZettelKasten-ohjelman ikkunan lopettamatta itse ohjelmaa. Kun tämä asetus on valittuna, ohjelman voi sulkea vain valitsemalla Lopeta ohjelman valikosta.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -929,23 +929,23 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting DarkCoin.</source>
-        <translation>Tässä voit määritellä käyttöliittymän kielen. Muutokset astuvat voimaan seuraavan kerran, kun DarkCoin käynnistetään.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZettelKasten.</source>
+        <translation>Tässä voit määritellä käyttöliittymän kielen. Muutokset astuvat voimaan seuraavan kerran, kun ZettelKasten käynnistetään.</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>Yksikkö jona darkcoin-määrät näytetään</translation>
+        <translation>Yksikkö jona ZettelKasten-määrät näytetään</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Valitse mitä yksikköä käytetään ensisijaisesti darkcoin-määrien näyttämiseen.</translation>
+        <translation>Valitse mitä yksikköä käytetään ensisijaisesti ZettelKasten-määrien näyttämiseen.</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show DarkCoin addresses in the transaction list or not.</source>
-        <translation>Näytetäänkö DarkCoin-osoitteet rahansiirrot listassa vai ei.</translation>
+        <source>Whether to show ZettelKasten addresses in the transaction list or not.</source>
+        <translation>Näytetäänkö ZettelKasten-osoitteet rahansiirrot listassa vai ei.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -996,8 +996,8 @@ Osoite: %4</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting DarkCoin.</source>
-        <translation>Tämä asetus astuu voimaan seuraavalla kerralla, kun DarkCoin käynnistetään.</translation>
+        <source>This setting will take effect after restarting ZettelKasten.</source>
+        <translation>Tämä asetus astuu voimaan seuraavalla kerralla, kun ZettelKasten käynnistetään.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1015,8 +1015,8 @@ Osoite: %4</translation>
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the DarkCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu DarkCoin-verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZettelKasten network after a connection is established, but this process has not completed yet.</source>
+        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu ZettelKasten-verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1051,12 +1051,12 @@ Osoite: %4</translation>
     <message>
         <location line="-101"/>
         <source>Your current balance</source>
-        <translation>Tililläsi tällä hetkellä olevien DarkCoinien määrä</translation>
+        <translation>Tililläsi tällä hetkellä olevien ZettelKastenien määrä</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
-        <translation>Niiden saapuvien rahansiirtojen määrä, joita DarkCoin-verkko ei vielä ole ehtinyt vahvistaa ja siten eivät vielä näy saldossa.</translation>
+        <translation>Niiden saapuvien rahansiirtojen määrä, joita ZettelKasten-verkko ei vielä ole ehtinyt vahvistaa ja siten eivät vielä näy saldossa.</translation>
     </message>
     <message>
         <location filename="../overviewpage.cpp" line="+116"/>
@@ -1069,7 +1069,7 @@ Osoite: %4</translation>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
+        <source>Cannot start ZettelKasten: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1219,8 +1219,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the DarkCoin-Qt help message to get a list with possible DarkCoin command-line options.</source>
-        <translation>Näytä DarkCoin-Qt komentoriviparametrien ohjesivu, jossa on listattuna mahdolliset komentoriviparametrit.</translation>
+        <source>Show the ZettelKasten-Qt help message to get a list with possible ZettelKasten command-line options.</source>
+        <translation>Näytä ZettelKasten-Qt komentoriviparametrien ohjesivu, jossa on listattuna mahdolliset komentoriviparametrit.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1239,13 +1239,13 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>DarkCoin - Debug window</source>
-        <translation>DarkCoin - Debug ikkuna</translation>
+        <source>ZettelKasten - Debug window</source>
+        <translation>ZettelKasten - Debug ikkuna</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>DarkCoin Core</source>
-        <translation>DarkCoin-ydin</translation>
+        <source>ZettelKasten Core</source>
+        <translation>ZettelKasten-ydin</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1254,7 +1254,7 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the DarkCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the ZettelKasten debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>Avaa lokitiedosto nykyisestä data-kansiosta. Tämä voi viedä useamman sekunnin, jos lokitiedosto on iso.</translation>
     </message>
     <message>
@@ -1264,8 +1264,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the DarkCoin RPC console.</source>
-        <translation>Tervetuloa DarkCoin RPC konsoliin.</translation>
+        <source>Welcome to the ZettelKasten RPC console.</source>
+        <translation>Tervetuloa ZettelKasten RPC konsoliin.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1290,7 +1290,7 @@ Osoite: %4</translation>
         <location line="+5"/>
         <location line="+5"/>
         <source>Send Coins</source>
-        <translation>Lähetä DarkCoineja</translation>
+        <translation>Lähetä ZettelKasteneja</translation>
     </message>
     <message>
         <location line="+50"/>
@@ -1340,7 +1340,7 @@ Osoite: %4</translation>
     <message>
         <location line="+5"/>
         <source>Confirm send coins</source>
-        <translation>Hyväksy DarkCoinien lähettäminen</translation>
+        <translation>Hyväksy ZettelKastenien lähettäminen</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1360,7 +1360,7 @@ Osoite: %4</translation>
     <message>
         <location line="+5"/>
         <source>The amount to pay must be larger than 0.</source>
-        <translation>Maksettavan summan tulee olla suurempi kuin 0 DarkCoinia.</translation>
+        <translation>Maksettavan summan tulee olla suurempi kuin 0 ZettelKastenia.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1385,7 +1385,7 @@ Osoite: %4</translation>
     <message>
         <location line="+5"/>
         <source>Error: The transaction was rejected. This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Virhe: Rahansiirto hylättiin.  Tämä voi tapahtua jos jotkin darkcoineistasi on jo käytetty, esimerkiksi jos olet käyttänyt kopiota wallet.dat-lompakkotiedostosta ja darkcoinit on merkitty käytetyksi vain kopiossa.</translation>
+        <translation>Virhe: Rahansiirto hylättiin.  Tämä voi tapahtua jos jotkin ZettelKasteneistasi on jo käytetty, esimerkiksi jos olet käyttänyt kopiota wallet.dat-lompakkotiedostosta ja ZettelKastenit on merkitty käytetyksi vain kopiossa.</translation>
     </message>
 </context>
 <context>
@@ -1448,8 +1448,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Anna DarkCoin-osoite (esim. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Anna ZettelKasten-osoite (esim. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1513,8 +1513,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this DarkCoin address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän DarkCoin-osoitteen</translation>
+        <source>Sign the message to prove you own this ZettelKasten address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän ZettelKasten-osoitteen</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1549,8 +1549,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified DarkCoin address</source>
-        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä DarkCoin-osoitteella</translation>
+        <source>Verify the message to ensure it was signed with the specified ZettelKasten address</source>
+        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä ZettelKasten-osoitteella</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1565,8 +1565,8 @@ Osoite: %4</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a DarkCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Anna DarkCoin-osoite (esim. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a ZettelKasten address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Anna ZettelKasten-osoite (esim. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1575,8 +1575,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter DarkCoin signature</source>
-        <translation>Syötä DarkCoin-allekirjoitus</translation>
+        <source>Enter ZettelKasten signature</source>
+        <translation>Syötä ZettelKasten-allekirjoitus</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1649,7 +1649,7 @@ Osoite: %4</translation>
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The DarkCoin developers</source>
+        <source>The ZettelKasten developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1955,7 +1955,7 @@ Osoite: %4</translation>
     <message>
         <location line="+2"/>
         <source>Destination address of transaction.</source>
-        <translation>Rahansiirron kohteen DarkCoin-osoite</translation>
+        <translation>Rahansiirron kohteen ZettelKasten-osoite</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2137,7 +2137,7 @@ Osoite: %4</translation>
     <message>
         <location filename="../walletmodel.cpp" line="+193"/>
         <source>Send Coins</source>
-        <translation>Lähetä DarkCoineja</translation>
+        <translation>Lähetä ZettelKasteneja</translation>
     </message>
 </context>
 <context>
@@ -2187,8 +2187,8 @@ Osoite: %4</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>DarkCoin version</source>
-        <translation>DarkCoinin versio</translation>
+        <source>ZettelKasten version</source>
+        <translation>ZettelKastenin versio</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2197,8 +2197,8 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Lähetä käsky palvelimelle tai darkcoind:lle</translation>
+        <source>Send command to -server or ZettelKastend</source>
+        <translation>Lähetä käsky palvelimelle tai ZettelKastend:lle</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2217,13 +2217,13 @@ Osoite: %4</translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Määritä asetustiedosto (oletus: darkcoin.conf)</translation>
+        <source>Specify configuration file (default: ZettelKasten.conf)</source>
+        <translation>Määritä asetustiedosto (oletus: ZettelKasten.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>Määritä pid-tiedosto (oletus: darkcoin.pid)</translation>
+        <source>Specify pid file (default: ZettelKastend.pid)</source>
+        <translation>Määritä pid-tiedosto (oletus: ZettelKasten.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2300,13 +2300,13 @@ Osoite: %4</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=ZettelKastenrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;ZettelKasten Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2322,7 +2322,7 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. DarkCoin is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. ZettelKasten is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2367,8 +2367,8 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong DarkCoin will not work properly.</source>
-        <translation>Varoitus: Tarkista että tietokoneesi kellonaika ja päivämäärä ovat paikkansapitäviä! DarkCoin ei toimi oikein väärällä päivämäärällä ja/tai kellonajalla.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ZettelKasten will not work properly.</source>
+        <translation>Varoitus: Tarkista että tietokoneesi kellonaika ja päivämäärä ovat paikkansapitäviä! ZettelKasten ei toimi oikein väärällä päivämäärällä ja/tai kellonajalla.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2617,8 +2617,8 @@ for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the DarkCoin Wiki for SSL setup instructions)</source>
-        <translation>SSL asetukset (katso DarkCoin Wikistä tarkemmat SSL ohjeet)</translation>
+        <source>SSL options: (see the ZettelKasten Wiki for SSL setup instructions)</source>
+        <translation>SSL asetukset (katso ZettelKasten Wikistä tarkemmat SSL ohjeet)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2808,13 +2808,13 @@ TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of DarkCoin</source>
-        <translation>Virhe ladattaessa wallet.dat-tiedostoa: Tarvitset uudemman version DarkCoinista</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of ZettelKasten</source>
+        <translation>Virhe ladattaessa wallet.dat-tiedostoa: Tarvitset uudemman version ZettelKastenista</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart DarkCoin to complete</source>
-        <translation>Lompakko tarvitsee uudelleenkirjoittaa: käynnistä DarkCoin uudelleen</translation>
+        <source>Wallet needed to be rewritten: restart ZettelKasten to complete</source>
+        <translation>Lompakko tarvitsee uudelleenkirjoittaa: käynnistä ZettelKasten uudelleen</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2873,8 +2873,8 @@ TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</translation>
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. DarkCoin is probably already running.</source>
-        <translation>Kytkeytyminen %s ei onnistu tällä tietokoneella. DarkCoin on todennäköisesti jo ajamassa.</translation>
+        <source>Unable to bind to %s on this computer. ZettelKasten is probably already running.</source>
+        <translation>Kytkeytyminen %s ei onnistu tällä tietokoneella. ZettelKasten on todennäköisesti jo ajamassa.</translation>
     </message>
     <message>
         <location line="+64"/>
