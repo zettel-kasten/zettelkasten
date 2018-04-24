@@ -140,7 +140,7 @@ endif
 all: zettelkastend
 
 test check: test_zettelkasten FORCE
-        ./test_zettelkasten
+	./test_zettelkasten
 
 #
 # LevelDB support
@@ -190,7 +190,7 @@ test_zettelkasten: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) $(TESTLIBS)
 
 clean:
-        -rm -f zettelkastend test_zettelkasten
+	-rm -f zettelkastend test_zettelkasten
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P

@@ -151,8 +151,8 @@ OBJS= \
 
 all: zettelkastend
 
-test check: test_spreadcoin FORCE
-	./test_spreadcoin
+test check: test_zettelkasten FORCE
+	./test_zettelkasten
 
 #
 # LevelDB support
@@ -206,11 +206,11 @@ obj-test/%.o: test/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-test_spreadcoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_zettelkasten: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(LINK) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ $(TESTLIBS) $(xLDFLAGS) $(LIBS)
 
 clean:
-        -rm -f zettelkastend test_zettelkasten
+	-rm -f zettelkastend test_zettelkasten
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P

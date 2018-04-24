@@ -119,7 +119,7 @@ OBJS= \
 all: zettelkastend.exe
 
 test check: test_zettelkasten.exe FORCE
-        test_zettelkasten.exe
+	test_zettelkasten.exe
 
 #
 # LevelDB support
@@ -151,9 +151,9 @@ test_zettelkasten.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework$(BOOST_SUFFIX) $(LIBS)
 
 clean:
-        rm -f zettelkastend.exe test_zettelkasten.exe
-        rm -f obj/*
-        rm -f obj-test/*
+	rm -f zettelkastend.exe test_zettelkasten.exe
+	rm -f obj/*
+	rm -f obj-test/*
 	cd leveldb && $(MAKE) TARGET_OS=NATIVE_WINDOWS clean && cd ..
 
 FORCE:
