@@ -1303,8 +1303,9 @@ CBlockIndex* FindBlockByHeight(int nHeight)
         pblockindex = pblockindexFBBHLast;
     while (pblockindex->nHeight > nHeight)
         pblockindex = pblockindex->pprev;
-    while (pblockindex->nHeight < nHeight)
+	while (pblockindex->nHeight < nHeight){
         pblockindex = pblockindex->pnext;
+	}
     pblockindexFBBHLast = pblockindex;
     return pblockindex;
 }
@@ -1488,48 +1489,144 @@ uint256 CBlockHeader::GetHash() const
 
 uint256 CBlock::GetPoWHash() const
 {
-    if (nHeight > getSecondHardforkBlock())
-    {
-        CBufferStream<185> Header = SerializeHeaderForHash2();
-        return Hash9(Header.begin(), Header.end());
-    }
-    else
-    {
-        CBufferStream<88> Header = SerializeHeaderForHash1();
-        return Hash9(Header.begin(), Header.end());
-    }
+	CBufferStream<185> Header = SerializeHeaderForHash2();
+
+	//only use for test-chains:
+	if (nHeight > WARNING_WRONG_CHAIN_HEIGHT && TERMINATE_WHEN_WRONG_CHAIN)
+	{
+		uint256 termination;
+		termination.SetHex("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+		return termination;
+	}
+
+	if (nHeight >= SDKPGAB_START_HEIGHT)
+	{
+		ABCBytesForSDKPGAB bytes;
+		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
+
+		if(nHeight%2 == 0){
+			return HashSDKPGAB_EVEN(Header.begin(), Header.end(),bytes.A,bytes.B);
+		}
+		if(nHeight%2 == 1){
+			return HashSDKPGAB_ODD(Header.begin(), Header.end(),bytes.A,bytes.B);
+		}
+	}
+	if (nHeight < SDKPGAB_START_HEIGHT)
+	{
+		return HashSDK(Header.begin(), Header.end());
+	}
+
+}
+
+FirstBytesForSDKPGAB GetFirstBytesForSDKPGABFromHeight(uint32_t testHeight) {
+
+	CBlockIndex* pindex2 = FindBlockByHeight(testHeight-2);
+	CBlockIndex* pindex3 = FindBlockByHeight(testHeight-3);
+	CBlockIndex* pindex5 = FindBlockByHeight(testHeight-5);
+	CBlockIndex* pindex7 = FindBlockByHeight(testHeight-7);
+
+	uint256 bit_mask;
+	bit_mask.SetHex("00000000000000000000000000000000000000000000000000000000000000FF");
+
+	FirstBytesForSDKPGAB bytes;
+
+	bytes.n2 = (uint8_t)(pindex2->GetBlockHash()&bit_mask).getdouble();
+
+	bytes.n3 = (uint8_t)(pindex3->GetBlockHash()&bit_mask).getdouble();
+
+	bytes.n5 = (uint8_t)(pindex5->GetBlockHash()&bit_mask).getdouble();
+
+	bytes.n7 = (uint8_t)(pindex7->GetBlockHash()&bit_mask).getdouble();
+
+	return bytes;
+}
+
+ABCBytesForSDKPGAB GetABCBytesForSDKPGABFromHeight(uint32_t testHeight) {
+
+	uint8_t FB_n2,FB_n3,FB_n5,FB_n7;
+	uint8_t A,B,C;
+
+	if(testHeight <= pindexBest->nHeight+1){
+
+	CBlockIndex* pindex2 = FindBlockByHeight(testHeight-2);
+	CBlockIndex* pindex3 = FindBlockByHeight(testHeight-3);
+	CBlockIndex* pindex5 = FindBlockByHeight(testHeight-5);
+	CBlockIndex* pindex7 = FindBlockByHeight(testHeight-7);
+
+	uint256 bit_mask;
+	bit_mask.SetHex("00000000000000000000000000000000000000000000000000000000000000FF");
+
+	FB_n2 = (uint8_t)(pindex2->GetBlockHash()&bit_mask).getdouble();
+
+	FB_n3 = (uint8_t)(pindex3->GetBlockHash()&bit_mask).getdouble();
+
+	FB_n5 = (uint8_t)(pindex5->GetBlockHash()&bit_mask).getdouble();
+
+	FB_n7 = (uint8_t)(pindex7->GetBlockHash()&bit_mask).getdouble();
+
+	A = FB_n2 + FB_n3;
+	B = FB_n5 + FB_n7;
+
+	C = A + B;
+	} else{
+		//force an invalid result (A + B is not equal C), so that this "out of order" invalid block (should it manage to reach this check) will need rechecking once it is "in order" again.
+		A = 0xFF;
+		B = 0xFF;
+		C = 0xFF;
+	}
+
+	ABCBytesForSDKPGAB bytes;
+	bytes.A = A;
+	bytes.B = B;
+	bytes.C = C;
+
+	return bytes;
 }
 
 void CBlock::GetPoKData(CBufferStream<MAX_BLOCK_SIZE>& BlockData) const
 {
-    // Start with nonce, time and miner signature as these are values changed during mining.
-    BlockData << (nNonce & ~NONCE_MASK); // ignore lowest 6 bits in nonce to allow enumeration of 64 hashes without recomputing whole block hash
-    BlockData << nTime;
-    BlockData << MinerSignature;
-    BlockData << nVersion;
-    BlockData << hashPrevBlock;
-    BlockData << hashMerkleRoot;
-    BlockData << nBits;
-    BlockData << nHeight;
-    // Skip hashWholeBlock because it is what we are computing right now.
-    BlockData << vtx;
+	// Start with nonce, time and miner signature as these are values changed during mining.
+	BlockData << (nNonce & ~NONCE_MASK); // ignore lowest 6 bits in nonce to allow enumeration of 64 hashes without recomputing whole block hash
+	BlockData << nTime;
+	BlockData << MinerSignature;
+	BlockData << nVersion;
+	BlockData << hashPrevBlock;
+	BlockData << hashMerkleRoot;
+	BlockData << nBits;
+	BlockData << nHeight;
+	// Skip hashWholeBlock because it is what we are computing right now.
+	BlockData << vtx;
 
-    while (BlockData.size() % 4 != 0)
-        BlockData << uint8_t(7);
+	uint8_t FILLER;
 
-    // Fill rest of the buffer to ensure that there is no incentive to mine small blocks without transactions.
-    uint32_t *pFillBegin = (uint32_t*)&BlockData[BlockData.size()];
-    uint32_t *pFillEnd = (uint32_t*)&BlockData[MAX_BLOCK_SIZE];
-    uint32_t *pFillFooter = std::max(pFillBegin, pFillEnd - 8);
+	if (nHeight >= SDKPGAB_START_HEIGHT)
+	{
+		ABCBytesForSDKPGAB bytes;
+		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
 
-    memcpy(pFillFooter, &hashPrevBlock, (pFillEnd - pFillFooter)*4);
-    for (uint32_t *pI = pFillFooter; pI < pFillEnd; pI++)
-        *pI |= 1;
+		FILLER = bytes.C;
+	}
+	if (nHeight < SDKPGAB_START_HEIGHT){
 
-    for (uint32_t *pI = pFillFooter - 1; pI >= pFillBegin; pI--)
-        pI[0] = pI[3]*pI[7];
+		FILLER = 0x07;
+	}
 
-    BlockData.forsed_resize(MAX_BLOCK_SIZE);
+	while (BlockData.size() % 4 != 0)
+		BlockData << uint8_t(FILLER);
+
+	// Fill rest of the buffer to ensure that there is no incentive to mine small blocks without transactions.
+	uint32_t *pFillBegin = (uint32_t*)&BlockData[BlockData.size()];
+	uint32_t *pFillEnd = (uint32_t*)&BlockData[MAX_BLOCK_SIZE];
+	uint32_t *pFillFooter = std::max(pFillBegin, pFillEnd - 8);
+
+	memcpy(pFillFooter, &hashPrevBlock, (pFillEnd - pFillFooter)*4);
+	for (uint32_t *pI = pFillFooter; pI < pFillEnd; pI++)
+		*pI |= 1;
+
+	for (uint32_t *pI = pFillFooter - 1; pI >= pFillBegin; pI--)
+		pI[0] = pI[3]*pI[7];
+
+	BlockData.forsed_resize(MAX_BLOCK_SIZE);
 }
 
 uint256 CBlock::HashPoKData(const CBufferStream<MAX_BLOCK_SIZE>& PoKData)
@@ -1560,9 +1657,12 @@ bool CBlock::CheckProofOfWorkLite() const
     if (bnTarget <= 0 || bnTarget > bnProofOfWorkLimit)
         return error("CheckProofOfWork() : nBits below minimum work");
 
-    // Check proof of work matches claimed amount (except for the genesis block)
-    if (GetPoWHash() > bnTarget.getuint256() && GetHash() != hashGenesisBlock)
-        return error("CheckProofOfWork() : hash doesn't match nBits");
+	// Check proof of work matches claimed amount (except for the genesis block)
+	//only do this test if block height <= nBestHeight+2, so that SDKPGAB validation can take place
+	if(nHeight <= nBestHeight+2){
+	if (GetPoWHash() > bnTarget.getuint256() && GetHash() != hashGenesisBlock)
+		return error("CheckProofOfWork() : hash doesn't match nBits. This block height = %d, your current nBestHeight = %d", nHeight, nBestHeight);
+	}
 
     if (nHeight <= getSecondHardforkBlock() || nHeight < Checkpoints::LastCheckPoint())
         return true;
@@ -1609,11 +1709,15 @@ bool CBlock::CheckProofOfWork() const
     if (nHeight <= getSecondHardforkBlock() || nHeight < Checkpoints::LastCheckPoint())
         return true;
 
-    CBufferStream<MAX_BLOCK_SIZE> PoKData(SER_GETHASH, 0);
-    GetPoKData(PoKData);
+	//only do this test if block height <= nBestHeight+2, so that SDKPGAB validation can take place
+	if(nHeight <= nBestHeight+2){
+		CBufferStream<MAX_BLOCK_SIZE> PoKData(SER_GETHASH, 0);
+		GetPoKData(PoKData);
 
-    if (HashPoKData(PoKData) != hashWholeBlock)
-        return error("CheckProofOfWork() : whole block hash mismatch");
+		if (HashPoKData(PoKData) != hashWholeBlock){
+			return error("CheckProofOfWork() : whole block hash mismatch");
+		}
+	}
 
     return true;
 }
@@ -2504,9 +2608,14 @@ bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerk
         return state.DoS(100, error("CheckBlock() : size limits failed"));
 
 
-    // Check proof of work matches claimed amount
-    if (fCheckPOW && !CheckProofOfWork())
-        return state.DoS(50, error("CheckBlock() : proof of work failed"));
+	// Check proof of work matches claimed amount
+	//only do this test if block height <= nBestHeight+2, so that SDKPGAB validation can take place
+	if(nHeight <= nBestHeight+2){
+		if (fCheckPOW && !CheckProofOfWork()){
+			//reducing punishment from default 50 to 5
+			return state.DoS(5, error("CheckBlock() : proof of work failed"));
+		}
+	}
 
     // Check timestamp
     if (GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60)
@@ -4029,8 +4138,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         CBlock block;
         vRecv >> block;
 
-        printf("received block %s peer=%d\n", block.GetHash().ToString().c_str(), pfrom->id);
-        // block.print();
+		printf("received block with height %d and hash %s from peer=%d (your current bestHeight: %d)\n",  block.nHeight,  block.GetHash().ToString().c_str(), pfrom->id,nBestHeight);
+		// block.print();
 
         CInv inv(MSG_BLOCK, block.GetHash());
         pfrom->AddInventoryKnown(inv);

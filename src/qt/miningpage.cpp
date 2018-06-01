@@ -20,8 +20,9 @@ MiningPage::MiningPage(QWidget *parent) :
     int nThreads = boost::thread::hardware_concurrency();
 
     int nUseThreads = GetArg("-genproclimit", -1);
-    if (nUseThreads < 0)
+	if (nUseThreads < 0){
          nUseThreads = nThreads;
+	}
 
     std::string PrivAddress = GetArg("-miningprivkey", "");
     if (!PrivAddress.empty())
@@ -199,4 +200,46 @@ void MiningPage::timerEvent(QTimerEvent *)
     ui->labelNethashrate->setText(formatHashrate(NetworkHashrate));
     ui->labelYourHashrate->setText(formatHashrate(Hashrate));
     ui->labelNextBlock->setText(NextBlockTime);
+
+
+
+	uint nHeight = pindexBest->nHeight+1;
+
+
+	ui->label_SDKPRAB_1->setVisible(false);
+	ui->label_SDKPRAB_2->setVisible(false);
+	ui->label_SDKPRAB_3->setVisible(false);
+	ui->label_SDKPRAB_4->setVisible(false);
+	ui->label_SDKPRAB_5->setVisible(false);
+	ui->label_SDKPRAB_6->setVisible(false);
+	ui->label_SDKPRAB_7->setVisible(false);
+	ui->label_SDKPRAB_8->setVisible(false);
+
+	ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchup");
+
+	if(nHeight >= SDKPGAB_START_HEIGHT){
+		ui->label_SDKPRAB_1->setVisible(true);
+		ui->label_SDKPRAB_2->setVisible(true);
+		ui->label_SDKPRAB_3->setVisible(true);
+		ui->label_SDKPRAB_4->setVisible(true);
+		ui->label_SDKPRAB_5->setVisible(true);
+		ui->label_SDKPRAB_6->setVisible(true);
+		ui->label_SDKPRAB_7->setVisible(true);
+		ui->label_SDKPRAB_8->setVisible(true);
+
+		ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeef");
+
+		FirstBytesForSDKPGAB first_bytes = GetFirstBytesForSDKPGABFromHeight(nHeight);
+		ui->label_n2->setText(QString::number(first_bytes.n2));
+		ui->label_n3->setText(QString::number(first_bytes.n3));
+		ui->label_n5->setText(QString::number(first_bytes.n5));
+		ui->label_n7->setText(QString::number(first_bytes.n7));
+
+		ABCBytesForSDKPGAB bytes;
+		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
+		ui->label_A->setText(QString::number(bytes.A));
+		ui->label_B->setText(QString::number(bytes.B));
+		ui->label_C->setText(QString::number(bytes.C));
+		ui->label_parity->setText((nHeight%2==0)?"even":"odd");
+	}
 }
