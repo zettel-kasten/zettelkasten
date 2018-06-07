@@ -1715,8 +1715,14 @@ public:
 
         // Check the header. Because this block is stored on disc it was already checked by us;
         // therefore, it is considered unnecessary to perform expensive full pow-check here.
-        if (!CheckProofOfWorkLite())
-            return error("CBlock::ReadFromDisk() : errors in block header");
+		//if (!CheckProofOfWorkLite()){
+		//    return error("CBlock::ReadFromDisk() : errors in block header");
+		//}
+
+		//Nope, very wrong! We need to do a full check of each header, no shortcuts here, honey.
+		if (!CheckProofOfWork()){
+			return error("CBlock::ReadFromDisk() : errors in block header --- FULL CheckProofOfWork");
+		}
 
         return true;
     }
