@@ -220,6 +220,9 @@ void MiningPage::timerEvent(QTimerEvent *)
 
 	ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchup");
 
+	ui->label_SDKPRABSPC_1->setVisible(false);
+	ui->label_SDKPRABSPC_2->setVisible(false);
+
 	if(nHeight >= SDKPGAB_START_HEIGHT){
 		ui->label_SDKPRAB_1->setVisible(true);
 		ui->label_SDKPRAB_2->setVisible(true);
@@ -245,4 +248,15 @@ void MiningPage::timerEvent(QTimerEvent *)
 		ui->label_C->setText(QString::number(bytes.C));
 		ui->label_parity->setText((nHeight%2==0)?"even":"odd");
 	}
+
+	if(nHeight >= SDKPGABSPC_START_HEIGHT){
+		ui->label_SDKPRABSPC_1->setVisible(true);
+		ui->label_SDKPRABSPC_2->setVisible(true);
+
+		ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheese");
+
+		ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
+		ui->label_inputsize_2->setText("64 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
+	}
+
 }
