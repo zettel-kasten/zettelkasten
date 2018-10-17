@@ -144,9 +144,7 @@ OBJS= \
     obj/noui.o \
     obj/leveldb.o \
     obj/txdb.o\
-    obj/aes_helper.o \
     obj/keccak.o\
-    obj/bttrackers.o \
     obj/ecdsa.o
 
 all: zettelkastend

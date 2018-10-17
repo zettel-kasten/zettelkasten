@@ -268,3 +268,50 @@ Value verifychain(const Array& params, bool fHelp)
     return VerifyDB(nCheckLevel, nCheckDepth);
 }
 
+Value getwordsalad(const Array& params, bool fHelp)
+{
+	if (fHelp || params.size() < 1 || params.size() > 2)
+		throw runtime_error(
+				"getwordsalad <hash>\n"
+				"returns the word salad string for a specific block <hash>."
+				);
+
+	std::string strHash = params[0].get_str();
+	uint256 hash(strHash);
+
+	if (mapBlockIndex.count(hash) == 0)
+		throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Block not found");
+
+	CBlock block;
+	CBlockIndex* pblockindex = mapBlockIndex[hash];
+	block.ReadFromDisk(pblockindex);
+
+	string str = "";
+	string wordsalad = "";
+
+	uint32_t height = block.GetBlockHeader().nHeight;
+
+	if(height <SDKPGABSPCSSWS_START_HEIGHT){
+		throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "WordSalad only available for blocks >= "+std::to_string(SDKPGABSPCSSWS_START_HEIGHT));
+	}
+
+	ABCBytesForSDKPGAB bytes = GetABCBytesForSDKPGABFromHeight(height);
+
+	uint32_t SDKPGABSPC_sinetable_pos = height%64;
+
+	CBufferStream<185> Header = block.GetBlockHeader().SerializeHeaderForHash2();
+
+	if(height%2 == 0){
+		wordsalad = GetWordSalad_SDKPGABSPCSSWS_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
+	}
+	if(height%2 == 1){
+		wordsalad = GetWordSalad_SDKPGABSPCSSWS_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
+	}
+
+	//str.append(" "+std::to_string(bytes.A)+" "+std::to_string(bytes.B)+" "+std::to_string(SDKPGABSPC_sinetable_pos));
+	//str.append("\n");
+
+	str.append(wordsalad);
+
+	return str;
+}

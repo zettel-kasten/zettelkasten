@@ -1501,7 +1501,21 @@ uint256 CBlock::GetPoWHash() const
 		return termination;
 	}
 
-	if (nHeight >= SDKPGABSPC_START_HEIGHT)
+	if (nHeight >= SDKPGABSPCSSWS_START_HEIGHT)
+	{
+		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
+
+		uint32_t SDKPGABSPC_sinetable_pos = nHeight%64;
+
+		if(nHeight%2 == 0){
+			return HashSDKPGABSPCSSWS_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
+		}
+		if(nHeight%2 == 1){
+			return HashSDKPGABSPCSSWS_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
+		}
+	}
+
+	if (nHeight >= SDKPGABSPC_START_HEIGHT && nHeight < SDKPGABSPCSSWS_START_HEIGHT)
 	{
 		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
 

@@ -237,7 +237,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/macnotificationhandler.h \
     src/qt/splashscreen.h \
     src/qt/qcustomplot.h \
-    src/hashblock.h \
+    src/pow.h \
     src/sph_keccak.h \
     src/sph_types.h \
     src/endiannes.h \

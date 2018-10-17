@@ -186,28 +186,27 @@ static QString formatHashrate(int64 n)
 
 void MiningPage::timerEvent(QTimerEvent *)
 {
-    int64 NetworkHashrate = GetNetworkHashPS(120, -1).get_int64();
-    int64 Hashrate = GetBoolArg("-gen")? gethashespersec(json_spirit::Array(), false).get_int64() : 0;
+	int64 NetworkHashrate = GetNetworkHashPS(120, -1).get_int64();
+	int64 Hashrate = GetBoolArg("-gen")? gethashespersec(json_spirit::Array(), false).get_int64() : 0;
 
-    QString NextBlockTime;
-    if (Hashrate == 0)
-        NextBlockTime = QChar(L'∞');
-    else
-    {
-        CBigNum Target;
-        Target.SetCompact(pindexBest->nBits);
-        CBigNum ExpectedTime = (CBigNum(1) << 256)/(Target*Hashrate);
-        NextBlockTime = formatTimeInterval(ExpectedTime);
-    }
+	QString NextBlockTime;
+	if (Hashrate == 0)
+		NextBlockTime = QChar(L'∞');
+	else
+	{
+		CBigNum Target;
+		Target.SetCompact(pindexBest->nBits);
+		CBigNum ExpectedTime = (CBigNum(1) << 256)/(Target*Hashrate);
+		NextBlockTime = formatTimeInterval(ExpectedTime);
+	}
 
-    ui->labelNethashrate->setText(formatHashrate(NetworkHashrate));
-    ui->labelYourHashrate->setText(formatHashrate(Hashrate));
-    ui->labelNextBlock->setText(NextBlockTime);
+	ui->labelNethashrate->setText(formatHashrate(NetworkHashrate));
+	ui->labelYourHashrate->setText(formatHashrate(Hashrate));
+	ui->labelNextBlock->setText(NextBlockTime);
 
 
 
 	uint nHeight = pindexBest->nHeight+1;
-
 
 	ui->label_SDKPRAB_1->setVisible(false);
 	ui->label_SDKPRAB_2->setVisible(false);
@@ -219,6 +218,7 @@ void MiningPage::timerEvent(QTimerEvent *)
 	ui->label_SDKPRAB_8->setVisible(false);
 
 	ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchup");
+
 
 	ui->label_SDKPRABSPC_1->setVisible(false);
 	ui->label_SDKPRABSPC_2->setVisible(false);
@@ -252,11 +252,48 @@ void MiningPage::timerEvent(QTimerEvent *)
 	if(nHeight >= SDKPGABSPC_START_HEIGHT){
 		ui->label_SDKPRABSPC_1->setVisible(true);
 		ui->label_SDKPRABSPC_2->setVisible(true);
+	}
 
+	if(nHeight >= SDKPGABSPC_START_HEIGHT && nHeight < SDKPGABSPCSSWS_START_HEIGHT){
 		ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheese");
 
 		ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
 		ui->label_inputsize_2->setText("64 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
+	}
+
+	if(nHeight >= SDKPGABSPCSSWS_START_HEIGHT){
+		ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheeseSomethingSomethingWordSalad");
+
+		ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
+		ui->label_inputsize_2->setText("185 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
+
+
+		if(nHeight >= SDKPGABSPCSSWS_START_HEIGHT +1){
+			CBlockIndex* pindex = pindexBest;
+			CBlockIndex* itr = pindex;
+			if(itr != NULL){
+
+				std::string wordsalad = "";
+
+				uint32_t prev_height = pindexBest->GetBlockHeader().nHeight;
+
+				ABCBytesForSDKPGAB bytes = GetABCBytesForSDKPGABFromHeight(prev_height);
+
+				uint32_t SDKPGABSPC_sinetable_pos = prev_height%64;
+
+				CBufferStream<185> Header = pindexBest->GetBlockHeader().SerializeHeaderForHash2();
+
+				if(prev_height%2 == 0){
+					wordsalad = GetWordSalad_SDKPGABSPCSSWS_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
+				}
+				if(prev_height%2 == 1){
+					wordsalad = GetWordSalad_SDKPGABSPCSSWS_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
+				}
+
+				ui->label_wordsalad_title->setText("Block #"+QString::number(prev_height)+" wordsalad:");
+				ui->label_wordsalad->setText(wordsalad.c_str());
+			}
+		}
 	}
 
 }

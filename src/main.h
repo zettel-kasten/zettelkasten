@@ -9,7 +9,7 @@
 #include "sync.h"
 #include "net.h"
 #include "script.h"
-#include "hashblock.h"
+#include "pow.h"
 #include "base58.h"
 
 #include <list>
@@ -50,17 +50,22 @@ class CMasterNodeVote;
 
 struct CBlockIndexWorkComparator;
 
+/** Block Height (>=) for SDKPGABSPCSSWS start height */
+static const unsigned int SDKPGABSPCSSWS_START_HEIGHT = 300000;
+
 /** Block Height (>=) for SDKPGABSPC start height */
 static const unsigned int SDKPGABSPC_START_HEIGHT = 200000;
 
 /** Block Height (>=) for SDKPGAB start height */
 static const unsigned int SDKPGAB_START_HEIGHT = 100000;
 
+
 /** Block Height (>=) for WARNING UPDATE */
-static const unsigned int WARNING_UPDATE_HEIGHT = 280000;
+static const unsigned int WARNING_UPDATE_HEIGHT = 380000;
 
 /** Block Height (>=) for WARNING WRONG CHAIN */
-static const unsigned int WARNING_WRONG_CHAIN_HEIGHT = 300000;
+static const unsigned int WARNING_WRONG_CHAIN_HEIGHT = 400000;
+
 /** Terminate when WARNING WRONG CHAIN true/false*/
 static const bool TERMINATE_WHEN_WRONG_CHAIN = false; //false for main-net
 
