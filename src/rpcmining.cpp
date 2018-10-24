@@ -281,6 +281,13 @@ Value getwork(const Array& params, bool fHelp)
         result.push_back(Pair("true_privkey", HexStr(PrivKey.begin(), PrivKey.end())));
         result.push_back(Pair("privkey",  pmr));
 
+		ABCBytesForSDKPGAB bytes;
+
+		bytes = GetABCBytesForSDKPGABFromHeight(pindexPrev->nHeight+1);
+
+		result.push_back(Pair("A",HexStr(BEGIN(bytes.A), END(bytes.A))));
+		result.push_back(Pair("B",HexStr(BEGIN(bytes.B), END(bytes.B))));
+
         std::vector<uint256> merkle = pblock->GetMerkleBranch(0);
         Array merkle_arr;
 
