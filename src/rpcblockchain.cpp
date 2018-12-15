@@ -295,7 +295,7 @@ Value getwordsalad(const Array& params, bool fHelp)
 		throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "WordSalad only available for blocks >= "+std::to_string(SDKPGABSPCSSWS_START_HEIGHT));
 	}
 
-	ABCBytesForSDKPGAB bytes = GetABCBytesForSDKPGABFromHeight(height);
+    ABCBytesForSDKPGAB bytes = GetABCBytesForSDKPGABFromHash(block.hashPrevBlock);
 
 	uint32_t SDKPGABSPC_sinetable_pos = height%64;
 

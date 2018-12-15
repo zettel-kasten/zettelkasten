@@ -186,7 +186,7 @@ struct ABCBytesForSDKPGAB{
 	uint8_t B;
 	uint8_t C;
 };
-ABCBytesForSDKPGAB GetABCBytesForSDKPGABFromHeight(uint32_t testHeight);
+ABCBytesForSDKPGAB GetABCBytesForSDKPGABFromHash(const uint256& hash);
 
 struct FirstBytesForSDKPGAB{
 	uint8_t n2;
@@ -194,7 +194,7 @@ struct FirstBytesForSDKPGAB{
 	uint8_t n5;
 	uint8_t n7;
 };
-FirstBytesForSDKPGAB GetFirstBytesForSDKPGABFromHeight(uint32_t testHeight);
+FirstBytesForSDKPGAB GetFirstBytesForSDKPGABFromHash(const uint256& hash);
 
 
 /** Register a wallet to receive updates from core */

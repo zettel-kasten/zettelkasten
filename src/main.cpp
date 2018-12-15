@@ -1310,6 +1310,21 @@ CBlockIndex* FindBlockByHeight(int nHeight)
     return pblockindex;
 }
 
+uint256 FindPrevHashByHash(const uint256 &hash)
+{
+    map<uint256, CBlockIndex*>::iterator mbi = mapBlockIndex.find(hash);
+    if (mbi != mapBlockIndex.end())
+    {
+        return (*mbi).second->pprev->GetBlockHash();
+    }
+    map<uint256, CBlock*>::iterator mob = mapOrphanBlocks.find(hash);
+    if (mob != mapOrphanBlocks.end())
+    {
+        return (*mob).second->hashPrevBlock;
+    }
+    return hashGenesisBlock;
+}
+
 bool CBlock::ReadFromDisk(const CBlockIndex* pindex)
 {
     if (!ReadFromDisk(pindex->GetBlockPos()))
@@ -1503,7 +1518,7 @@ uint256 CBlock::GetPoWHash() const
 
 	if (nHeight >= SDKPGABSPCSSWS_START_HEIGHT)
 	{
-		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
+        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
 		uint32_t SDKPGABSPC_sinetable_pos = nHeight%64;
 
@@ -1517,7 +1532,7 @@ uint256 CBlock::GetPoWHash() const
 
 	if (nHeight >= SDKPGABSPC_START_HEIGHT && nHeight < SDKPGABSPCSSWS_START_HEIGHT)
 	{
-		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
+        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
 		uint32_t SDKPGABSPC_sinetable_pos = nHeight%64;
 
@@ -1531,7 +1546,7 @@ uint256 CBlock::GetPoWHash() const
 
 	if (nHeight >= SDKPGAB_START_HEIGHT && nHeight < SDKPGABSPC_START_HEIGHT)
 	{
-		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
+        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
 		if(nHeight%2 == 0){
 			return HashSDKPGAB_EVEN(Header.begin(), Header.end(),bytes.A,bytes.B);
@@ -1548,69 +1563,72 @@ uint256 CBlock::GetPoWHash() const
 
 }
 
-FirstBytesForSDKPGAB GetFirstBytesForSDKPGABFromHeight(uint32_t testHeight) {
+FirstBytesForSDKPGAB GetFirstBytesForSDKPGABFromHash(const uint256& hash) {
 
-	CBlockIndex* pindex2 = FindBlockByHeight(testHeight-2);
-	CBlockIndex* pindex3 = FindBlockByHeight(testHeight-3);
-	CBlockIndex* pindex5 = FindBlockByHeight(testHeight-5);
-	CBlockIndex* pindex7 = FindBlockByHeight(testHeight-7);
+    uint256 hash2 = FindPrevHashByHash(hash);
+    uint256 hash3 = FindPrevHashByHash(hash2);
+    uint256 hash4 = FindPrevHashByHash(hash3);
+    uint256 hash5 = FindPrevHashByHash(hash4);
+    uint256 hash6 = FindPrevHashByHash(hash5);
+    uint256 hash7 = FindPrevHashByHash(hash6);
 
-	uint256 bit_mask;
-	bit_mask.SetHex("00000000000000000000000000000000000000000000000000000000000000FF");
+    uint256 bit_mask;
+    bit_mask.SetHex("00000000000000000000000000000000000000000000000000000000000000FF");
 
-	FirstBytesForSDKPGAB bytes;
+    FirstBytesForSDKPGAB bytes;
 
-	bytes.n2 = (uint8_t)(pindex2->GetBlockHash()&bit_mask).getdouble();
+    bytes.n2 = (uint8_t)(hash2&bit_mask).getdouble();
 
-	bytes.n3 = (uint8_t)(pindex3->GetBlockHash()&bit_mask).getdouble();
+    bytes.n3 = (uint8_t)(hash3&bit_mask).getdouble();
 
-	bytes.n5 = (uint8_t)(pindex5->GetBlockHash()&bit_mask).getdouble();
+    bytes.n5 = (uint8_t)(hash5&bit_mask).getdouble();
 
-	bytes.n7 = (uint8_t)(pindex7->GetBlockHash()&bit_mask).getdouble();
+    bytes.n7 = (uint8_t)(hash7&bit_mask).getdouble();
 
-	return bytes;
+    return bytes;
 }
 
-ABCBytesForSDKPGAB GetABCBytesForSDKPGABFromHeight(uint32_t testHeight) {
+ABCBytesForSDKPGAB GetABCBytesForSDKPGABFromHash(const uint256& hash) {
 
-	uint8_t FB_n2,FB_n3,FB_n5,FB_n7;
-	uint8_t A,B,C;
+    uint8_t FB_n2,FB_n3,FB_n5,FB_n7;
+    uint8_t A,B,C;
+    //force an invalid result (A + B is not equal C), so that this "out of order" invalid block (should it manage to reach this check) will need rechecking once it is "in order" again.
+    ABCBytesForSDKPGAB bytes = { 0xFF, 0xFF, 0xFF };
 
-	if(testHeight <= pindexBest->nHeight+1){
+    uint256 hash2 = FindPrevHashByHash(hash);
+    if (hash2 == hashGenesisBlock) return bytes;
+    uint256 hash3 = FindPrevHashByHash(hash2);
+    if (hash3 == hashGenesisBlock) return bytes;
+    uint256 hash4 = FindPrevHashByHash(hash3);
+    if (hash4 == hashGenesisBlock) return bytes;
+    uint256 hash5 = FindPrevHashByHash(hash4);
+    if (hash5 == hashGenesisBlock) return bytes;
+    uint256 hash6 = FindPrevHashByHash(hash5);
+    if (hash6 == hashGenesisBlock) return bytes;
+    uint256 hash7 = FindPrevHashByHash(hash6);
+    if (hash7 == hashGenesisBlock) return bytes;
 
-	CBlockIndex* pindex2 = FindBlockByHeight(testHeight-2);
-	CBlockIndex* pindex3 = FindBlockByHeight(testHeight-3);
-	CBlockIndex* pindex5 = FindBlockByHeight(testHeight-5);
-	CBlockIndex* pindex7 = FindBlockByHeight(testHeight-7);
+    uint256 bit_mask;
+    bit_mask.SetHex("00000000000000000000000000000000000000000000000000000000000000FF");
 
-	uint256 bit_mask;
-	bit_mask.SetHex("00000000000000000000000000000000000000000000000000000000000000FF");
+    FB_n2 = (uint8_t)(hash2&bit_mask).getdouble();
 
-	FB_n2 = (uint8_t)(pindex2->GetBlockHash()&bit_mask).getdouble();
+    FB_n3 = (uint8_t)(hash3&bit_mask).getdouble();
 
-	FB_n3 = (uint8_t)(pindex3->GetBlockHash()&bit_mask).getdouble();
+    FB_n5 = (uint8_t)(hash5&bit_mask).getdouble();
 
-	FB_n5 = (uint8_t)(pindex5->GetBlockHash()&bit_mask).getdouble();
+    FB_n7 = (uint8_t)(hash7&bit_mask).getdouble();
 
-	FB_n7 = (uint8_t)(pindex7->GetBlockHash()&bit_mask).getdouble();
+    A = FB_n2 + FB_n3;
+    B = FB_n5 + FB_n7;
 
-	A = FB_n2 + FB_n3;
-	B = FB_n5 + FB_n7;
+    C = A + B;
 
-	C = A + B;
-	} else{
-		//force an invalid result (A + B is not equal C), so that this "out of order" invalid block (should it manage to reach this check) will need rechecking once it is "in order" again.
-		A = 0xFF;
-		B = 0xFF;
-		C = 0xFF;
-	}
+    bytes.A = A;
+    bytes.B = B;
+    bytes.C = C;
 
-	ABCBytesForSDKPGAB bytes;
-	bytes.A = A;
-	bytes.B = B;
-	bytes.C = C;
-
-	return bytes;
+    return bytes;
 }
 
 void CBlock::GetPoKData(CBufferStream<MAX_BLOCK_SIZE>& BlockData) const
@@ -1632,7 +1650,7 @@ void CBlock::GetPoKData(CBufferStream<MAX_BLOCK_SIZE>& BlockData) const
 	if (nHeight >= SDKPGAB_START_HEIGHT)
 	{
 		ABCBytesForSDKPGAB bytes;
-		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
+        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
 		FILLER = bytes.C;
 	}
@@ -1688,11 +1706,9 @@ bool CBlock::CheckProofOfWorkLite() const
         return error("CheckProofOfWork() : nBits below minimum work");
 
 	// Check proof of work matches claimed amount (except for the genesis block)
-	//only do this test if block height <= nBestHeight+2, so that SDKPGAB validation can take place
-	if(nHeight <= nBestHeight+2){
+
 	if (GetPoWHash() > bnTarget.getuint256() && GetHash() != hashGenesisBlock)
 		return error("CheckProofOfWork() : hash doesn't match nBits. This block height = %d, your current nBestHeight = %d", nHeight, nBestHeight);
-	}
 
     if (nHeight <= getSecondHardforkBlock() || nHeight < Checkpoints::LastCheckPoint())
         return true;
@@ -2639,13 +2655,10 @@ bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerk
 
 
 	// Check proof of work matches claimed amount
-	//only do this test if block height <= nBestHeight+2, so that SDKPGAB validation can take place
-	if(nHeight <= nBestHeight+2){
-		if (fCheckPOW && !CheckProofOfWork()){
-			//reducing punishment from default 50 to 5
-			return state.DoS(5, error("CheckBlock() : proof of work failed"));
-		}
-	}
+    if (fCheckPOW && !CheckProofOfWork()){
+        //reducing punishment from default 50 to 5
+        return state.DoS(5, error("CheckBlock() : proof of work failed"));
+    }
 
     // Check timestamp
     if (GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60)
@@ -2713,6 +2726,10 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
 
         if (nBits != GetNextWorkRequired(pindexPrev, this))
              return state.DoS(100, error("AcceptBlock() : incorrect proof of work"));
+
+        if (!CheckProofOfWork()){
+            return state.DoS(5, error("AcceptBlock() : proof of work failed"));
+        }
 
         // Prevent blocks from too far in the future
         if (GetBlockTime() > GetAdjustedTime() + 15 * 60)
@@ -2795,7 +2812,7 @@ bool ProcessBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDiskBl
         return state.Invalid(error("ProcessBlock() : already have block (orphan) %s", hash.ToString().c_str()));
 
     // Preliminary checks
-    if (!pblock->CheckBlock(state))
+    if (!pblock->CheckBlock(state, false))
         return error("ProcessBlock() : CheckBlock FAILED");
 
     CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(mapBlockIndex);

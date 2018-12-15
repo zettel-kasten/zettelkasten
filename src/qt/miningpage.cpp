@@ -223,77 +223,77 @@ void MiningPage::timerEvent(QTimerEvent *)
 	ui->label_SDKPRABSPC_1->setVisible(false);
 	ui->label_SDKPRABSPC_2->setVisible(false);
 
-	if(nHeight >= SDKPGAB_START_HEIGHT){
-		ui->label_SDKPRAB_1->setVisible(true);
-		ui->label_SDKPRAB_2->setVisible(true);
-		ui->label_SDKPRAB_3->setVisible(true);
-		ui->label_SDKPRAB_4->setVisible(true);
-		ui->label_SDKPRAB_5->setVisible(true);
-		ui->label_SDKPRAB_6->setVisible(true);
-		ui->label_SDKPRAB_7->setVisible(true);
-		ui->label_SDKPRAB_8->setVisible(true);
+    if(nHeight >= SDKPGAB_START_HEIGHT){
+        ui->label_SDKPRAB_1->setVisible(true);
+        ui->label_SDKPRAB_2->setVisible(true);
+        ui->label_SDKPRAB_3->setVisible(true);
+        ui->label_SDKPRAB_4->setVisible(true);
+        ui->label_SDKPRAB_5->setVisible(true);
+        ui->label_SDKPRAB_6->setVisible(true);
+        ui->label_SDKPRAB_7->setVisible(true);
+        ui->label_SDKPRAB_8->setVisible(true);
 
-		ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeef");
+        ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeef");
 
-		FirstBytesForSDKPGAB first_bytes = GetFirstBytesForSDKPGABFromHeight(nHeight);
-		ui->label_n2->setText(QString::number(first_bytes.n2));
-		ui->label_n3->setText(QString::number(first_bytes.n3));
-		ui->label_n5->setText(QString::number(first_bytes.n5));
-		ui->label_n7->setText(QString::number(first_bytes.n7));
+        FirstBytesForSDKPGAB first_bytes = GetFirstBytesForSDKPGABFromHash(pindexBest->GetBlockHash());
+        ui->label_n2->setText(QString::number(first_bytes.n2));
+        ui->label_n3->setText(QString::number(first_bytes.n3));
+        ui->label_n5->setText(QString::number(first_bytes.n5));
+        ui->label_n7->setText(QString::number(first_bytes.n7));
 
-		ABCBytesForSDKPGAB bytes;
-		bytes = GetABCBytesForSDKPGABFromHeight(nHeight);
-		ui->label_A->setText(QString::number(bytes.A));
-		ui->label_B->setText(QString::number(bytes.B));
-		ui->label_C->setText(QString::number(bytes.C));
-		ui->label_parity->setText((nHeight%2==0)?"even":"odd");
-	}
+        ABCBytesForSDKPGAB bytes;
+        bytes = GetABCBytesForSDKPGABFromHash(pindexBest->GetBlockHash());
+        ui->label_A->setText(QString::number(bytes.A));
+        ui->label_B->setText(QString::number(bytes.B));
+        ui->label_C->setText(QString::number(bytes.C));
+        ui->label_parity->setText((nHeight%2==0)?"even":"odd");
+    }
 
-	if(nHeight >= SDKPGABSPC_START_HEIGHT){
-		ui->label_SDKPRABSPC_1->setVisible(true);
-		ui->label_SDKPRABSPC_2->setVisible(true);
-	}
+    if(nHeight >= SDKPGABSPC_START_HEIGHT){
+        ui->label_SDKPRABSPC_1->setVisible(true);
+        ui->label_SDKPRABSPC_2->setVisible(true);
+    }
 
-	if(nHeight >= SDKPGABSPC_START_HEIGHT && nHeight < SDKPGABSPCSSWS_START_HEIGHT){
-		ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheese");
+    if(nHeight >= SDKPGABSPC_START_HEIGHT && nHeight < SDKPGABSPCSSWS_START_HEIGHT){
+        ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheese");
 
-		ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
-		ui->label_inputsize_2->setText("64 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
-	}
+        ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
+        ui->label_inputsize_2->setText("64 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
+    }
 
-	if(nHeight >= SDKPGABSPCSSWS_START_HEIGHT){
-		ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheeseSomethingSomethingWordSalad");
+    if(nHeight >= SDKPGABSPCSSWS_START_HEIGHT){
+        ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheeseSomethingSomethingWordSalad");
 
-		ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
-		ui->label_inputsize_2->setText("185 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
+        ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
+        ui->label_inputsize_2->setText("185 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
 
 
-		if(nHeight >= SDKPGABSPCSSWS_START_HEIGHT +1){
-			CBlockIndex* pindex = pindexBest;
-			CBlockIndex* itr = pindex;
-			if(itr != NULL){
+        if(nHeight >= SDKPGABSPCSSWS_START_HEIGHT +1){
+            CBlockIndex* pindex = pindexBest;
+            CBlockIndex* itr = pindex;
+            if(itr != NULL){
 
-				std::string wordsalad = "";
+                std::string wordsalad = "";
 
-				uint32_t prev_height = pindexBest->GetBlockHeader().nHeight;
+                uint32_t prev_height = pindexBest->GetBlockHeader().nHeight;
 
-				ABCBytesForSDKPGAB bytes = GetABCBytesForSDKPGABFromHeight(prev_height);
+                ABCBytesForSDKPGAB bytes = GetABCBytesForSDKPGABFromHash(pindexBest->pprev->GetBlockHash());
 
-				uint32_t SDKPGABSPC_sinetable_pos = prev_height%64;
+                uint32_t SDKPGABSPC_sinetable_pos = prev_height%64;
 
-				CBufferStream<185> Header = pindexBest->GetBlockHeader().SerializeHeaderForHash2();
+                CBufferStream<185> Header = pindexBest->GetBlockHeader().SerializeHeaderForHash2();
 
-				if(prev_height%2 == 0){
-					wordsalad = GetWordSalad_SDKPGABSPCSSWS_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-				}
-				if(prev_height%2 == 1){
-					wordsalad = GetWordSalad_SDKPGABSPCSSWS_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-				}
+                if(prev_height%2 == 0){
+                    wordsalad = GetWordSalad_SDKPGABSPCSSWS_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
+                }
+                if(prev_height%2 == 1){
+                    wordsalad = GetWordSalad_SDKPGABSPCSSWS_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
+                }
 
-				ui->label_wordsalad_title->setText("Block #"+QString::number(prev_height)+" wordsalad:");
-				ui->label_wordsalad->setText(wordsalad.c_str());
-			}
-		}
-	}
+                ui->label_wordsalad_title->setText("Block #"+QString::number(prev_height)+" wordsalad:");
+                ui->label_wordsalad->setText(wordsalad.c_str());
+            }
+        }
+    }
 
 }

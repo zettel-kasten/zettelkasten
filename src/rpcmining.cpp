@@ -283,7 +283,7 @@ Value getwork(const Array& params, bool fHelp)
 
 		ABCBytesForSDKPGAB bytes;
 
-		bytes = GetABCBytesForSDKPGABFromHeight(pindexPrev->nHeight+1);
+        bytes = GetABCBytesForSDKPGABFromHash(pindexPrev->GetBlockHash());
 
 		result.push_back(Pair("A",HexStr(BEGIN(bytes.A), END(bytes.A))));
 		result.push_back(Pair("B",HexStr(BEGIN(bytes.B), END(bytes.B))));
