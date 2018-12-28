@@ -681,4 +681,176 @@ inline std::string GetWordSalad_SDKPGABSPCSSWS_ODD(const T1 pbegin, const T1 pen
 	return str;
 }
 
+
+
+
+
+
+
+
+template<typename T1>
+inline uint256 HashSDKPGABSPCSSWSSBP_EVEN(const T1 pbegin, const T1 pend, uint8_t A, uint8_t B, uint32_t sinetable_pos, uint256 pubkey_hashPrevBlock)
+
+{
+	sph_keccak512_context    ctx_keccak;
+	sph_keccak512_context    ctx_keccak2;
+	static unsigned char pblank[1];
+
+	uint512 temp_hash;
+	uint512 hash[2];
+
+	sph_keccak512_init(&ctx_keccak);
+	sph_keccak512 (&ctx_keccak, (pbegin == pend ? pblank : static_cast<const void*>(&pbegin[0])), (pend - pbegin) * sizeof(pbegin[0]));
+	sph_keccak512 (&ctx_keccak, (pbegin == pend ? pblank : static_cast<const void*>(&pbegin[0])), SDKPGABSPC_sinetable[sinetable_pos] * sizeof(pbegin[0]));
+	sph_keccak512_close(&ctx_keccak, static_cast<void*>(&hash[0]));
+
+	temp_hash = hash[0];
+	hash[0] = temp_hash<<A;
+	temp_hash >>=(512-A);
+	hash[0] += temp_hash;
+
+	std::string str = "";
+	uint32_t p = 0;
+	uint32_t rnd;
+
+	while(str.length()<121){
+		rnd = hash[0].begin()[p]+(hash[0].begin()[p+1]<<8);
+		str.append(adjective_list[rnd%323]);//.c_str());
+		str.append(" ");
+		p+=2;
+
+		rnd = hash[0].begin()[p]+(hash[0].begin()[p+1]<<8);
+		str.append(noun_list[rnd%1222]);//.c_str());
+		str.append(" ");
+		p+=2;
+
+		rnd = hash[0].begin()[p]+(hash[0].begin()[p+1]<<8);
+		str.append(verb_list[rnd%433]);//.c_str());
+		str.append(" ");
+		p+=2;
+
+		rnd = hash[0].begin()[p];
+		str.append(adverb_list[rnd%48]);//.c_str());
+		str.append(" ");
+		p++;
+
+		rnd = hash[0].begin()[p];
+		if(rnd<32){
+			str.append(preposition_list[rnd%15]);//.c_str());
+			str.append(" ");
+		} else if(rnd>=224){
+			str.append(conjunctive_list[rnd%7]);//.c_str());
+			str.append(" ");
+		}
+		p++;
+	}
+
+	const char *cstr = str.c_str();
+
+	sph_keccak512_init(&ctx_keccak2);
+	sph_keccak512 (&ctx_keccak2, static_cast<const void*>(&cstr[0]), 121);
+	sph_keccak512 (&ctx_keccak2, static_cast<const void*>(&hash[0]), 64);
+	sph_keccak512 (&ctx_keccak2, static_cast<const void*>(&pubkey_hashPrevBlock), 32);
+	sph_keccak512 (&ctx_keccak2, static_cast<const void*>(&hash[0]), 64-SDKPGABSPC_sinetable[sinetable_pos]);
+	sph_keccak512_close(&ctx_keccak2, static_cast<void*>(&hash[1]));
+
+	hash[1] =~hash[1];
+
+	temp_hash = hash[1];
+	hash[1] = temp_hash>>B;
+	temp_hash <<=(512-B);
+	hash[1] += temp_hash;
+
+	return hash[1].trim256();
+}
+
+
+template<typename T1>
+inline uint256 HashSDKPGABSPCSSWSSBP_ODD(const T1 pbegin, const T1 pend, uint8_t A, uint8_t B, uint32_t sinetable_pos, uint256 pubkey_hashPrevBlock)
+
+{
+	sph_keccak512_context    ctx_keccak;
+	sph_keccak512_context    ctx_keccak2;
+	static unsigned char pblank[1];
+
+	uint512 temp_hash;
+	uint512 hash[2];
+
+	sph_keccak512_init(&ctx_keccak);
+	sph_keccak512 (&ctx_keccak, (pbegin == pend ? pblank : static_cast<const void*>(&pbegin[0])), (pend - pbegin) * sizeof(pbegin[0]));
+	sph_keccak512 (&ctx_keccak, (pbegin == pend ? pblank : static_cast<const void*>(&pbegin[0])), SDKPGABSPC_sinetable[sinetable_pos] * sizeof(pbegin[0]));
+	sph_keccak512_close(&ctx_keccak, static_cast<void*>(&hash[0]));
+
+	hash[0] =~hash[0];
+
+	temp_hash = hash[0];
+	hash[0] = temp_hash<<A;
+	temp_hash >>=(512-A);
+	hash[0] += temp_hash;
+
+	std::string str = "";
+	uint32_t p = 0;
+	uint32_t rnd;
+
+	while(str.length()<121){
+		rnd = hash[0].begin()[p]+(hash[0].begin()[p+1]<<8);
+		str.append(adjective_list[rnd%323]);//.c_str());
+		str.append(" ");
+		p+=2;
+
+		rnd = hash[0].begin()[p]+(hash[0].begin()[p+1]<<8);
+		str.append(noun_list[rnd%1222]);//.c_str());
+		str.append(" ");
+		p+=2;
+
+		rnd = hash[0].begin()[p]+(hash[0].begin()[p+1]<<8);
+		str.append(verb_list[rnd%433]);//.c_str());
+		str.append(" ");
+		p+=2;
+
+		rnd = hash[0].begin()[p];
+		str.append(adverb_list[rnd%48]);//.c_str());
+		str.append(" ");
+		p++;
+
+		rnd = hash[0].begin()[p];
+		if(rnd<32){
+			str.append(preposition_list[rnd%15]);//.c_str());
+			str.append(" ");
+		} else if(rnd>=224){
+			str.append(conjunctive_list[rnd%7]);//.c_str());
+			str.append(" ");
+		}
+		p++;
+	}
+
+	const char *cstr = str.c_str();
+
+	sph_keccak512_init(&ctx_keccak2);
+	sph_keccak512 (&ctx_keccak2, static_cast<const void*>(&cstr[0]), 121);
+	sph_keccak512 (&ctx_keccak2, static_cast<const void*>(&hash[0]), 64);
+	sph_keccak512 (&ctx_keccak2, static_cast<const void*>(&pubkey_hashPrevBlock), 32);
+	sph_keccak512 (&ctx_keccak2, static_cast<const void*>(&hash[0]), 64-SDKPGABSPC_sinetable[sinetable_pos]);
+	sph_keccak512_close(&ctx_keccak2, static_cast<void*>(&hash[1]));
+
+	temp_hash = hash[1];
+	hash[1] = temp_hash>>B;
+	temp_hash <<=(512-B);
+	hash[1] += temp_hash;
+
+	return hash[1].trim256();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif // POW_H

@@ -20,6 +20,9 @@
 #include <algorithm>
 #include <boost/assign/list_of.hpp>
 
+#include <openssl/ec.h> // for SDKPGABSPCSSWSSBP
+#include <openssl/obj_mac.h> // for SDKPGABSPCSSWSSBP
+
 using namespace std;
 using namespace boost;
 
@@ -70,6 +73,8 @@ multimap<uint256, CBlock*> mapOrphanBlocksByPrev;
 
 map<uint256, CTransaction> mapOrphanTransactions;
 map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
+
+std::map<uint256,uint256> SDKPGABSPCSSWSSBP_keymap; //SDKPGABSPCSSWSSBP_keymap for onetime calculated privkey/pubkey
 
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
@@ -1502,6 +1507,55 @@ uint256 CBlockHeader::GetHash() const
     }
 }
 
+uint256 SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(uint256 priv_key){
+	EC_KEY *eckey = NULL;
+	EC_POINT *pub_key = NULL;
+	const EC_GROUP *group = NULL;
+	BIGNUM start;
+	BIGNUM *res;
+	BN_CTX *ctx;
+
+	BN_init(&start);
+	ctx = BN_CTX_new();
+
+	res = &start;
+
+	BN_hex2bn(&res,priv_key.GetHex().c_str());
+
+	eckey = EC_KEY_new_by_curve_name(NID_secp256k1);
+	group = EC_KEY_get0_group(eckey);
+	pub_key = EC_POINT_new(group);
+
+	EC_KEY_set_private_key(eckey, res);
+
+	if (!EC_POINT_mul(group, pub_key, res, NULL, NULL, ctx)){
+		//
+	}
+
+	EC_KEY_set_public_key(eckey, pub_key);
+
+	char *cc = EC_POINT_point2hex(group, pub_key, POINT_CONVERSION_COMPRESSED, ctx);
+
+	std::string pub_str;
+
+	for (int i=0; i<64; i++) // normally 33 bytes, but cut down the last one to fit into uint256
+	{
+		pub_str += cc[i];
+	}
+
+	uint256 pub256;
+	pub256.SetHex(pub_str.c_str());
+
+	BN_CTX_free(ctx);
+
+	free(cc);
+
+	EC_POINT_free(pub_key);
+	EC_KEY_free(eckey);
+
+	return pub256;
+}
+
 uint256 CBlock::GetPoWHash() const
 {
 	CBufferStream<185> Header = SerializeHeaderForHash2();
@@ -1516,9 +1570,32 @@ uint256 CBlock::GetPoWHash() const
 		return termination;
 	}
 
-	if (nHeight >= SDKPGABSPCSSWS_START_HEIGHT)
+	if (nHeight >= SDKPGABSPCSSWSSBP_START_HEIGHT)
 	{
-        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
+		bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
+
+		uint32_t SDKPGABSPC_sinetable_pos = nHeight%64;
+
+		uint256 pubkey_hashPrevBlock;
+
+		if(!SDKPGABSPCSSWSSBP_keymap.count(hashPrevBlock)){
+			pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
+			SDKPGABSPCSSWSSBP_keymap.insert(std::make_pair(hashPrevBlock,pubkey_hashPrevBlock));
+		};
+
+		pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_keymap[hashPrevBlock];
+
+		if(nHeight%2 == 0){
+			return HashSDKPGABSPCSSWSSBP_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos, pubkey_hashPrevBlock);
+		}
+		if(nHeight%2 == 1){
+			return HashSDKPGABSPCSSWSSBP_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos, pubkey_hashPrevBlock);
+		}
+	}
+
+	else if (nHeight >= SDKPGABSPCSSWS_START_HEIGHT)
+	{
+		bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
 		uint32_t SDKPGABSPC_sinetable_pos = nHeight%64;
 
@@ -1530,9 +1607,9 @@ uint256 CBlock::GetPoWHash() const
 		}
 	}
 
-	if (nHeight >= SDKPGABSPC_START_HEIGHT && nHeight < SDKPGABSPCSSWS_START_HEIGHT)
+	else if (nHeight >= SDKPGABSPC_START_HEIGHT)
 	{
-        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
+		bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
 		uint32_t SDKPGABSPC_sinetable_pos = nHeight%64;
 
@@ -1544,9 +1621,9 @@ uint256 CBlock::GetPoWHash() const
 		}
 	}
 
-	if (nHeight >= SDKPGAB_START_HEIGHT && nHeight < SDKPGABSPC_START_HEIGHT)
+	else if(nHeight >= SDKPGAB_START_HEIGHT)
 	{
-        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
+		bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
 		if(nHeight%2 == 0){
 			return HashSDKPGAB_EVEN(Header.begin(), Header.end(),bytes.A,bytes.B);
@@ -1556,11 +1633,7 @@ uint256 CBlock::GetPoWHash() const
 		}
 	}
 
-	if (nHeight < SDKPGAB_START_HEIGHT)
-	{
-		return HashSDK(Header.begin(), Header.end());
-	}
-
+	return HashSDK(Header.begin(), Header.end());
 }
 
 FirstBytesForSDKPGAB GetFirstBytesForSDKPGABFromHash(const uint256& hash) {

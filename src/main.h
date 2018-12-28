@@ -50,6 +50,9 @@ class CMasterNodeVote;
 
 struct CBlockIndexWorkComparator;
 
+/** Block Height (>=) for SDKPGABSPCSSWSSBP start height */
+static const unsigned int SDKPGABSPCSSWSSBP_START_HEIGHT = 400000;
+
 /** Block Height (>=) for SDKPGABSPCSSWS start height */
 static const unsigned int SDKPGABSPCSSWS_START_HEIGHT = 300000;
 
@@ -61,10 +64,10 @@ static const unsigned int SDKPGAB_START_HEIGHT = 100000;
 
 
 /** Block Height (>=) for WARNING UPDATE */
-static const unsigned int WARNING_UPDATE_HEIGHT = 380000;
+static const unsigned int WARNING_UPDATE_HEIGHT = 480000;
 
 /** Block Height (>=) for WARNING WRONG CHAIN */
-static const unsigned int WARNING_WRONG_CHAIN_HEIGHT = 400000;
+static const unsigned int WARNING_WRONG_CHAIN_HEIGHT = 500000;
 
 /** Terminate when WARNING WRONG CHAIN true/false*/
 static const bool TERMINATE_WHEN_WRONG_CHAIN = false; //false for main-net
@@ -196,6 +199,7 @@ struct FirstBytesForSDKPGAB{
 };
 FirstBytesForSDKPGAB GetFirstBytesForSDKPGABFromHash(const uint256& hash);
 
+uint256 SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(uint256 priv_key);
 
 /** Register a wallet to receive updates from core */
 void RegisterWallet(CWallet* pwalletIn);

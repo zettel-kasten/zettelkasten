@@ -296,4 +296,22 @@ void MiningPage::timerEvent(QTimerEvent *)
         }
     }
 
+	if(nHeight >= SDKPGABSPCSSWSSBP_START_HEIGHT){
+		ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheeseSomethingSomethingWordSaladSenoritaBonitaPepita");
+
+		ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
+		ui->label_inputsize_2->setText("185 + 32 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
+
+		ui->label_pepita_title->setText("hashPrevBlock keypair:");
+
+		uint256 hashPrevBlock = pindexBest->GetBlockHash();
+		ui->label_pepita_privkey->setText(hashPrevBlock.GetHex().c_str());
+
+		uint256 pubkey_hashPrevBlock;
+
+		pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
+
+		ui->label_pepita_pubkey->setText(pubkey_hashPrevBlock.GetHex().c_str());
+	}
+
 }
