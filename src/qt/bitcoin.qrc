@@ -49,8 +49,6 @@
         <file alias="splash">res/images/splash.png</file>
         <file alias="splash_testnet">res/images/splash_testnet.png</file>
         <file alias="zettelkasten_plain">res/images/zettelkasten_plain.png</file>
-        <file alias="warning_update">res/images/warning_update.png</file>
-        <file alias="warning_wrong_fork">res/images/warning_wrong_fork.png</file>
     </qresource>
     <qresource prefix="/movies">
         <file alias="update_spinner">res/movies/update_spinner.mng</file>

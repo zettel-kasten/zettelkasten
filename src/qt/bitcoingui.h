@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <QSystemTrayIcon>
 #include <QMap>
-#include <QPropertyAnimation>
 
 class TransactionTableModel;
 class WalletFrame;
@@ -73,8 +72,6 @@ public:
 
 	void timerEvent(QTimerEvent *event);
 	void resizeEvent(QResizeEvent *event);
-	QLabel *WARNING_UPDATE;
-	QPropertyAnimation *animation;
 
 protected:
     void changeEvent(QEvent *e);

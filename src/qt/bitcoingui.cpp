@@ -151,10 +151,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent) :
     // Initially wallet actions should be disabled
     setWalletActionsEnabled(false);
 
-	WARNING_UPDATE = new QLabel(this);
-	WARNING_UPDATE->setPixmap( QPixmap(":/images/warning_update"));
-	WARNING_UPDATE->setContentsMargins(0,0,0,0);
-	WARNING_UPDATE->adjustSize();
 	startTimer(1500);
 }
 
@@ -800,28 +796,12 @@ bool BitcoinGUI::eventFilter(QObject *object, QEvent *event)
 
 void BitcoinGUI::timerEvent(QTimerEvent *event)
 {
-	if(nBestHeight>=WARNING_UPDATE_HEIGHT){
-		if(WARNING_UPDATE->x() >=this->width()+1){
-			animation = new QPropertyAnimation(WARNING_UPDATE, "pos");
-			animation->setDuration(500);
-			animation->setStartValue(QPoint(WARNING_UPDATE->x(), this->height()/2-129));
-			animation->setEndValue(QPoint(this->width()-140, this->height()/2-129));
-			animation->setEasingCurve(QEasingCurve::InCubic);
-			animation->start();
-		}
-	}
-	if(nBestHeight>=WARNING_WRONG_CHAIN_HEIGHT){
-		WARNING_UPDATE->setPixmap( QPixmap(":/images/warning_wrong_fork"));
-	}
+
 }
 
 void BitcoinGUI::resizeEvent(QResizeEvent *event)
 {
-	if(nBestHeight>=WARNING_UPDATE_HEIGHT){
-		WARNING_UPDATE->move(this->width()-140,this->height()/2-129);
-	} else{
-		WARNING_UPDATE->move(this->width()+1,this->height()/2-129);
-	}
+
 }
 
 void BitcoinGUI::handleURI(QString strURI)
