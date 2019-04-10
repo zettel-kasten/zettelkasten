@@ -283,12 +283,10 @@ void MiningPage::timerEvent(QTimerEvent *)
 
                 CBufferStream<185> Header = pindexBest->GetBlockHeader().SerializeHeaderForHash2();
 
-                if(prev_height%2 == 0){
-                    wordsalad = GetWordSalad_SDKPGABSPCSSWS_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-                }
-                if(prev_height%2 == 1){
-                    wordsalad = GetWordSalad_SDKPGABSPCSSWS_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-                }
+                wordsalad = GetWordSalad_SDKPGABSPCSSWS(Header.begin(), Header.end(),
+                                            (prev_height%2 == 0),
+                                            bytes.A, bytes.B,
+                                            SDKPGABSPC_sinetable_pos);
 
                 ui->label_wordsalad_title->setText("Block #"+QString::number(prev_height)+" wordsalad:");
                 ui->label_wordsalad->setText(wordsalad.c_str());

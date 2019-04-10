@@ -301,12 +301,12 @@ Value getwordsalad(const Array& params, bool fHelp)
 
 	CBufferStream<185> Header = block.GetBlockHeader().SerializeHeaderForHash2();
 
-	if(height%2 == 0){
-		wordsalad = GetWordSalad_SDKPGABSPCSSWS_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-	}
-	if(height%2 == 1){
-		wordsalad = GetWordSalad_SDKPGABSPCSSWS_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-	}
+    if(height >=SDKPGABSPCSSWS_START_HEIGHT){
+        wordsalad = GetWordSalad_SDKPGABSPCSSWS(Header.begin(), Header.end(),
+                                            (height%2 == 0),
+                                            bytes.A, bytes.B,
+                                            SDKPGABSPC_sinetable_pos);
+    }
 
 	//str.append(" "+std::to_string(bytes.A)+" "+std::to_string(bytes.B)+" "+std::to_string(SDKPGABSPC_sinetable_pos));
 	//str.append("\n");

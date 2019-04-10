@@ -1558,74 +1558,64 @@ uint256 SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(uint256 priv_key){
 
 uint256 CBlock::GetPoWHash() const
 {
-	CBufferStream<185> Header = SerializeHeaderForHash2();
+    CBufferStream<185> Header = SerializeHeaderForHash2();
 
-	ABCBytesForSDKPGAB bytes;
+    bool nHeight_even;
+    ABCBytesForSDKPGAB bytes;
+    uint32_t SDKPGABSPC_sinetable_pos;
+    uint256 pubkey_hashPrevBlock;
 
-	if (nHeight >= SDKPGABSPCSSWSSBP_START_HEIGHT)
-	{
-		bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
+    SDKPGABSPC_sinetable_pos = nHeight%64;
+    nHeight_even = (nHeight%2 == 0);
 
-		uint32_t SDKPGABSPC_sinetable_pos = nHeight%64;
+    if (nHeight >= SDKPGABSPCSSWSSBP_START_HEIGHT)
+    {
+        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
-		uint256 pubkey_hashPrevBlock;
+        if(!SDKPGABSPCSSWSSBP_keymap.count(hashPrevBlock)){
+            pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
+            SDKPGABSPCSSWSSBP_keymap.insert(std::make_pair(hashPrevBlock,pubkey_hashPrevBlock));
+        };
 
-		if(!SDKPGABSPCSSWSSBP_keymap.count(hashPrevBlock)){
-			pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
-			SDKPGABSPCSSWSSBP_keymap.insert(std::make_pair(hashPrevBlock,pubkey_hashPrevBlock));
-		};
+        pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_keymap[hashPrevBlock];
 
-		pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_keymap[hashPrevBlock];
+        return HashSDKPGABSPCSSWSSBP(Header.begin(), Header.end(),
+                                     nHeight_even,
+                                     bytes.A, bytes.B,
+                                     SDKPGABSPC_sinetable_pos,
+                                     pubkey_hashPrevBlock);
+    }
 
-		if(nHeight%2 == 0){
-			return HashSDKPGABSPCSSWSSBP_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos, pubkey_hashPrevBlock);
-		}
-		if(nHeight%2 == 1){
-			return HashSDKPGABSPCSSWSSBP_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos, pubkey_hashPrevBlock);
-		}
-	}
+    else if (nHeight >= SDKPGABSPCSSWS_START_HEIGHT)
+    {
+        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
-	else if (nHeight >= SDKPGABSPCSSWS_START_HEIGHT)
-	{
-		bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
+        return HashSDKPGABSPCSSWS(Header.begin(), Header.end(),
+                                  nHeight_even,
+                                  bytes.A, bytes.B,
+                                  SDKPGABSPC_sinetable_pos);
+    }
 
-		uint32_t SDKPGABSPC_sinetable_pos = nHeight%64;
+    else if (nHeight >= SDKPGABSPC_START_HEIGHT)
+    {
+        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
-		if(nHeight%2 == 0){
-			return HashSDKPGABSPCSSWS_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-		}
-		if(nHeight%2 == 1){
-			return HashSDKPGABSPCSSWS_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-		}
-	}
+        return HashSDKPGABSPC(Header.begin(), Header.end(),
+                              nHeight_even,
+                              bytes.A, bytes.B,
+                              SDKPGABSPC_sinetable_pos);
+    }
 
-	else if (nHeight >= SDKPGABSPC_START_HEIGHT)
-	{
-		bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
+    else if(nHeight >= SDKPGAB_START_HEIGHT)
+    {
+        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 
-		uint32_t SDKPGABSPC_sinetable_pos = nHeight%64;
+        return HashSDKPGAB(Header.begin(), Header.end(),
+                           nHeight_even,
+                           bytes.A,bytes.B);
+    }
 
-		if(nHeight%2 == 0){
-			return HashSDKPGABSPC_EVEN(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-		}
-		if(nHeight%2 == 1){
-			return HashSDKPGABSPC_ODD(Header.begin(), Header.end(), bytes.A, bytes.B, SDKPGABSPC_sinetable_pos);
-		}
-	}
-
-	else if(nHeight >= SDKPGAB_START_HEIGHT)
-	{
-		bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
-
-		if(nHeight%2 == 0){
-			return HashSDKPGAB_EVEN(Header.begin(), Header.end(),bytes.A,bytes.B);
-		}
-		if(nHeight%2 == 1){
-			return HashSDKPGAB_ODD(Header.begin(), Header.end(),bytes.A,bytes.B);
-		}
-	}
-
-	return HashSDK(Header.begin(), Header.end());
+    return HashSDK(Header.begin(), Header.end());
 }
 
 FirstBytesForSDKPGAB GetFirstBytesForSDKPGABFromHash(const uint256& hash) {

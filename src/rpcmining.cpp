@@ -288,6 +288,13 @@ Value getwork(const Array& params, bool fHelp)
 		result.push_back(Pair("A",HexStr(BEGIN(bytes.A), END(bytes.A))));
 		result.push_back(Pair("B",HexStr(BEGIN(bytes.B), END(bytes.B))));
 
+        uint256 hashPrevBlock = pindexBest->GetBlockHash();
+        uint256 pubkey_hashPrevBlock;
+
+        pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
+
+        result.push_back(Pair("prevhashblock",   HexStr(BEGIN(pubkey_hashPrevBlock), END(pubkey_hashPrevBlock))));
+
         std::vector<uint256> merkle = pblock->GetMerkleBranch(0);
         Array merkle_arr;
 
