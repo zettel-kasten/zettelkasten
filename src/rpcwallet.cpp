@@ -1608,3 +1608,14 @@ Value listlockunspent(const Array& params, bool fHelp)
     return ret;
 }
 
+Value getmoneysupply(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() != 0)
+        throw runtime_error(
+            "getmoneysupply\n"
+            "Returns total amount of coins in circulation.\n");
+
+    boost::int64_t moneysupply = GetTotalSupply();
+
+    return ValueFromAmount(moneysupply);
+}
