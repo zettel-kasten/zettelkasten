@@ -205,23 +205,27 @@ void MiningPage::timerEvent(QTimerEvent *)
 	ui->labelNextBlock->setText(NextBlockTime);
 
 
+    uint nHeight = pindexBest->nHeight+1;
 
-	uint nHeight = pindexBest->nHeight+1;
+    ui->label_SDKPRAB_1->setVisible(false);
+    ui->label_SDKPRAB_2->setVisible(false);
+    ui->label_SDKPRAB_3->setVisible(false);
+    ui->label_SDKPRAB_4->setVisible(false);
+    ui->label_SDKPRAB_5->setVisible(false);
+    ui->label_SDKPRAB_6->setVisible(false);
+    ui->label_SDKPRAB_7->setVisible(false);
+    ui->label_SDKPRAB_8->setVisible(false);
 
-	ui->label_SDKPRAB_1->setVisible(false);
-	ui->label_SDKPRAB_2->setVisible(false);
-	ui->label_SDKPRAB_3->setVisible(false);
-	ui->label_SDKPRAB_4->setVisible(false);
-	ui->label_SDKPRAB_5->setVisible(false);
-	ui->label_SDKPRAB_6->setVisible(false);
-	ui->label_SDKPRAB_7->setVisible(false);
-	ui->label_SDKPRAB_8->setVisible(false);
-
-	ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchup");
+    ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchup");
 
 
-	ui->label_SDKPRABSPC_1->setVisible(false);
-	ui->label_SDKPRABSPC_2->setVisible(false);
+    ui->label_SDKPRABSPC_1->setVisible(false);
+    ui->label_SDKPRABSPC_2->setVisible(false);
+
+    ui->label_ace_light->setVisible(false);
+    ui->label_ace_light_strength->setVisible(false);
+    ui->label_recent_instructions->setVisible(false);
+    ui->label_recent_instructions_list->setVisible(false);
 
     if(nHeight >= SDKPGAB_START_HEIGHT){
         ui->label_SDKPRAB_1->setVisible(true);
@@ -261,6 +265,30 @@ void MiningPage::timerEvent(QTimerEvent *)
         ui->label_inputsize_2->setText("64 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
     }
 
+    //ACE-LIGHT INSTRUCTION CHAIN for mininginfo:
+    std::vector<unsigned int> SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN;
+    unsigned int ace_light_strength;
+
+    if(nHeight >=SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT){
+
+        const uint32_t dist = (nHeight-SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT);
+        const uint32_t instr_i = (dist/SDKPGABSPCSSWSSBP_ACELIGHT_SPACING);
+
+        if(SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.size() < (instr_i+1)){
+            SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.resize(instr_i+1);
+
+            const uint32_t ace_first_height = SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT-SDKPGABSPCSSWSSBP_ACELIGHT_DISTANCE;
+
+            for(int i = 0; i<=instr_i;i++){
+                SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.at(i) =
+                        FindBlockByHeight(ace_first_height
+                                          +(i*SDKPGABSPCSSWSSBP_ACELIGHT_SPACING))->GetBlockHash().Get64(0);
+            };
+        };
+
+        ace_light_strength = SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.size();
+    }
+
     if(nHeight >= SDKPGABSPCSSWS_START_HEIGHT){
         ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheeseSomethingSomethingWordSalad");
 
@@ -283,10 +311,26 @@ void MiningPage::timerEvent(QTimerEvent *)
 
                 CBufferStream<185> Header = pindexBest->GetBlockHeader().SerializeHeaderForHash2();
 
-                wordsalad = GetWordSalad_SDKPGABSPCSSWS(Header.begin(), Header.end(),
-                                            (prev_height%2 == 0),
-                                            bytes.A, bytes.B,
-                                            SDKPGABSPC_sinetable_pos);
+                if(prev_height >=SDKPGABSPCSSWS_START_HEIGHT && prev_height < SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT){
+                    wordsalad = GetWordSalad_SDKPGABSPCSSWS(Header.begin(), Header.end(),
+                                                        (prev_height%2 == 0),
+                                                        bytes.A, bytes.B,
+                                                        SDKPGABSPC_sinetable_pos);
+                }
+
+                if(prev_height >=SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT){
+
+                    //attention, calculated for previous block:
+                    const uint32_t dist = (prev_height-SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT);
+                    const uint32_t instr_i = (dist/SDKPGABSPCSSWSSBP_ACELIGHT_SPACING);
+                    ace_light_strength = instr_i+1;
+
+                    wordsalad = GetWordSalad_SDKPGABSPCSSWSSBP_ACELIGHT(Header.begin(), Header.end(),
+                                                                        (prev_height%2 == 0),
+                                                                        bytes.A, bytes.B,
+                                                                        SDKPGABSPC_sinetable_pos,
+                                                                        &SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN, ace_light_strength);
+                }
 
                 ui->label_wordsalad_title->setText("Block #"+QString::number(prev_height)+" wordsalad:");
                 ui->label_wordsalad->setText(wordsalad.c_str());
@@ -294,22 +338,86 @@ void MiningPage::timerEvent(QTimerEvent *)
         }
     }
 
-	if(nHeight >= SDKPGABSPCSSWSSBP_START_HEIGHT){
-		ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheeseSomethingSomethingWordSaladSenoritaBonitaPepita");
+    if(nHeight >= SDKPGABSPCSSWSSBP_START_HEIGHT){
+        ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheeseSomethingSomethingWordSaladSenoritaBonitaPepita");
 
-		ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
-		ui->label_inputsize_2->setText("185 + 32 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
+        ui->label_inputsize_1->setText("185 + "+QString::number(SDKPGABSPC_sinetable[nHeight%64]));
+        ui->label_inputsize_2->setText("185 + 32 + "+QString::number(64-SDKPGABSPC_sinetable[nHeight%64]));
 
-		ui->label_pepita_title->setText("hashPrevBlock keypair:");
+        ui->label_pepita_title->setText("hashPrevBlock keypair:");
 
-		uint256 hashPrevBlock = pindexBest->GetBlockHash();
-		ui->label_pepita_privkey->setText(hashPrevBlock.GetHex().c_str());
+        uint256 hashPrevBlock = pindexBest->GetBlockHash();
+        ui->label_pepita_privkey->setText(hashPrevBlock.GetHex().c_str());
 
-		uint256 pubkey_hashPrevBlock;
+        uint256 pubkey_hashPrevBlock;
 
-		pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
+        pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
 
-		ui->label_pepita_pubkey->setText(pubkey_hashPrevBlock.GetHex().c_str());
-	}
+        ui->label_pepita_pubkey->setText(pubkey_hashPrevBlock.GetHex().c_str());
+    }
+
+    if(nHeight >= SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT){
+        ui->label_hashalgo->setText("mining block with height "+QString::number(nHeight)+" using SpreadDoubleKetchupPrimeGradeABeefStickyPuffyCheeseSomethingSomethingWordSaladSenoritaBonitaPepita-AlgoComposerEngineLight");
+
+        ui->label_ace_light->setVisible(true);
+        ui->label_ace_light_strength->setVisible(true);
+        ui->label_recent_instructions->setVisible(true);
+        ui->label_recent_instructions_list->setVisible(true);
+
+        ui->label_ace_light_strength->setText(QString::number(ace_light_strength));
+        QString ace_instructions_str = "...";
+
+        int ace_instruction_count_start = ace_light_strength-5;
+
+        if(ace_instruction_count_start<=0){
+            ace_instruction_count_start = 0;
+        }
+
+        unsigned char ACELIGHT_METHOD;
+        unsigned short ACELIGHT_BYTE_A;  //modulo 46
+        unsigned short ACELIGHT_BYTE_B;  //modulo 46
+        unsigned short ACELIGHT_BYTE_A_FULL;
+        unsigned short ACELIGHT_BYTE_B_FULL;
+        unsigned short ACELIGHT_BIT;  //modulo 368
+
+        for (int i = ace_instruction_count_start; i<ace_light_strength;i++){
+            uint32_t instruction = SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.at(i);
+            ACELIGHT_METHOD = (((unsigned char*)&instruction)[0])>>5;
+            ACELIGHT_BYTE_A_FULL = ((unsigned char*)&instruction)[1];
+            ACELIGHT_BYTE_B_FULL = ((unsigned char*)&instruction)[2];
+            ACELIGHT_BYTE_A = ACELIGHT_BYTE_A_FULL%46;
+            ACELIGHT_BYTE_B = ACELIGHT_BYTE_B_FULL%46;
+            ACELIGHT_BIT = ((ACELIGHT_BYTE_A_FULL<<8) + ACELIGHT_BYTE_B_FULL) % 368;
+
+            ace_instructions_str.append("  -  (");
+            if(ACELIGHT_METHOD == 0){
+                ace_instructions_str.append("SWAP.BYTES "+QString::number(ACELIGHT_BYTE_A,16)+" "+QString::number(ACELIGHT_BYTE_B,16));
+            }
+            else if(ACELIGHT_METHOD == 1){
+                ace_instructions_str.append("ROTL.BYTES "+QString::number(ACELIGHT_BYTE_A,16)+" "+QString::number(ACELIGHT_BYTE_B,16));
+            }
+            else if(ACELIGHT_METHOD == 2){
+                ace_instructions_str.append("ROTR.BYTES "+QString::number(ACELIGHT_BYTE_A,16)+" "+QString::number(ACELIGHT_BYTE_B,16));
+            }
+            else if(ACELIGHT_METHOD == 3){
+                ace_instructions_str.append("INV.BYTES "+QString::number(ACELIGHT_BYTE_A,16)+" "+QString::number(ACELIGHT_BYTE_B,16));
+            }
+            else if(ACELIGHT_METHOD == 4){
+                ace_instructions_str.append("SET.BIT "+QString::number(ACELIGHT_BIT,16));
+            }
+            else if(ACELIGHT_METHOD == 5){
+                ace_instructions_str.append("UNSET.BIT "+QString::number(ACELIGHT_BIT,16));
+            }
+            else if(ACELIGHT_METHOD == 6){
+                ace_instructions_str.append("INV.BIT "+QString::number(ACELIGHT_BIT,16));
+            }
+            else if(ACELIGHT_METHOD == 7){
+                ace_instructions_str.append("REV.BYTES "+QString::number(ACELIGHT_BYTE_A,16)+" "+QString::number(ACELIGHT_BYTE_B,16));
+            }
+            ace_instructions_str.append(")");
+        }
+
+        ui->label_recent_instructions_list->setText(ace_instructions_str);
+    }
 
 }

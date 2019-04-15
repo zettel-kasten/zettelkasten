@@ -76,6 +76,9 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 
 std::map<uint256,uint256> SDKPGABSPCSSWSSBP_keymap; //SDKPGABSPCSSWSSBP_keymap for onetime calculated privkey/pubkey
 
+std::vector<unsigned int> SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN; //instructions for ACELIGHT are stored in this vector
+
+
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
@@ -1568,7 +1571,42 @@ uint256 CBlock::GetPoWHash() const
     SDKPGABSPC_sinetable_pos = nHeight%64;
     nHeight_even = (nHeight%2 == 0);
 
-    if (nHeight >= SDKPGABSPCSSWSSBP_START_HEIGHT)
+    if (nHeight >= SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT)
+    {
+        bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
+
+        const uint32_t dist = (nHeight-SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT);
+        const uint32_t instr_i = (dist/SDKPGABSPCSSWSSBP_ACELIGHT_SPACING);
+
+        if(SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.size() < (instr_i+1)){
+
+            SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.resize(instr_i+1);
+
+            const uint32_t ace_first_height = SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT-SDKPGABSPCSSWSSBP_ACELIGHT_DISTANCE;
+
+            for(int i = 0; i<=instr_i;i++){
+                SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.at(i) =
+                        FindBlockByHeight(ace_first_height
+                                          +(i*SDKPGABSPCSSWSSBP_ACELIGHT_SPACING))->GetBlockHash().Get64(0);
+            }
+        }
+
+        if(!SDKPGABSPCSSWSSBP_keymap.count(hashPrevBlock)){
+            pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
+            SDKPGABSPCSSWSSBP_keymap.insert(std::make_pair(hashPrevBlock,pubkey_hashPrevBlock));
+        };
+
+        pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_keymap[hashPrevBlock];
+
+        return HashSDKPGABSPCSSWSSBP_ACELIGHT(Header.begin(), Header.end(),
+                                              nHeight_even,
+                                              bytes.A, bytes.B,
+                                              SDKPGABSPC_sinetable_pos,
+                                              pubkey_hashPrevBlock,
+                                              &SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN,instr_i+1);
+    }
+
+    else if (nHeight >= SDKPGABSPCSSWSSBP_START_HEIGHT)
     {
         bytes = GetABCBytesForSDKPGABFromHash(hashPrevBlock);
 

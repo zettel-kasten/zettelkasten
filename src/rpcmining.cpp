@@ -171,6 +171,40 @@ static std::string prefixToWidth(const std::string& Str, int Size, char C)
     return Prefix + Str;
 }
 
+template<typename T>
+std::string HexStrAceLight(const T itbegin, const T itend, bool fSpaces=false)
+{
+    std::string rv;
+    static const char hexmap[16] = { '0', '1', '2', '3', '4', '5', '6', '7',
+                                     '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+    rv.reserve((itend-itbegin)*3);
+    for(T it = itbegin; it < itend; ++it)
+    {
+        unsigned int val_int = (unsigned int)(*it);
+        //qDebug() << "HHH" << QString::number(val_int,16);
+        //unsigned char val = (unsigned char)(*it);
+        //if(fSpaces && it != itbegin)
+        //    rv.push_back(' ');
+        unsigned char METHOD = ((unsigned char*)&val_int)[0];
+        unsigned char BYTE_A = ((unsigned char*)&val_int)[1];
+        unsigned char BYTE_B = ((unsigned char*)&val_int)[2];
+        rv.push_back(hexmap[METHOD>>4]);
+        rv.push_back(hexmap[METHOD&15]);
+        rv.push_back(hexmap[BYTE_A>>4]);
+        rv.push_back(hexmap[BYTE_A&15]);
+        rv.push_back(hexmap[BYTE_B>>4]);
+        rv.push_back(hexmap[BYTE_B&15]);
+    }
+
+    return rv;
+}
+
+template<typename T>
+inline std::string HexStrAceLight(const T& vch, bool fSpaces=false)
+{
+    return HexStrAceLight(vch.begin(), vch.end(), fSpaces);
+}
+
 Value getwork(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 2)
@@ -281,19 +315,23 @@ Value getwork(const Array& params, bool fHelp)
         result.push_back(Pair("true_privkey", HexStr(PrivKey.begin(), PrivKey.end())));
         result.push_back(Pair("privkey",  pmr));
 
-		ABCBytesForSDKPGAB bytes;
+        if(pblock->nHeight >=SDKPGAB_START_HEIGHT){
+            ABCBytesForSDKPGAB bytes;
 
-        bytes = GetABCBytesForSDKPGABFromHash(pindexPrev->GetBlockHash());
+            bytes = GetABCBytesForSDKPGABFromHash(pindexPrev->GetBlockHash());
 
-		result.push_back(Pair("A",HexStr(BEGIN(bytes.A), END(bytes.A))));
-		result.push_back(Pair("B",HexStr(BEGIN(bytes.B), END(bytes.B))));
+            result.push_back(Pair("A",HexStr(BEGIN(bytes.A), END(bytes.A))));
+            result.push_back(Pair("B",HexStr(BEGIN(bytes.B), END(bytes.B))));
+        }
 
-        uint256 hashPrevBlock = pindexBest->GetBlockHash();
-        uint256 pubkey_hashPrevBlock;
+        if(pblock->nHeight >=SDKPGABSPCSSWSSBP_START_HEIGHT){
+            uint256 hashPrevBlock = pindexBest->GetBlockHash();
+            uint256 pubkey_hashPrevBlock;
 
-        pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
+            pubkey_hashPrevBlock = SDKPGABSPCSSWSSBP_GetPublicKeyFromPrivateKey(hashPrevBlock);
 
-        result.push_back(Pair("prevhashblock",   HexStr(BEGIN(pubkey_hashPrevBlock), END(pubkey_hashPrevBlock))));
+            result.push_back(Pair("prevhashblock",   HexStr(BEGIN(pubkey_hashPrevBlock), END(pubkey_hashPrevBlock))));
+        }
 
         std::vector<uint256> merkle = pblock->GetMerkleBranch(0);
         Array merkle_arr;
@@ -304,6 +342,30 @@ Value getwork(const Array& params, bool fHelp)
         }
 
         result.push_back(Pair("merkle", merkle_arr));
+
+        if(pblock->nHeight >=SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT){
+            std::vector<unsigned int> SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN;
+
+            const uint32_t dist = (pblock->nHeight-SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT);
+            const uint32_t instr_i = (dist/SDKPGABSPCSSWSSBP_ACELIGHT_SPACING);
+
+            if(SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.size() < (instr_i+1)){
+                SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.resize(instr_i+1);
+
+                const uint32_t ace_first_height = SDKPGABSPCSSWSSBP_ACELIGHT_START_HEIGHT-SDKPGABSPCSSWSSBP_ACELIGHT_DISTANCE;
+
+                for(int i = 0; i<=instr_i;i++){
+                    SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.at(i) =
+                            FindBlockByHeight(ace_first_height
+                                              +(i*SDKPGABSPCSSWSSBP_ACELIGHT_SPACING))->GetBlockHash().Get64(0);
+                };
+            };
+
+            result.push_back(Pair("ace_light_instructions",     HexStrAceLight(SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.begin(), SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.end())));
+
+            unsigned int ace_light_strength = SDKPGABSPCSSWSSBP_ACELIGHT_INSTRUCTION_CHAIN.size();
+            result.push_back(Pair("ace_light_strength",HexStr(BEGIN(ace_light_strength), END(ace_light_strength))));
+        }
 
         return result;
     }
