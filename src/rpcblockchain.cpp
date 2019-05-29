@@ -9,6 +9,19 @@
 using namespace json_spirit;
 using namespace std;
 
+#include <string>
+#include <sstream>
+
+namespace patch
+{
+    template < typename T > std::string to_string( const T& n )
+    {
+        std::ostringstream stm ;
+        stm << n ;
+        return stm.str() ;
+    }
+}
+
 void ScriptPubKeyToJSON(const CScript& scriptPubKey, Object& out);
 
 double GetDifficulty(const CBlockIndex* blockindex)
@@ -295,7 +308,7 @@ Value getwordsalad(const Array& params, bool fHelp)
     uint32_t height = block.GetBlockHeader().nHeight;
 
     if(height <SDKPGABSPCSSWS_START_HEIGHT){
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "WordSalad only available for blocks >= "+std::to_string(SDKPGABSPCSSWS_START_HEIGHT));
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "WordSalad only available for blocks >= "+patch::to_string(SDKPGABSPCSSWS_START_HEIGHT));
     }
 
     ABCBytesForSDKPGAB bytes = GetABCBytesForSDKPGABFromHash(block.hashPrevBlock);
