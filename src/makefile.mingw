@@ -102,7 +102,6 @@ OBJS= \
     obj/leveldb.o \
     obj/txdb.o\
     obj/keccak.o\
-    obj/aes_helper.o \
     obj/ecdsa.o
 
 all: zettelkastend.exe
