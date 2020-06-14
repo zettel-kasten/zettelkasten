@@ -74,6 +74,12 @@ Value getinfo(const Array& params, bool fHelp)
 
     boost::int64_t moneysupply = GetTotalSupply();
 
+    std::string cleanDonationAddress = SanitizeString(GetArg("-donation",""));
+    CBitcoinAddress addressParsed(cleanDonationAddress.c_str());
+    if(!addressParsed.IsValid()){
+        cleanDonationAddress = "";
+    }
+
     Object obj;
     obj.push_back(Pair("version",       (int)CLIENT_VERSION));
     obj.push_back(Pair("protocolversion",(int)PROTOCOL_VERSION));
@@ -98,6 +104,8 @@ Value getinfo(const Array& params, bool fHelp)
     if (pwalletMain && pwalletMain->IsCrypted())
         obj.push_back(Pair("unlocked_until", (boost::int64_t)nWalletUnlockTime));
     obj.push_back(Pair("errors",        GetWarnings("statusbar")));
+
+    obj.push_back(Pair("donation",        cleanDonationAddress.c_str()));
     return obj;
 }
 

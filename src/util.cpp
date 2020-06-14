@@ -1413,7 +1413,7 @@ std::string FormatSubVersion(const std::string& name, int nClientVersion, const 
     ss << "/";
     ss << name << ":" << FormatVersion(nClientVersion);
     if (!comments.empty())
-        ss << "(" << boost::algorithm::join(comments, "; ") << ")";
+        ss << ":" << boost::algorithm::join(comments, ":");
     ss << "/";
     return ss.str();
 }

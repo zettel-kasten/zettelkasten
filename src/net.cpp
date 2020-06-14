@@ -549,8 +549,16 @@ void CNode::PushVersion()
     CAddress addrMe = GetLocalAddress(&addr);
     RAND_bytes((unsigned char*)&nLocalHostNonce, sizeof(nLocalHostNonce));
     printf("send version message: version %d, blocks=%d, us=%s, them=%s, peer=%d\n", PROTOCOL_VERSION, nBestHeight, addrMe.ToString().c_str(), addrYou.ToString().c_str(), id);
+
+    std::string cleanDonationAddress = SanitizeString(GetArg("-donation",""));
+    CBitcoinAddress addressParsed(cleanDonationAddress.c_str());
+    std::vector<string> comments;
+    if(addressParsed.IsValid()){
+        comments.push_back(cleanDonationAddress.c_str());
+    }
+
     PushMessage("version", PROTOCOL_VERSION, nLocalServices, nTime, addrYou, addrMe,
-                nLocalHostNonce, FormatSubVersion(CLIENT_NAME, CLIENT_VERSION, std::vector<string>()), nBestHeight);
+                nLocalHostNonce, FormatSubVersion(CLIENT_NAME, CLIENT_VERSION, comments), nBestHeight);
 }
 
 
