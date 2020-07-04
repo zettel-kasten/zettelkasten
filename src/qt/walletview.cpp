@@ -14,10 +14,11 @@
 #include "walletmodel.h"
 #include "optionsmodel.h"
 #include "transactionview.h"
-#include "overviewpage.h"
+#include "timelinepage.h"
 #include "askpassphrasedialog.h"
 #include "ui_interface.h"
 #include "miningpage.h"
+#include "ui/uiheader.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -37,7 +38,7 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
     walletModel(0)
 {
     // Create tabs
-    overviewPage = new OverviewPage();
+    timelinePage = new TimelinePage();
 
     transactionsPage = new QWidget(this);
     QVBoxLayout *vbox = new QVBoxLayout();
@@ -64,7 +65,7 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
 
     signVerifyMessageDialog = new SignVerifyMessageDialog(gui);
 
-    addWidget(overviewPage);
+    addWidget(timelinePage);
     addWidget(transactionsPage);
     addWidget(addressBookPage);
     addWidget(receiveCoinsPage);
@@ -72,8 +73,8 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
     addWidget(miningPage);
 
     // Clicking on a transaction on the overview page simply sends you to transaction history page
-    connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), this, SLOT(gotoHistoryPage()));
-    connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
+    //connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), this, SLOT(gotoHistoryPage()));
+    //connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
 
     // Double-clicking on a transaction on the transaction history page shows details
     connect(transactionView, SIGNAL(doubleClicked(QModelIndex)), transactionView, SLOT(showDetails()));
@@ -87,7 +88,9 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
     // Clicking on "Export" allows to export the transaction list
     connect(exportButton, SIGNAL(clicked()), transactionView, SLOT(exportClicked()));
 
-    gotoOverviewPage();
+    //gotoOverviewPage();
+    //gotoSendCoinsPage();
+    gotoTimelinePage();
 }
 
 WalletView::~WalletView()
@@ -104,7 +107,8 @@ void WalletView::setClientModel(ClientModel *clientModel)
     this->clientModel = clientModel;
     if (clientModel)
     {
-        overviewPage->setClientModel(clientModel);
+        gui->uiHeader->setClientModel(clientModel);
+        timelinePage->setClientModel(clientModel);
         addressBookPage->setOptionsModel(clientModel->getOptionsModel());
         receiveCoinsPage->setOptionsModel(clientModel->getOptionsModel());
     }
@@ -120,7 +124,8 @@ void WalletView::setWalletModel(WalletModel *walletModel)
 
         // Put transaction list in tabs
         transactionView->setModel(walletModel);
-        overviewPage->setWalletModel(walletModel);
+        timelinePage->setWalletModel(walletModel);
+        gui->uiHeader->setWalletModel(walletModel);
         addressBookPage->setModel(walletModel->getAddressTableModel());
         receiveCoinsPage->setModel(walletModel->getAddressTableModel());
         sendCoinsPage->setModel(walletModel);
@@ -155,10 +160,10 @@ void WalletView::incomingTransaction(const QModelIndex& parent, int start, int /
     gui->incomingTransaction(date, walletModel->getOptionsModel()->getDisplayUnit(), amount, type, address);
 }
 
-void WalletView::gotoOverviewPage()
+void WalletView::gotoTimelinePage()
 {
-    gui->getOverviewAction()->setChecked(true);
-    setCurrentWidget(overviewPage);
+    gui->getTimelineAction()->setChecked(true);
+    setCurrentWidget(timelinePage);
 }
 
 void WalletView::gotoHistoryPage()
@@ -227,7 +232,7 @@ bool WalletView::handleURI(const QString& strURI)
 
 void WalletView::showOutOfSyncWarning(bool fShow)
 {
-    overviewPage->showOutOfSyncWarning(fShow);
+    //overviewPage->showOutOfSyncWarning(fShow);
 }
 
 void WalletView::setEncryptionStatus()
@@ -270,6 +275,10 @@ void WalletView::unlockWallet()
 void WalletView::updatePlot()
 {
     //overviewPage->updatePlot();
-    overviewPage->updateDataLabels();
+    //overviewPage->updateDataLabels();
 }
 
+void WalletView::passSyncData(QStringList str_list, int _count, int _nTotalBlocks, int _secs)
+{
+    timelinePage->passSyncData( str_list,  _count, _nTotalBlocks, _secs);
+}

@@ -12,13 +12,18 @@ class ClientModel;
 class WalletModel;
 class WalletStack;
 class TransactionView;
-class OverviewPage;
+class TimelinePage;
 class AddressBookPage;
 class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
 class MiningPage;
+
+#include "ui/uisidebar.h"
+#include "ui/uiheader.h"
+#include "ui/uitoolbar.h"
+#include "ui/uifooter.h"
 
 class CWallet;
 
@@ -63,7 +68,7 @@ public:
 
     /** Used by WalletView to allow access to needed QActions */
     // Todo: Use Qt signals for these
-    QAction * getOverviewAction() { return overviewAction; }
+    QAction * getTimelineAction() { return timelineAction; }
     QAction * getHistoryAction() { return historyAction; }
     QAction * getAddressBookAction() { return addressBookAction; }
     QAction * getReceiveCoinsAction() { return receiveCoinsAction; }
@@ -72,6 +77,11 @@ public:
 
 	void timerEvent(QTimerEvent *event);
 	void resizeEvent(QResizeEvent *event);
+
+    UISideBar *uiSideBar;
+    UIToolBar *uiToolBar;
+    UIFooter *uiFooter;
+    UIHeader *uiHeader;
 
 protected:
     void changeEvent(QEvent *e);
@@ -91,7 +101,10 @@ private:
     QProgressBar *progressBar;
 
     QMenuBar *appMenuBar;
-    QAction *overviewAction;
+
+
+
+    QAction *timelineAction;
     QAction *historyAction;
     QAction *quitAction;
     QAction *sendCoinsAction;
@@ -124,10 +137,22 @@ private:
     void createMenuBar();
     /** Create the toolbars */
     void createToolBars();
+
+    /** Create sidebar */
+    void createSideBar();
+    /** Create header bar */
+    void createHeader();
+    /** Create the new toolbar */
+    void createToolBar();
+    /** Create the new footer */
+    void createFooter();
+
     /** Create system tray icon and notification */
     void createTrayIcon();
     /** Create system tray menu (or setup the dock menu) */
     void createTrayIconMenu();
+
+
     /** Save window size and position */
     void saveWindowGeometry();
     /** Restore window size and position */
@@ -136,8 +161,6 @@ private:
     void setWalletActionsEnabled(bool enabled);
 
 public slots:
-    /** Set number of connections shown in the UI */
-    void setNumConnections(int count);
     /** Set number of blocks shown in the UI */
     void setNumBlocks(int count, int nTotalBlocks);
     /** Set the encryption status as shown in the UI.
@@ -169,8 +192,11 @@ public slots:
     void incomingTransaction(const QString& date, int unit, qint64 amount, const QString& type, const QString& address);
 
 private slots:
-    /** Switch to overview (home) page */
-    void gotoOverviewPage();
+
+    /** Tells us what menu to switch to */
+    void sideBarClick(int index);
+    /** Switch to timeline (home) page */
+    void gotoTimelinePage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
     /** Switch to address book page */

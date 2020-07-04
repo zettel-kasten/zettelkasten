@@ -102,4 +102,37 @@
         <file alias="zh_CN">locale/bitcoin_zh_CN.qm</file>
         <file alias="zh_TW">locale/bitcoin_zh_TW.qm</file>
     </qresource>
+    <qresource prefix="/ui/icons">
+        <file alias="house">res/ui/house.png</file>
+        <file alias="logo_inverted">res/ui/zettelkasten_small_inverted.png</file>
+        <file alias="LED_0">res/ui/LED_0.png</file>
+        <file alias="LED_1">res/ui/LED_1.png</file>
+        <file alias="LED_2">res/ui/LED_2.png</file>
+        <file alias="LED_3">res/ui/LED_3.png</file>
+        <file alias="LED_4">res/ui/LED_4.png</file>
+        <file alias="LED_5">res/ui/LED_5.png</file>
+        <file alias="LED_6">res/ui/LED_6.png</file>
+        <file alias="LED_7">res/ui/LED_7.png</file>
+        <file alias="LED_8">res/ui/LED_8.png</file>
+        <file alias="LED_9">res/ui/LED_9.png</file>
+        <file alias="LED_X">res/ui/LED_X.png</file>
+        <file alias="burger">res/ui/burger.png</file>
+        <file alias="cheese">res/ui/cheese.png</file>
+        <file alias="ketchup">res/ui/ketchup.png</file>
+        <file alias="meat">res/ui/meat.png</file>
+        <file alias="onion">res/ui/onion.png</file>
+        <file alias="salad">res/ui/salad.png</file>
+        <file alias="tomato">res/ui/tomato.png</file>
+        <file alias="timeline">res/ui/timeline.png</file>
+        <file alias="mining">res/ui/mining.png</file>
+        <file alias="wallet">res/ui/wallet.png</file>
+        <file alias="preloader">res/ui/preloader_64.png</file>
+    </qresource>
+    <qresource prefix="/ui/fonts">
+        <file alias="opensans-bold">res/fonts/OpenSans-Bold.ttf</file>
+        <file alias="opensans-regular">res/fonts/OpenSans-Regular.ttf</file>
+        <file alias="opensans-semibold">res/fonts/OpenSans-Semibold.ttf</file>
+        <file alias="st-charles-1">res/fonts/STCHARLE.TTF</file>
+        <file alias="st-charles-2">res/fonts/Stcht__.ttf</file>
+    </qresource>
 </RCC>

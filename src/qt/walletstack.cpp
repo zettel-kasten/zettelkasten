@@ -75,11 +75,11 @@ void WalletStack::showOutOfSyncWarning(bool fShow)
         i.value()->showOutOfSyncWarning(fShow);
 }
 
-void WalletStack::gotoOverviewPage()
+void WalletStack::gotoTimelinePage()
 {
     QMap<QString, WalletView*>::const_iterator i;
     for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
-        i.value()->gotoOverviewPage();
+        i.value()->gotoTimelinePage();
 }
 
 void WalletStack::gotoHistoryPage()
@@ -168,4 +168,13 @@ void WalletStack::updatePlot()
     QMap<QString, WalletView*>::const_iterator i;
     for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
         i.value()->updatePlot();
+}
+
+void WalletStack::passSyncData(QStringList str_list, int _count, int _nTotalBlocks, int _secs)
+{
+    //we can't be sure that the view has loaded, so this needs
+    //to be loaded in a manner that fails gracefully
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->passSyncData( str_list,  _count, _nTotalBlocks, _secs);
 }

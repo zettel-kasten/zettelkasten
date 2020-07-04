@@ -78,9 +78,9 @@ void WalletFrame::showOutOfSyncWarning(bool fShow)
     walletStack->showOutOfSyncWarning(fShow);
 }
 
-void WalletFrame::gotoOverviewPage()
+void WalletFrame::gotoTimelinePage()
 {
-    walletStack->gotoOverviewPage();
+    walletStack->gotoTimelinePage();
 }
 
 void WalletFrame::gotoHistoryPage()
@@ -160,5 +160,10 @@ WalletView *WalletFrame::currentWalletView()
 void WalletFrame::updatePlot()
 {
     walletStack->updatePlot();
+}
+
+void WalletFrame::passSyncData(QStringList str_list, int _count, int _nTotalBlocks, int _secs)
+{
+    walletStack->passSyncData( str_list,  _count, _nTotalBlocks, _secs);
 }
 

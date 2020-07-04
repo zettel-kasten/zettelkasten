@@ -13,7 +13,7 @@ class BitcoinGUI;
 class ClientModel;
 class WalletModel;
 class TransactionView;
-class OverviewPage;
+class TimelinePage;
 class AddressBookPage;
 class SendCoinsDialog;
 class SignVerifyMessageDialog;
@@ -59,7 +59,7 @@ private:
     ClientModel *clientModel;
     WalletModel *walletModel;
 
-    OverviewPage *overviewPage;
+    TimelinePage *timelinePage;
     QWidget *transactionsPage;
     AddressBookPage *addressBookPage;
     AddressBookPage *receiveCoinsPage;
@@ -70,8 +70,8 @@ private:
     TransactionView *transactionView;
 
 public slots:
-    /** Switch to overview (home) page */
-    void gotoOverviewPage();
+    /** Switch to timeline (home) page */
+    void gotoTimelinePage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
     /** Switch to address book page */
@@ -104,6 +104,8 @@ public slots:
 
     /** Update the plot on the overview (home) page */
     void updatePlot();
+    /** Pass sync data on */
+    void passSyncData(QStringList str_list, int _count, int _nTotalBlocks, int _secs);
 
 signals:
     /** Signal that we want to show the main window */

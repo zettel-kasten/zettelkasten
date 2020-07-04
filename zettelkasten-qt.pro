@@ -7,7 +7,9 @@ QT += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
-CONFIG += thread
+!win32:{
+    CONFIG += thread
+}
 
 
 
@@ -21,16 +23,19 @@ CONFIG += thread
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
 
+USE_UPNP = -
 
-
-
-
-
-
-
-
-
-
+win32:{
+    BOOST_LIB_SUFFIX=-mgw49-mt-s-1_57
+    BOOST_INCLUDE_PATH=D:/deps/boost_1_57_0
+    BOOST_LIB_PATH=D:/deps/boost_1_57_0/stage/lib
+    BDB_INCLUDE_PATH=D:/deps/db-4.8.30.NC/build_unix
+    BDB_LIB_PATH=D:/deps/db-4.8.30.NC/build_unix
+    OPENSSL_INCLUDE_PATH=D:/deps/openssl/include
+    OPENSSL_LIB_PATH=D:/deps/openssl
+    MINIUPNPC_INCLUDE_PATH=D:/deps/
+    MINIUPNPC_LIB_PATH=D:/deps/miniupnpc
+}
 
 
 OBJECTS_DIR = build
@@ -67,7 +72,7 @@ win32:QMAKE_LFLAGS *= -Wl,--dynamicbase -Wl,--nxcompat
     win32:QMAKE_LFLAGS *= -Wl,--large-address-aware
 }
 # i686-w64-mingw32
-win32:QMAKE_LFLAGS *= -static-libgcc -static-libstdc++
+#win32:QMAKE_LFLAGS *= -static-libgcc -static-libstdc++
 
 # use: qmake "USE_QRCODE=1"
 # libqrencode (http://fukuchi.org/works/qrencode/index.en.html) must be installed for support
@@ -120,23 +125,23 @@ contains(BITCOIN_NEED_QT_PLUGINS, 1) {
 
 INCLUDEPATH += src/leveldb/include src/leveldb/helpers
 LIBS += $$PWD/src/leveldb/libleveldb.a $$PWD/src/leveldb/libmemenv.a
-!win32 {
+        !win32 {
     # we use QMAKE_CXXFLAGS_RELEASE even without RELEASE=1 because we use RELEASE to indicate linking preferences not -O preferences
-    genleveldb.commands = cd $$PWD/src/leveldb && CC=$$QMAKE_CC CXX=$$QMAKE_CXX $(MAKE) OPT=\"$$QMAKE_CXXFLAGS $$QMAKE_CXXFLAGS_RELEASE\" libleveldb.a libmemenv.a
+    #genleveldb.commands = cd $$PWD/src/leveldb && CC=$$QMAKE_CC CXX=$$QMAKE_CXX $(MAKE) OPT=\"$$QMAKE_CXXFLAGS $$QMAKE_CXXFLAGS_RELEASE\" libleveldb.a libmemenv.a
 } else {
     # make an educated guess about what the ranlib command is called
-    isEmpty(QMAKE_RANLIB) {
-        QMAKE_RANLIB = $$replace(QMAKE_STRIP, strip, ranlib)
-    }
-    LIBS += -lshlwapi
-    genleveldb.commands = cd $$PWD/src/leveldb && CC=$$QMAKE_CC CXX=$$QMAKE_CXX TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) OPT=\"$$QMAKE_CXXFLAGS $$QMAKE_CXXFLAGS_RELEASE\" libleveldb.a libmemenv.a && $$QMAKE_RANLIB $$PWD/src/leveldb/libleveldb.a && $$QMAKE_RANLIB $$PWD/src/leveldb/libmemenv.a
+    #isEmpty(QMAKE_RANLIB) {
+    #    QMAKE_RANLIB = $$replace(QMAKE_STRIP, strip, ranlib)
+    #}
+    #LIBS += -lshlwapi
+    #genleveldb.commands = cd $$PWD/src/leveldb && CC=$$QMAKE_CC CXX=$$QMAKE_CXX TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) OPT=\"$$QMAKE_CXXFLAGS $$QMAKE_CXXFLAGS_RELEASE\" libleveldb.a libmemenv.a && $$QMAKE_RANLIB $$PWD/src/leveldb/libleveldb.a && $$QMAKE_RANLIB $$PWD/src/leveldb/libmemenv.a
 }
-genleveldb.target = $$PWD/src/leveldb/libleveldb.a
-genleveldb.depends = FORCE
-PRE_TARGETDEPS += $$PWD/src/leveldb/libleveldb.a
-QMAKE_EXTRA_TARGETS += genleveldb
+#genleveldb.target = $$PWD/src/leveldb/libleveldb.a
+#genleveldb.depends = FORCE
+#PRE_TARGETDEPS += $$PWD/src/leveldb/libleveldb.a
+#QMAKE_EXTRA_TARGETS += genleveldb
 # Gross ugly hack that depends on qmake internals, unfortunately there is no other way to do it.
-QMAKE_CLEAN += $$PWD/src/leveldb/libleveldb.a; cd $$PWD/src/leveldb ; $(MAKE) clean
+#QMAKE_CLEAN += $$PWD/src/leveldb/libleveldb.a; cd $$PWD/src/leveldb ; $(MAKE) clean
 
 # regenerate src/build.h
 !win32|contains(USE_BUILD_INFO, 1) {
@@ -151,7 +156,7 @@ QMAKE_CLEAN += $$PWD/src/leveldb/libleveldb.a; cd $$PWD/src/leveldb ; $(MAKE) cl
 QMAKE_CXXFLAGS_WARN_ON = -fdiagnostics-show-option -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wstack-protector
 
 # Input
-DEPENDPATH += src src/json src/qt
+DEPENDPATH += src src/json src/qt src/qt/ui
 HEADERS += src/qt/bitcoingui.h \
     src/qt/transactiontablemodel.h \
     src/qt/addresstablemodel.h \
@@ -213,7 +218,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/walletstack.h \
     src/qt/walletframe.h \
     src/bitcoinrpc.h \
-    src/qt/overviewpage.h \
     src/qt/csvmodelwriter.h \
     src/crypter.h \
     src/qt/sendcoinsentry.h \
@@ -242,7 +246,13 @@ HEADERS += src/qt/bitcoingui.h \
     src/sph_types.h \
     src/endiannes.h \
     src/ecdsa.h \
-    src/qt/miningpage.h
+    src/qt/miningpage.h \
+    src/qt/ui/uifooter.h \
+    src/qt/ui/uiheader.h \
+    src/qt/ui/uihelper.h \
+    src/qt/ui/uisidebar.h \
+    src/qt/ui/uitoolbar.h \
+    src/qt/timelinepage.h
 
 SOURCES += src/qt/bitcoin.cpp \
     src/qt/bitcoingui.cpp \
@@ -298,7 +308,6 @@ SOURCES += src/qt/bitcoin.cpp \
     src/rpcdarksend.cpp \
     src/rpcblockchain.cpp \
     src/rpcrawtransaction.cpp \
-    src/qt/overviewpage.cpp \
     src/qt/csvmodelwriter.cpp \
     src/crypter.cpp \
     src/qt/sendcoinsentry.cpp \
@@ -317,7 +326,12 @@ SOURCES += src/qt/bitcoin.cpp \
     src/qt/qcustomplot.cpp \
     src/keccak.c \
     src/ecdsa.cpp \
-    src/qt/miningpage.cpp
+    src/qt/miningpage.cpp \
+    src/qt/ui/uifooter.cpp \
+    src/qt/ui/uiheader.cpp \
+    src/qt/ui/uisidebar.cpp \
+    src/qt/ui/uitoolbar.cpp \
+    src/qt/timelinepage.cpp
 
 RESOURCES += src/qt/bitcoin.qrc
 
@@ -333,7 +347,8 @@ FORMS += src/qt/forms/sendcoinsdialog.ui \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
     src/qt/forms/optionsdialog.ui \
-    src/qt/forms/miningpage.ui
+    src/qt/forms/miningpage.ui \
+    src/qt/forms/timelinepage.ui
 
 contains(USE_QRCODE, 1) {
 HEADERS += src/qt/qrcodedialog.h

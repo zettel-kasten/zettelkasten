@@ -42,8 +42,8 @@ private:
     WalletView *currentWalletView();
 
 public slots:
-    /** Switch to overview (home) page */
-    void gotoOverviewPage();
+    /** Switch to timeline (home) page */
+    void gotoTimelinePage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
     /** Switch to address book page */
@@ -74,8 +74,11 @@ public slots:
      */
     void setEncryptionStatus();
 
-    /** Update the plot on the overview (home) page */
+    /** Update the plot on the timeline (home) page */
     void updatePlot();
+
+    /** Pass sync data on */
+    void passSyncData(QStringList str_list, int _count, int _nTotalBlocks, int _secs);
 };
 
 #endif // WALLETFRAME_H
