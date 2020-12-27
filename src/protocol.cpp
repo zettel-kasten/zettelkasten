@@ -16,18 +16,13 @@
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ascii, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-// Public testnet message start
-static unsigned char pchMessageStartTest[4] = { 0xc2, 0xe3, 0xcb, 0xfa };
 
 // Zettelkasten message start
 static unsigned char pchMessageStartZettelKasten[4] = { 0xF7, 0xCF, 0xF3, 0xF7 };
 
 void GetMessageStart(unsigned char pchMessageStart[], bool)
 {
-    if (fTestNet)
-        memcpy(pchMessageStart, pchMessageStartTest, sizeof(pchMessageStartTest));
-    else
-        memcpy(pchMessageStart, pchMessageStartZettelKasten, sizeof(pchMessageStartZettelKasten));
+     memcpy(pchMessageStart, pchMessageStartZettelKasten, sizeof(pchMessageStartZettelKasten));
 }
 
 

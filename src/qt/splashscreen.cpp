@@ -42,12 +42,7 @@ SplashScreen::SplashScreen(QWidget *parent) :
 */
     splashImage = new QLabel(this);
     QPixmap newPixmap;
-    if(GetBoolArg("-testnet")) {
-        newPixmap.load(":/images/splash_testnet");
-    }
-    else {
-        newPixmap.load(":/images/splash");
-    }
+    newPixmap.load(":/images/splash");
 
 
     splashImage->setPixmap(newPixmap);

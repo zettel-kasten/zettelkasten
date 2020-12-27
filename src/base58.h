@@ -279,12 +279,12 @@ public:
     };
 
     bool Set(const CKeyID &id) {
-        SetData(fTestNet ? PUBKEY_ADDRESS_TEST : PUBKEY_ADDRESS, &id, 20);
+        SetData(PUBKEY_ADDRESS, &id, 20);
         return true;
     }
 
     bool Set(const CScriptID &id) {
-        SetData(fTestNet ? SCRIPT_ADDRESS_TEST : SCRIPT_ADDRESS, &id, 20);
+        SetData(SCRIPT_ADDRESS, &id, 20);
         return true;
     }
 
@@ -296,31 +296,19 @@ public:
     bool IsValid() const
     {
         unsigned int nExpectedSize = 20;
-        bool fExpectTestNet = false;
         switch(nVersion)
         {
             case PUBKEY_ADDRESS:
                 nExpectedSize = 20; // Hash of public key
-                fExpectTestNet = false;
                 break;
             case SCRIPT_ADDRESS:
                 nExpectedSize = 20; // Hash of CScript
-                fExpectTestNet = false;
-                break;
-
-            case PUBKEY_ADDRESS_TEST:
-                nExpectedSize = 20;
-                fExpectTestNet = true;
-                break;
-            case SCRIPT_ADDRESS_TEST:
-                nExpectedSize = 20;
-                fExpectTestNet = true;
                 break;
 
             default:
                 return false;
         }
-        return fExpectTestNet == fTestNet && vchData.size() == nExpectedSize;
+        return vchData.size() == nExpectedSize;
     }
 
     CBitcoinAddress()
@@ -407,7 +395,7 @@ public:
     void SetKey(const CKey& vchSecret)
     {
         assert(vchSecret.IsValid());
-        SetData(fTestNet ? PRIVKEY_ADDRESS_TEST : PRIVKEY_ADDRESS, vchSecret.begin(), vchSecret.size());
+        SetData(PRIVKEY_ADDRESS, vchSecret.begin(), vchSecret.size());
     }
 
     CKey GetKey()
@@ -419,20 +407,15 @@ public:
 
     bool IsValid() const
     {
-        bool fExpectTestNet = false;
         switch(nVersion)
         {
             case PRIVKEY_ADDRESS:
                 break;
 
-            case PRIVKEY_ADDRESS_TEST:
-                fExpectTestNet = true;
-                break;
-
             default:
                 return false;
         }
-        return fExpectTestNet == fTestNet && vchData.size() == 32;
+        return vchData.size() == 32;
     }
 
     bool SetString(const char* pszSecret)

@@ -157,7 +157,6 @@ Value getmininginfo(const Array& params, bool fHelp)
     obj.push_back(Pair("hashespersec",  gethashespersec(params, false)));
     obj.push_back(Pair("networkhashps", getnetworkhashps(params, false)));
     obj.push_back(Pair("pooledtx",      (uint64_t)mempool.size()));
-    obj.push_back(Pair("testnet",       fTestNet));
     return obj;
 }
 
@@ -219,7 +218,7 @@ Value getwork(const Array& params, bool fHelp)
             "Submit work.\n"
         );
 
-    if (vNodes.empty() && !fTestNet)
+    if (vNodes.empty())
         throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "ZettelKasten is not connected!");
 
     if (IsInitialBlockDownload())
@@ -436,7 +435,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
     if (strMode != "template")
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
-    if (vNodes.empty() && !fTestNet)
+    if (vNodes.empty())
         throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "ZettelKasten is not connected!");
 
     if (IsInitialBlockDownload())

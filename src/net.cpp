@@ -1210,14 +1210,9 @@ static const char *strMainNetDNSSeed[][2] = {
     {NULL, NULL}
 };
 
-static const char *strTestNetDNSSeed[][2] = {
-    // Spread-FIXME: Add seed nodes
-    {NULL, NULL}
-};
-
 void ThreadDNSAddressSeed()
 {
-    static const char *(*strDNSSeed)[2] = fTestNet ? strTestNetDNSSeed : strMainNetDNSSeed;
+    static const char *(*strDNSSeed)[2] = strMainNetDNSSeed;
 
     int found = 0;
 
@@ -1333,7 +1328,7 @@ void ThreadOpenConnections()
         boost::this_thread::interruption_point();
 
         // Add seed nodes if IRC isn't working
-        if (addrman.size()<=2 && (GetTime() - nStart > 20) && !fTestNet)
+        if (addrman.size()<=2 && (GetTime() - nStart > 20))
         {
             std::vector<CAddress> vAdd;
             for (unsigned int i = 0; i < ARRAYLEN(pnSeed); i++)

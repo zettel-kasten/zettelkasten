@@ -78,7 +78,7 @@ bool fDaemon = false;
 bool fServer = false;
 bool fCommandLine = false;
 string strMiscWarning;
-bool fTestNet = false;
+
 bool fBloomFilters = true;
 bool fNoListen = false;
 bool fLogTimestamps = false;
@@ -1082,8 +1082,6 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
     } else {
         path = GetDefaultDataDir();
     }
-    if (fNetSpecific && GetBoolArg("-testnet", false))
-        path /= "testnet3";
 
     fs::create_directories(path);
 

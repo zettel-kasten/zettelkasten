@@ -94,12 +94,12 @@ int64 nMinimumInputValue = DUST_HARD_LIMIT;
 // Get hardfork blocks
 unsigned int getFirstHardforkBlock()
 {
-    return fTestNet? 0 : 0;//2200;
+    return 0;
 }
 
 unsigned int getSecondHardforkBlock()
 {
-    return fTestNet? 0 : 0;//43000;
+    return 0;//43000;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -690,9 +690,9 @@ bool CTxMemPool::accept(CValidationState &state, CTransaction &tx, bool fCheckIn
     if ((int64)tx.nLockTime > std::numeric_limits<int>::max())
         return error("CTxMemPool::accept() : not accepting nLockTime beyond 2038 yet");
 
-    // Rather not work on nonstandard transactions (unless -testnet)
+    // Rather not work on nonstandard transactions
     string strNonStd;
-    if (!fTestNet && !tx.IsStandard(strNonStd))
+    if (!tx.IsStandard(strNonStd))
         return error("CTxMemPool::accept() : nonstandard transaction (%s)",
                      strNonStd.c_str());
 
@@ -769,7 +769,7 @@ bool CTxMemPool::accept(CValidationState &state, CTransaction &tx, bool fCheckIn
         }
 
         // Check for non-standard pay-to-script-hash in inputs
-        if (!tx.AreInputsStandard(view) && !fTestNet)
+        if (!tx.AreInputsStandard(view))
             return error("CTxMemPool::accept() : nonstandard transaction input");
 
         // Note: if you modify this code to accept non-standard transactions, then
@@ -843,9 +843,9 @@ bool CTxMemPool::acceptableInputs(CValidationState &state, CTransaction &tx, boo
     if ((int64)tx.nLockTime > std::numeric_limits<int>::max())
         return error("CTxMemPool::acceptableInputs() : not accepting nLockTime beyond 2038 yet");
 
-    // Rather not work on nonstandard transactions (unless -testnet)
+    // Rather not work on nonstandard transactions
     string strNonStd;
-    if (!fTestNet && !tx.IsStandard(strNonStd))
+    if (!tx.IsStandard(strNonStd))
         return error("CTxMemPool::acceptableInputs() : nonstandard transaction (%s)",
                      strNonStd.c_str());
 
@@ -920,9 +920,9 @@ bool CTxMemPool::acceptable(CValidationState &state, CTransaction &tx, bool fChe
     if ((int64)tx.nLockTime > std::numeric_limits<int>::max())
         return error("CTxMemPool::acceptable() : not accepting nLockTime beyond 2038 yet");
 
-    // Rather not work on nonstandard transactions (unless -testnet)
+    // Rather not work on nonstandard transactions
     string strNonStd;
-    if (!fTestNet && !tx.IsStandard(strNonStd))
+    if (!tx.IsStandard(strNonStd))
         return error("CTxMemPool::acceptable() : nonstandard transaction (%s)",
                      strNonStd.c_str());
 
@@ -985,7 +985,7 @@ bool CTxMemPool::acceptable(CValidationState &state, CTransaction &tx, bool fChe
         }
 
         // Check for non-standard pay-to-script-hash in inputs
-        if (!tx.AreInputsStandard(view) && !fTestNet) {
+        if (!tx.AreInputsStandard(view)) {
             return error("CTxMemPool::acceptable() : nonstandard transaction input");
         }
 
@@ -1967,10 +1967,6 @@ bool ConnectBestBlock(CValidationState &state) {
 void CBlockHeader::UpdateTime(const CBlockIndex* pindexPrev)
 {
     nTime = max(pindexPrev->GetMedianTimePast()+1, GetAdjustedTime());
-
-    // Updating time can change work required on testnet:
-    if (fTestNet)
-        nBits = GetNextWorkRequired(pindexPrev, this);
 }
 
 const CTxOut &CTransaction::GetOutputFor(const CTxIn& input, CCoinsViewCache& view)
@@ -3372,7 +3368,7 @@ static CBlock getGenesisBlock()
     block.hashPrevBlock = 0;
     block.hashMerkleRoot = block.BuildMerkleTree();
     block.nVersion = 1;
-    block.nTime    = 1522187616; //fTestNet? 1496033996 : 1495841000; //1406620001 : 1406620000;
+    block.nTime    = 1522187616;
     block.nBits    = bnProofOfWorkLimit.GetCompact();
     block.nHeight  = 0;
 
@@ -4896,7 +4892,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn)
                         if (!mempool.mapTx.count(txin.prevout.hash))
                         {
                             printf("ERROR: mempool transaction missing input %s\n", txin.prevout.hash.ToString().c_str());
-                            if (!fTestNet && fDebug) assert("mempool transaction missing input" == 0);
+                            if (fDebug) assert("mempool transaction missing input" == 0);
                             fMissingInputs = true;
                             if (porphan)
                                 vOrphan.pop_back();
@@ -5169,7 +5165,7 @@ void static ZettelKastenMiner(CWallet *pwallet)
     CReserveKey reservekey(pwallet);
 
     try { for (;;) {
-       while (vNodes.empty() && !fTestNet)
+       while (vNodes.empty())
             MilliSleep(1000);
 
         //
@@ -5272,7 +5268,7 @@ void static ZettelKastenMiner(CWallet *pwallet)
 
             // Check for stop or if block needs to be rebuilt
             boost::this_thread::interruption_point();
-            if (vNodes.empty() && !fTestNet)
+            if (vNodes.empty())
                 break;
             if (pblock->nNonce >= 0xffff0000)
                 break;
@@ -5284,11 +5280,6 @@ void static ZettelKastenMiner(CWallet *pwallet)
             // Update nTime every few seconds
             pblock->UpdateTime(pindexPrev);
             memcpy(pBlockTime, &pblock->nTime, sizeof(pblock->nTime));
-            if (fTestNet)
-            {
-                // Changing pblock->nTime can change work required on testnet:
-                hashTarget = CBigNum().SetCompact(pblock->nBits).getuint256();
-            }
         }
     } }
     catch (boost::thread_interrupted)

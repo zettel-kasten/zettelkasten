@@ -187,10 +187,7 @@ int main(int argc, char *argv[])
     // as it is used to locate QSettings)
     QApplication::setOrganizationName("ZettelKasten");
     QApplication::setOrganizationDomain("zettelkasten.org");
-    if(GetBoolArg("-testnet")) // Separate UI settings for testnet
-        QApplication::setApplicationName("ZettelKasten-Qt-testnet");
-    else
-        QApplication::setApplicationName("ZettelKasten-Qt");
+    QApplication::setApplicationName("ZettelKasten-Qt");
 
     // ... then GUI settings:
     OptionsModel optionsModel;
@@ -236,13 +233,6 @@ int main(int argc, char *argv[])
         help.showOrPrint();
         return 1;
     }
-
-#ifdef Q_OS_MAC
-    // on mac, also change the icon now because it would look strange to have a testnet splash (green) and a std app icon (orange)
-    if(GetBoolArg("-testnet")) {
-        MacDockIconHandler::instance()->setIcon(QIcon(":icons/bitcoin_testnet"));
-    }
-#endif
 
     SplashScreen splash;
 

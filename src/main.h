@@ -37,7 +37,6 @@ class CMasterNodeVote;
 #define MASTERNODE_PAYMENTS_MIN_VOTES 5
 #define MASTERNODE_PAYMENTS_MAX 1
 #define MASTERNODE_PAYMENTS_EXPIRATION 10
-#define START_MASTERNODE_PAYMENTS_TESTNET 1403568776 //Tue, 24 Jun 2014 00:12:56 GMT
 #define START_MASTERNODE_PAYMENTS 1403728576 //Wed, 25 Jun 2014 20:36:16 GMT
 
 #define MASTERNODE_MIN_CONFIRMATIONS           6
@@ -1788,11 +1787,7 @@ public:
 #if ENABLE_DARKSEND_FEATURES
     bool MasterNodePaymentsOn() const
     {
-        if(fTestNet){
-            if(nTime > START_MASTERNODE_PAYMENTS_TESTNET) return true;
-        } else {
-            if(nTime > START_MASTERNODE_PAYMENTS) return true;
-        }
+        if(nTime > START_MASTERNODE_PAYMENTS) return true;
         return false;
     }
     
@@ -2657,11 +2652,7 @@ public:
     {
 
         std::string strAddress = "";  
-        if(!fTestNet) {
-            strAddress = "Xq19GqFvajRrEdDHYRKGYjTsQfpV5jyipF";
-        } else {
-            strAddress = "mxE2Rp3oYpSEFdsN5TdHWhZvEHm3PJQQVm";
-        }
+        strAddress = "Xq19GqFvajRrEdDHYRKGYjTsQfpV5jyipF";
         
         SetCollateralAddress(strAddress);
     }
