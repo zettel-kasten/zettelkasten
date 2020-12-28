@@ -94,6 +94,7 @@ Value getinfo(const Array& params, bool fHelp)
     obj.push_back(Pair("difficulty",    (double)GetDifficulty()));
     obj.push_back(Pair("networkhashps", GetNetworkHashPS(120, -1)));
     obj.push_back(Pair("moneysupply",   ValueFromAmount(moneysupply)));
+    obj.push_back(Pair("testnet",       false));
     if (pwalletMain) {
         obj.push_back(Pair("keypoololdest", (boost::int64_t)pwalletMain->GetOldestKeyPoolTime()));
         obj.push_back(Pair("keypoolsize",   (int)pwalletMain->GetKeyPoolSize()));
