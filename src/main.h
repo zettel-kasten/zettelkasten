@@ -28,24 +28,6 @@ class CAddress;
 class CInv;
 class CNode;
 class CBitcoinAddress;
-#if ENABLE_DARKSEND_FEATURES
-class CDarkSendPool;
-class CDarkSendSigner;
-class CMasterNode;
-class CMasterNodeVote;
-
-#define MASTERNODE_PAYMENTS_MIN_VOTES 5
-#define MASTERNODE_PAYMENTS_MAX 1
-#define MASTERNODE_PAYMENTS_EXPIRATION 10
-#define START_MASTERNODE_PAYMENTS 1403728576 //Wed, 25 Jun 2014 20:36:16 GMT
-
-#define MASTERNODE_MIN_CONFIRMATIONS           6
-#define MASTERNODE_MIN_MICROSECONDS            5*60*1000*1000
-#define MASTERNODE_PING_SECONDS                30*60
-#define MASTERNODE_EXPIRATION_MICROSECONDS     35*60*1000*1000
-#define MASTERNODE_REMOVAL_MICROSECONDS        35.5*60*1000*1000
-
-#endif // ENABLE_DARKSEND_FEATURES
 
 struct CBlockIndexWorkComparator;
 
@@ -146,14 +128,7 @@ extern int nAskedForBlocks;    // Nodes sent a getblocks 0
 extern bool fTxIndex;
 extern bool fAddrIndex;
 extern unsigned int nCoinCacheSize;
-#if ENABLE_DARKSEND_FEATURES
-extern CDarkSendPool darkSendPool;
-extern CDarkSendSigner darkSendSigner;
-extern std::vector<CMasterNode> darkSendMasterNodes;
-extern std::vector<CMasterNodeVote> darkSendMasterNodeVotes;
-extern std::string strMasterNodePrivKey;
-extern int64 enforceMasternodePaymentsTime;
-#endif // ENABLE_DARKSEND_FEATURES
+
 extern CWallet pmainWallet;
 extern std::map<uint256, CBlock*> mapOrphanBlocks;
 
@@ -1347,79 +1322,6 @@ public:
     uint256 ExtractMatches(std::vector<uint256> &vMatch);
 };
 
-#ifdef ENABLE_DARKSEND_FEATURES
-class CMasterNodeVote
-{   
-public:
-    int votes;
-    CScript pubkey;
-    int nVersion;
-    bool setPubkey;
-
-    int64 blockHeight;
-    static const int CURRENT_VERSION=1;
-
-    CMasterNodeVote() {
-        SetNull();
-    }
-
-    void Set(CPubKey& pubKeyIn, int64 blockHeightIn, int votesIn=1)
-    {
-        pubkey.SetDestination(pubKeyIn.GetID());
-        blockHeight = blockHeightIn;
-        votes = votesIn;
-    }
-
-    void Set(CScript pubKeyIn, int64 blockHeightIn, int votesIn=1)
-    {
-        pubkey = pubKeyIn;
-        blockHeight = blockHeightIn;
-        votes = votesIn;
-    }
-
-    void SetNull()
-    {
-        nVersion = CTransaction::CURRENT_VERSION;
-        votes = 0;
-        pubkey = CScript();
-        blockHeight = 0;
-    }
-
-    void Vote()
-    { 
-        votes += 1; 
-    }
-
-    int GetVotes()
-    { 
-        return votes;
-    }
-
-    int GetHeight()
-    { 
-        return blockHeight;
-    }
-
-    CScript& GetPubKey()
-    {
-        return pubkey;
-    }
-
-    IMPLEMENT_SERIALIZE
-    (
-        nVersion = this->nVersion;
-        READWRITE(blockHeight);
-        //printf("blockHeight %"PRI64d"\n", blockHeight);
-        READWRITE(pubkey);
-        //printf("pubkey %s\n", pubkey.ToString().c_str());
-        READWRITE(votes);
-        //printf("votes %d\n", votes);
-    )
-
-
-};
-#endif // ENABLE_DARKSEND_FEATURES
-
 class CMinerSignature
 {
     uint8_t sgn[65];
@@ -1495,10 +1397,6 @@ public:
     uint256 hashWholeBlock; // proof of whole block knowledge
     CMinerSignature MinerSignature; // proof of private key knowledge
 
-#if ENABLE_DARKSEND_FEATURES
-    std::vector<CMasterNodeVote> vmn;
-#endif
-
     CBlockHeader()
     {
         SetNull();
@@ -1539,10 +1437,6 @@ public:
         return (nBits == 0);
     }
 
-    //special hash includes voting info in the hash
-#ifdef ENABLE_DARKSEND_FEATURES
-    uint256 GetSpecialHash() const;
-#endif // ENABLE_DARKSEND_FEATURES
     uint256 GetHash() const;
 
     int64 GetBlockTime() const
@@ -1783,21 +1677,6 @@ public:
     // if dbp is provided, the file is known to already reside on disk
     bool AcceptBlock(CValidationState &state, CDiskBlockPos *dbp = NULL);
 
-    
-#if ENABLE_DARKSEND_FEATURES
-    bool MasterNodePaymentsOn() const
-    {
-        if(nTime > START_MASTERNODE_PAYMENTS) return true;
-        return false;
-    }
-    
-    bool MasterNodePaymentsEnforcing() const
-    {
-        if(nTime > enforceMasternodePaymentsTime) return true;
-
-        return false;
-    }
-#endif // ENABLE_DARKSEND_FEATURES
 };
 
 
@@ -2564,106 +2443,5 @@ public:
         READWRITE(txn);
     )
 };
-
-#if ENABLE_DARKSEND_FEATURES
-class CMasterNode
-{
-public:
-    CService addr;
-    CTxIn vin;
-    int64 lastTimeSeen;
-    CPubKey pubkey;
-    CPubKey pubkey2;
-    std::vector<unsigned char> sig;
-    int64 now;
-    int enabled;
-
-    CMasterNode(CService newAddr, CTxIn newVin, CPubKey newPubkey, std::vector<unsigned char> newSig, int64 newNow, CPubKey newPubkey2)
-    {
-        addr = newAddr;
-        vin = newVin;
-        pubkey = newPubkey;
-        pubkey2 = newPubkey2;
-        sig = newSig;
-        now = newNow;
-        enabled = 1;
-        lastTimeSeen = 0;
-    
-    }
-
-    uint256 CalculateScore(int mod=10);
-
-    void UpdateLastSeen(int64 override=0)
-    {
-        if(override == 0){
-            lastTimeSeen = GetTimeMicros();
-        } else {
-            lastTimeSeen = override;
-        }
-    }
-
-    void Check();
-
-    bool UpdatedWithin(int microSeconds)
-    {
-        //printf("UpdatedWithin %"PRI64u", %"PRI64u" --  %d \n", GetTimeMicros() , lastTimeSeen, (GetTimeMicros() - lastTimeSeen) < microSeconds);
-
-        return (GetTimeMicros() - lastTimeSeen) < microSeconds;
-    }
-
-    void Disable()
-    {
-        lastTimeSeen = 0;
-    }
-
-    bool IsEnabled()
-    {
-        return enabled == 1;
-    }
-};
-
-
-
-class CDarkSendSigner
-{
-public:
-    bool SetKey(std::string strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey);
-    bool SignMessage(std::string strMessage, std::string& errorMessage, std::vector<unsigned char>& vchSig, CKey key);
-    bool VerifyMessage(CPubKey pubkey, std::vector<unsigned char>& vchSig, std::string strMessage, std::string& errorMessage);
-};
-
-static const int64 POOL_FEE_AMOUNT = 0.025*COIN;
-
-/** Used to keep track of current status of darksend pool
- */
-class CDarkSendPool
-{
-public:
-    static const int MIN_PEER_PROTO_VERSION = 70018;
-
-    CTxIn vinMasterNode;
-    CPubKey pubkeyMasterNode;
-    std::vector<unsigned char> vchMasterNodeSignature;
-    CScript collateralPubKey;
-    
-    int64 masterNodeSignatureTime;
-
-    CDarkSendPool()
-    {
-
-        std::string strAddress = "";  
-        strAddress = "Xq19GqFvajRrEdDHYRKGYjTsQfpV5jyipF";
-        
-        SetCollateralAddress(strAddress);
-    }
-
-    bool SetCollateralAddress(std::string strAddress);
-    bool GetLastValidBlockHash(uint256& hash, int mod=10);
-    int GetCurrentMasterNode(int mod=10);
-    void NewBlock();
-};
-
-#endif // ENABLE_DARKSEND_FEATURES
-
 
 #endif
