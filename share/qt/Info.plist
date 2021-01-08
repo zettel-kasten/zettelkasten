@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
-<plist version="0.9">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
 <dict>
 	<key>CFBundleIconFile</key>
-        <string>zettelkasten.icns</string>
+	<string>zettelkasten.icns</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleGetInfoString</key>
-	<string>$VERSION, Copyright © 2014 The Developers</string>
+	<string>$VERSION, Copyright © 2021 The Developers</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$VERSION</string>
 	<key>CFBundleVersion</key>
@@ -15,22 +15,22 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleExecutable</key>
-	<string>SpreadCoin-Qt</string>
+	<string>ZettelKasten-Qt</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.spreadcoin.SpreadCoin-Qt</string>
-        <key>CFBundleURLTypes</key>
-        <array>
-          <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLName</key>
-            <string>org.spreadcoin.SpreadCoinPayment</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-              <string>spreadcoin</string>
-            </array>
-          </dict>
-        </array>
+	<string>org.zettelkasten.ZettelKasten-Qt</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>org.zettelkasten.ZettelKastenPayment</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>zettelkasten</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSHighResolutionCapable</key>
 	<true/>
 </dict>
