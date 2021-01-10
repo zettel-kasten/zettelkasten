@@ -183,17 +183,45 @@ void TimelinePage::updateData()
             tx_id = vtxid.at(i).GetHex().c_str();
             if(!tx_set.contains(tx_id)){
                 tx_set.insert(tx_id);
+
+                /*struct ui_tx_item {
+                    QString txid;
+                    QString txid_truncated;
+                    int offset_x;
+                    int offset_y;
+                    int target_x;
+                    int target_y;
+                    qreal counter;
+                    int sin_sign;
+                    qreal sin_divider;
+                    qreal sin_multiplier;
+                    int cos_sign;
+                    qreal cos_divider;
+                    qreal cos_multiplier;
+                    int state;
+                    qreal opacity;
+                    int win_orientation;
+                };*/
+
+                qreal temp_counter = qrand()%100000;
+                int temp_sin_sign = qPow(-1,qrand()%10);
+                qreal temp_sin_divider = 10+qrand()%20;
+                qreal temp_sin_multiplier = 200+qrand()%100;
+                int temp_cos_sign = qPow(-1,qrand()%10);
+                qreal temp_cos_divider = 10+qrand()%20;
+                qreal temp_cos_multiplier = 45+qrand()%30;
+
                 ui_tx_list.append({tx_id,
                                    QString(tx_id).left(10)+QString(" . . ."),
                                    0,-50, //offset
                                    0,75, //target offset
-                                   qrand()%100000, //counter
-                                   qPow(-1,qrand()%10),
-                                   10+qrand()%20,
-                                   200+qrand()%100, //sin_multiplier
-                                   qPow(-1,qrand()%10),
-                                   10+qrand()%20,
-                                   45+qrand()%30, // cos_multiplier
+                                   temp_counter, //counter
+                                   temp_sin_sign,
+                                   temp_sin_divider,
+                                   temp_sin_multiplier, //sin_multiplier
+                                   temp_cos_sign,
+                                   temp_cos_divider,
+                                   temp_cos_multiplier, // cos_multiplier
                                    0,
                                    1, //opacity
                                    1 //win orientation
