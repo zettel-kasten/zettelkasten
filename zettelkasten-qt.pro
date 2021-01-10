@@ -433,13 +433,11 @@ isEmpty(BOOST_INCLUDE_PATH) {
 }
 
 isEmpty(OPENSSL_LIB_PATH) {
-    macx:OPENSSL_LIB_PATH = /usr/local/Cellar/openssl@1.0/1.0.2t/lib
-    #macx:OPENSSL_LIB_PATH = /usr/local/Cellar/openssl/lib
+    macx:OPENSSL_LIB_PATH = /usr/local/ssl/lib
 }
 
 isEmpty(OPENSSL_INCLUDE_PATH) {
-    macx:OPENSSL_INCLUDE_PATH = /usr/local/Cellar/openssl@1.0/1.0.2t/include
-    #macx:OPENSSL_INCLUDE_PATH = /usr/local/Cellar/openssl/include
+    macx:OPENSSL_INCLUDE_PATH = /usr/local/ssl/include
 }
 
 win32:DEFINES += WIN32
