@@ -90,17 +90,6 @@ int64 nHPSTimerStart = 0;
 int64 nTransactionFee = 0;
 int64 nMinimumInputValue = DUST_HARD_LIMIT;
 
-// Get hardfork blocks
-unsigned int getFirstHardforkBlock()
-{
-    return 0;
-}
-
-unsigned int getSecondHardforkBlock()
-{
-    return 0;//43000;
-}
-
 //////////////////////////////////////////////////////////////////////////////
 //
 // dispatching functions
@@ -1352,15 +1341,7 @@ static const int g_RewardHalvingPeriod = 2000000;
 
 int64 GetBlockValue(int nHeight, int64 nFees)
 {
-    /*int64_t nSubsidy = 50 * COIN * 4 / 3;
-    if (nHeight > (int)getFirstHardforkBlock()){
-        nSubsidy /= 10;
-    }*/
-
     int64_t nSubsidy = 10 * COIN;
-    /*if (nHeight > (int)getFirstHardforkBlock()){
-        nSubsidy /= 10;
-    }*/
 
     // Subsidy is cut in half every g_RewardHalvingPeriod blocks which will occur approximately every 4 years.
     int halvings = nHeight / g_RewardHalvingPeriod;
@@ -1404,14 +1385,14 @@ static int clampTimespan(int val, int lo, int hi)
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pLastBlock, const CBlockHeader *)
 {
-    const int nTargetSpacing = (pLastBlock->nHeight > (int)getFirstHardforkBlock())? 60 : 600; // ZettelKasten: 1 minute after block 2200
-    const int nTargetTimespan = (pLastBlock->nHeight > (int)getSecondHardforkBlock())? 6*60*60 : 24*60*60; // ZettelKasten: 6 hours after second hardfork
+    const int nTargetSpacing = 60; // ZettelKasten: 1 minute
+    const int nTargetTimespan = 6*60*60; // ZettelKasten: 6 hours
     const int nInterval = nTargetTimespan/nTargetSpacing;
 
     if (pLastBlock->nHeight <= nInterval + 2)
         return bnProofOfWorkLimit.GetCompact();
 
-    if ((int)getSecondHardforkBlock() <= pLastBlock->nHeight && pLastBlock->nHeight <= (int)getSecondHardforkBlock() + nInterval)
+    if (0 <= pLastBlock->nHeight && pLastBlock->nHeight <= 0 + nInterval)
         return (bnProofOfWorkLimit/20).GetCompact();
 
     pLastBlock = pLastBlock->pprev;
@@ -1438,7 +1419,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pLastBlock, const CBl
 
 CPubKey CBlockHeader::GetRewardAddress() const
 {
-    if (nHeight <= getSecondHardforkBlock())
+    if (nHeight <= 0)
         return CPubKey();
 
     CPubKey PubKey;
@@ -1496,7 +1477,7 @@ CBufferStream<185> CBlockHeader::SerializeHeaderForHash2() const
 
 uint256 CBlockHeader::GetHash() const
 {
-    if (nHeight > getSecondHardforkBlock())
+    if (nHeight > 0)
     {
         CBufferStream<185> Header = SerializeHeaderForHash2();
         return Hash(Header.begin(), Header.end());
@@ -1801,7 +1782,7 @@ bool CBlock::CheckProofOfWorkLite() const
 	if (GetPoWHash() > bnTarget.getuint256() && GetHash() != hashGenesisBlock)
 		return error("CheckProofOfWork() : hash doesn't match nBits. This block height = %d, your current nBestHeight = %d", nHeight, nBestHeight);
 
-    if (nHeight <= getSecondHardforkBlock() || nHeight < Checkpoints::LastCheckPoint())
+    if (nHeight <= 0 || nHeight < Checkpoints::LastCheckPoint())
         return true;
 
     if (vtx.size() < 1)
@@ -1843,7 +1824,7 @@ bool CBlock::CheckProofOfWork() const
     if (!CheckProofOfWorkLite())
         return false;
 
-    if (nHeight <= getSecondHardforkBlock() || nHeight < Checkpoints::LastCheckPoint())
+    if (nHeight <= 0 || nHeight < Checkpoints::LastCheckPoint())
         return true;
 
 	//only do this test if block height <= nBestHeight+2, so that SDKPGAB validation can take place
