@@ -181,8 +181,10 @@ void UIFooter::paintEvent(QPaintEvent *e)
         painter.drawStaticText(200+(this->width()-200-120)/2-stat_width/2,35,stat);
 
         if(blockSource != BLOCK_SOURCE_NONE){
-            QString stat3 = QString("%1 total blocks (estimated)").arg(nTotalBlocks);
-            stat_width = fm.width(stat3);
+            QString str = QString("%1 total blocks (estimated)").arg(nTotalBlocks);
+            QStaticText stat3;
+            stat3.setText(str);
+            stat_width = fm.width(str);
             stat_height = fm.height();
             painter.drawStaticText(200+(this->width()-200-120)-stat_width,35,stat3);
         }
