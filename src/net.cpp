@@ -350,7 +350,6 @@ bool GetMyExternalIP(CNetAddr& ipRet)
     const char* pszGet;
     const char* pszKeyword;
 
-    //for (int nLookup = 0; nLookup <= 1; nLookup++)
     for (int nHost = 1; nHost <= 2; nHost++)
     {
         // We should be phasing out our use of sites like these. If we need
