@@ -112,6 +112,7 @@ UISideBar::UISideBar(QWidget *parent) : QWidget(parent)
     main_menu_data.append({":/ui/icons/timeline","Timeline"});
     main_menu_data.append({":/ui/icons/wallet","Wallet"});
     main_menu_data.append({":/ui/icons/mining","Mining"});
+    main_menu_data.append({":/ui/icons/network","Network"});
 
     int offset_y = 30;
     for(int i = 0;i<main_menu_data.length();i++){

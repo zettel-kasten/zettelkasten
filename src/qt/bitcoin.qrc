@@ -127,6 +127,7 @@
         <file alias="mining">res/ui/mining.png</file>
         <file alias="wallet">res/ui/wallet.png</file>
         <file alias="preloader">res/ui/preloader_64.png</file>
+        <file alias="network">res/ui/network.png</file>
     </qresource>
     <qresource prefix="/ui/fonts">
         <file alias="opensans-bold">res/fonts/OpenSans-Bold.ttf</file>
