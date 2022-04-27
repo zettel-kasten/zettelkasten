@@ -18,6 +18,7 @@
 #include "askpassphrasedialog.h"
 #include "ui_interface.h"
 #include "miningpage.h"
+#include "networkpage.h"
 #include "ui/uiheader.h"
 
 #include <QHBoxLayout>
@@ -63,6 +64,8 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
 
     miningPage = new MiningPage(gui);
 
+    networkPage = new NetworkPage();
+
     signVerifyMessageDialog = new SignVerifyMessageDialog(gui);
 
     addWidget(timelinePage);
@@ -71,6 +74,7 @@ WalletView::WalletView(QWidget *parent, BitcoinGUI *_gui):
     addWidget(receiveCoinsPage);
     addWidget(sendCoinsPage);
     addWidget(miningPage);
+    addWidget(networkPage);
 
     // Clicking on a transaction on the overview page simply sends you to transaction history page
     //connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), this, SLOT(gotoHistoryPage()));
@@ -197,6 +201,12 @@ void WalletView::gotoMiningPage()
 {
     gui->getMiningAction()->setChecked(true);
     setCurrentWidget(miningPage);
+}
+
+void WalletView::gotoNetworkPage()
+{
+    gui->getNetworkAction()->setChecked(true);
+    setCurrentWidget(networkPage);
 }
 
 void WalletView::gotoSignMessageTab(QString addr)

@@ -252,7 +252,8 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/ui/uihelper.h \
     src/qt/ui/uisidebar.h \
     src/qt/ui/uitoolbar.h \
-    src/qt/timelinepage.h
+    src/qt/timelinepage.h \
+    src/qt/networkpage.h
 
 SOURCES += src/qt/bitcoin.cpp \
     src/qt/bitcoingui.cpp \
@@ -330,7 +331,8 @@ SOURCES += src/qt/bitcoin.cpp \
     src/qt/ui/uiheader.cpp \
     src/qt/ui/uisidebar.cpp \
     src/qt/ui/uitoolbar.cpp \
-    src/qt/timelinepage.cpp
+    src/qt/timelinepage.cpp \
+    src/qt/networkpage.cpp
 
 RESOURCES += src/qt/bitcoin.qrc
 
@@ -347,7 +349,8 @@ FORMS += src/qt/forms/sendcoinsdialog.ui \
     src/qt/forms/rpcconsole.ui \
     src/qt/forms/optionsdialog.ui \
     src/qt/forms/miningpage.ui \
-    src/qt/forms/timelinepage.ui
+    src/qt/forms/timelinepage.ui \
+    src/qt/forms/networkpage.ui
 
 contains(USE_QRCODE, 1) {
 HEADERS += src/qt/qrcodedialog.h

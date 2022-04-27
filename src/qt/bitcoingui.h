@@ -19,6 +19,7 @@ class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
 class MiningPage;
+class NetworkPage;
 
 #include "ui/uisidebar.h"
 #include "ui/uiheader.h"
@@ -74,6 +75,7 @@ public:
     QAction * getReceiveCoinsAction() { return receiveCoinsAction; }
     QAction * getSendCoinsAction() { return sendCoinsAction; }
     QAction * getMiningAction() { return miningAction; }
+    QAction * getNetworkAction() { return networkAction; }
 
 	void timerEvent(QTimerEvent *event);
 	void resizeEvent(QResizeEvent *event);
@@ -121,6 +123,7 @@ private:
     QAction *openRPCConsoleAction;
     QAction *openInfoAction;
     QAction *miningAction;
+    QAction *networkAction;
 
     QSystemTrayIcon *trayIcon;
     Notificator *notificator;
@@ -207,6 +210,8 @@ private slots:
     void gotoSendCoinsPage(QString addr = "");
     /** Switch to mining page */
     void gotoMiningPage();
+    /** Switch to network page */
+    void gotoNetworkPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");

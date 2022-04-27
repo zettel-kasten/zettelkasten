@@ -237,6 +237,13 @@ void BitcoinGUI::createActions()
     miningAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
     tabGroup->addAction(miningAction);
 
+    networkAction = new QAction(QIcon(":/icons/network"), tr("&Network"), this);
+    networkAction->setStatusTip(tr("Network Connectivity"));
+    networkAction->setToolTip(networkAction->statusTip());
+    networkAction->setCheckable(true);
+    networkAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
+    tabGroup->addAction(networkAction);
+
     connect(timelineAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(timelineAction, SIGNAL(triggered()), this, SLOT(gotoTimelinePage()));
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -248,6 +255,7 @@ void BitcoinGUI::createActions()
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(gotoAddressBookPage()));
     connect(miningAction, SIGNAL(triggered()), this, SLOT(gotoMiningPage()));
+    connect(networkAction, SIGNAL(triggered()), this, SLOT(gotoNetworkPage()));
 
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
     quitAction->setStatusTip(tr("Quit application"));
@@ -339,6 +347,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(historyAction);
     toolbar->addAction(addressBookAction);
     toolbar->addAction(miningAction);
+    toolbar->addAction(networkAction);
 }
 
 void BitcoinGUI::createSideBar()
@@ -543,6 +552,10 @@ void BitcoinGUI::sideBarClick(int index)
         uiToolBar->clicked_button = 4;
         gotoMiningPage();
     }
+    if(index == 3){
+        uiToolBar->clicked_button = 5;
+        gotoNetworkPage();
+    }
 }
 
 void BitcoinGUI::gotoTimelinePage()
@@ -589,6 +602,12 @@ void BitcoinGUI::gotoMiningPage()
 {
     uiToolBar->switchToToolBar(2);
     if (walletFrame) walletFrame->gotoMiningPage();
+}
+
+void BitcoinGUI::gotoNetworkPage()
+{
+    uiToolBar->switchToToolBar(0); //adjust later
+    if (walletFrame) walletFrame->gotoNetworkPage();
 }
 
 void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
